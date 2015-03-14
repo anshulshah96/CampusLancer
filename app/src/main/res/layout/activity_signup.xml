@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.aka.campuslancer.SignupActivity">
+
+    <TextView
+        android:id="@+id/txtusernamesignup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Username" />
+
+    <EditText
+        android:id="@+id/usernamesignup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtusernamesignup"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/txtpasswordsignup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/usernamesignup"
+        android:text="@string/Password" />
+
+    <EditText
+        android:id="@+id/passwordsignup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtpasswordsignup"
+        android:inputType="textPassword" />
+    <TextView
+        android:id="@+id/txtenrollmentsignup"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/passwordsignup"
+        android:layout_height="wrap_content"
+        android:text="Enrollment" />
+
+    <EditText
+        android:id="@+id/enrollmentsignup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtenrollmentsignup"
+        android:inputType="text" />
+    <TextView
+        android:id="@+id/txtemailsignup"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/enrollmentsignup"
+        android:layout_height="wrap_content"
+        android:text="Email" />
+
+    <EditText
+        android:id="@+id/emailsignup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtemailsignup"
+        android:inputType="text" />
+    <Button
+        android:id="@+id/signupbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emailsignup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="109dp"
+        android:text="SignUp"/>
+
+
+</RelativeLayout>
