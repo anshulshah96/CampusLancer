@@ -15,7 +15,7 @@ import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
 
-public class SignupActivity extends ActionBarActivity {
+class SignupActivity extends ActionBarActivity {
 
     Button signup;
     String usernametxt;
