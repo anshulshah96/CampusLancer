@@ -13,7 +13,8 @@ import android.widget.TextView;
 public class Welcome extends Activity {
 
     // Declare Variable
-    Button logout;
+    Button logout,hire,work;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,18 @@ public class Welcome extends Activity {
 
         // Locate Button in welcome.xml
         logout = (Button) findViewById(R.id.logout);
+        hire=(Button) findViewById(R.id.hire);
+        work=(Button)findViewById(R.id.work);
+
+        //hire button click listener
+        hire.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(getApplicationContext(),Hire.class);
+                startActivity(i);
+
+            }
+        });
 
         // Logout Button Click Listener
         logout.setOnClickListener(new OnClickListener() {

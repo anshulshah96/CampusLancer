@@ -16,7 +16,7 @@ import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
 
-class SignupActivity extends ActionBarActivity {
+public class SignupActivity extends ActionBarActivity {
 
     Button signup;
     String usernametxt;
@@ -50,7 +50,7 @@ class SignupActivity extends ActionBarActivity {
                 user.setPassword(passwordtxt);
                 user.setEmail(emailtxt);
                 user.put("enrollment",Integer.parseInt(enrollment.getText().toString()));
-               // user.setEnrollment(enrollmenttxt);
+                // user.setEnrollment(enrollmenttxt);
                 user.signUpInBackground(new SignUpCallback() {
                     public void done(ParseException e) {
                         if (e == null) {
