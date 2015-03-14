@@ -3,6 +3,7 @@ package com.aka.campuslancer;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,6 +49,7 @@ public class SignupActivity extends ActionBarActivity {
                 user.setUsername(usernametxt);
                 user.setPassword(passwordtxt);
                 user.setEmail(emailtxt);
+                user.put("enrollment",Integer.parseInt(enrollment.getText().toString()));
                // user.setEnrollment(enrollmenttxt);
                 user.signUpInBackground(new SignUpCallback() {
                     public void done(ParseException e) {
@@ -62,6 +64,7 @@ public class SignupActivity extends ActionBarActivity {
                             Toast.makeText(getApplicationContext(),
                                     "Sign up Error", Toast.LENGTH_LONG)
                                     .show();
+                            Log.e("Sign Up Error: ",e.getMessage());
                         }
                     }
                 });

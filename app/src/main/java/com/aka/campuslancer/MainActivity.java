@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
                 finish();
             } else {
                 // Send user to LoginSignupActivity.class
+
                 Intent intent = new Intent(MainActivity.this,
                         LoginSignupActivity.class);
                 startActivity(intent);

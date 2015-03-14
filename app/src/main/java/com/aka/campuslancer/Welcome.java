@@ -3,6 +3,7 @@ package com.aka.campuslancer;
 import com.parse.ParseUser;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -41,7 +42,10 @@ public class Welcome extends Activity {
             public void onClick(View arg0) {
                 // Logout current user
                 ParseUser.logOut();
-                finish();
+                Intent intent = new Intent(getApplicationContext(),LoginSignupActivity.class);
+                startActivity(intent);
+
+                //finish();
             }
         });
     }
