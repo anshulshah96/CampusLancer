@@ -24,7 +24,26 @@
         android:id="@+id/logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="@string/LogoutBtn" />
+        android:text="@string/LogoutBtn"
+        android:layout_below="@+id/txtuser"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hire"
+        android:id="@+id/hire"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/logout"
+        android:layout_toStartOf="@+id/logout" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Work"
+        android:id="@+id/work"
+        android:layout_alignTop="@+id/hire"
+        android:layout_toRightOf="@+id/logout"
+        android:layout_toEndOf="@+id/logout" />
 
 </RelativeLayout>
