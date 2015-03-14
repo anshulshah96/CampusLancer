@@ -2,21 +2,39 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:background="@drawable/loginSignUpBackGround">
+    android:orientation="vertical">
 
     <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundmain"
+        android:alpha="0.9"/>
+
+    <TextView
         android:id="@+id/Header"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:background="#1761ef"
-    />
+
+        android:paddingLeft="120dp"
+        android:paddingTop="35dp"
+        android:text="@string/Heading"
+        android:textSize="35sp"
+        android:textColor="#FFFFFF"/>
+
+    <ImageView
+        android:id="@+id/MainLogo"
+        android:background="@drawable/mainlogo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"/>
 
     <TextView
         android:id="@+id/txtusername"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/Header"
+        android:layout_below="@id/MainLogo"
         android:paddingTop="20dp"
 
         android:layout_marginLeft="10dp"
