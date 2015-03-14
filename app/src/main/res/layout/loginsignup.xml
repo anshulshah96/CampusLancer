@@ -3,13 +3,13 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    >
+    android:background="@drawable/loginSignUpBackGround">
 
     <ImageView
         android:id="@+id/Header"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#1673F1"
+        android:layout_height="100dp"
+        android:background="#1761ef"
     />
 
     <TextView
@@ -17,15 +17,28 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/Header"
-        android:paddingTop="10dp"
-        android:text="@string/Username" />
+        android:paddingTop="20dp"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        android:text="@string/Username"
+        android:textSize="20sp"
+        android:textColor="#000000"/>
 
     <EditText
         android:id="@+id/username"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtusername"
-        android:inputType="text" />
+        android:padding="5sp"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        android:inputType="text"
+        android:textSize="25sp"
+        android:background="#DDDDDD"/>
 
     <TextView
         android:id="@+id/txtpassword"
@@ -33,28 +46,72 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/username"
         android:paddingTop="10dp"
-        android:text="@string/Password" />
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        android:text="@string/Password"
+        android:textSize="20sp"
+        android:textColor="#000000"/>
 
     <EditText
         android:id="@+id/password"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtpassword"
-        android:inputType="textPassword" />
+        android:padding="5sp"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        android:inputType="textPassword"
+        android:textSize="25sp"
+        android:background="#DDDDDD"/>
 
     <Button
         android:id="@+id/login"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/password"
-        android:text="@string/LoginBtn" />
+
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+
+        android:text="@string/LoginBtn"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="#F8650D"/>
+
+    <TextView
+        android:id="@+id/SignUpBoost"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login"
+
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+
+        android:text="@string/SignUpBoost"
+        android:textSize="15sp"
+        android:textColor="#000000"/>
 
     <Button
         android:id="@+id/signup"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login"
+        android:layout_below="@+id/SignUpBoost"
         android:text="@string/SignupBtn"
-        android:onClick="SignUp"/>
+        android:onClick="SignUp"
+
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="#F8650D" />
 
 </RelativeLayout>

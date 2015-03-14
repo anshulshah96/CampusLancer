@@ -11,5 +11,6 @@
     <string name="LogoutBtn">Log Out</string>
     <string name="Welcome">Welcome!</string>
     <string name="title_activity_signup">SignupActivity</string>
+    <string name="SignUpBoost">Don't have an account? Sign Up for free!</string>
 
 </resources>
