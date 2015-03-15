@@ -15,6 +15,10 @@
     <string name="title_activity_signup">SignupActivity</string>
     <string name="SignUpBoost">Don\'t have an account? Sign Up for free!</string>
     <string name="Heading">Campus Lancer</string>
+<<<<<<< HEAD
     <string name="SignUpDescription">Sign Up as a New User for free!</string>
+=======
+    <string name="title_activity_post">PostActivity</string>
+>>>>>>> PostWorking
 
 </resources>
