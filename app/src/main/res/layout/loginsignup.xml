@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/backgroundmain"
-        android:alpha="0.9"/>
+        android:alpha="0.9" />
 
     <TextView
         android:id="@+id/Header"
@@ -20,7 +20,7 @@
         android:paddingTop="35dp"
         android:text="@string/Heading"
         android:textSize="35sp"
-        android:textColor="#FFFFFF"/>
+        android:textColor="#FFFFFF" />
 
     <ImageView
         android:id="@+id/MainLogo"
@@ -28,7 +28,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="10dp" />
 
     <TextView
         android:id="@+id/txtusername"
