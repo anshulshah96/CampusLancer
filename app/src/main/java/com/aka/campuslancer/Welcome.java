@@ -39,6 +39,15 @@ public class Welcome extends Activity {
         hire=(Button) findViewById(R.id.hire);
         work=(Button)findViewById(R.id.work);
 
+        work.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(getApplicationContext(),WorkActivity.class);
+                startActivity(i);
+
+            }
+        });
+
         //hire button click listener
         hire.setOnClickListener(new OnClickListener() {
             @Override

@@ -1,5 +1,6 @@
 package com.aka.campuslancer;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -42,6 +43,9 @@ public class LoginSignupActivity extends Activity {
                 // Retrieve the text entered from the EditText
                 usernametxt = username.getText().toString();
                 passwordtxt = password.getText().toString();
+                final ProgressDialog dialog = new ProgressDialog(LoginSignupActivity.this);
+                dialog.setMessage("Logging in...");
+                dialog.show();
 
                 // Send data to Parse.com for verification
                 ParseUser.logInInBackground(usernametxt,  passwordtxt,
@@ -56,12 +60,14 @@ public class LoginSignupActivity extends Activity {
                                     Toast.makeText(getApplicationContext(),
                                             "Successfully Logged in",
                                             Toast.LENGTH_LONG).show();
+                                    dialog.dismiss();
                                     finish();
                                 } else {
                                     Toast.makeText(
                                             getApplicationContext(),
                                             "No such user exist, please signup",
                                             Toast.LENGTH_LONG).show();
+                                    dialog.dismiss();
                                 }
                             }
                         });
@@ -75,5 +81,6 @@ public class LoginSignupActivity extends Activity {
         // Save new user data into Parse.com Data Storage
         Intent intent = new Intent(LoginSignupActivity.this,SignupActivity.class);
         startActivity(intent);
+
     }
 }

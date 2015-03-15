@@ -1,5 +1,6 @@
 package com.aka.campuslancer;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -45,10 +46,14 @@ public class SignupActivity extends ActionBarActivity {
                 passwordtxt = password.getText().toString();
                 enrollmenttxt = enrollment.getText().toString();
                 emailtxt = email.getText().toString();
+                final ProgressDialog dialog = new ProgressDialog(SignupActivity.this);
+                dialog.setMessage("Signing up...");
+                dialog.show();
                 ParseUser user = new ParseUser();
                 user.setUsername(usernametxt);
                 user.setPassword(passwordtxt);
                 user.setEmail(emailtxt);
+
                 user.put("enrollment",Integer.parseInt(enrollment.getText().toString()));
                 // user.setEnrollment(enrollmenttxt);
                 user.signUpInBackground(new SignUpCallback() {
@@ -58,13 +63,15 @@ public class SignupActivity extends ActionBarActivity {
                             Toast.makeText(getApplicationContext(),
                                     "Successfully Signed up, please log in.",
                                     Toast.LENGTH_LONG).show();
+                                 dialog.dismiss();
                             Intent intent = new Intent(SignupActivity.this,
                                     Welcome.class);
                         } else {
                             Toast.makeText(getApplicationContext(),
                                     "Sign up Error", Toast.LENGTH_LONG)
                                     .show();
-                            Log.e("Sign Up Error: ",e.getMessage());
+                            dialog.dismiss();
+                           // Log.e("Sign Up Error: ",e.getMessage());
                         }
                     }
                 });

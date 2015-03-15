@@ -47,6 +47,10 @@ public class Hire extends Activity {
         post.setTopic(text);
         post.setDescription(text1);
 
+        //To be Set
+        post.setEnrol(0);
+        post.setBid(Integer.parseInt(bid.getText().toString()));
+
 
         final ProgressDialog dialog = new ProgressDialog(Hire.this);
         dialog.setMessage("Posting...");

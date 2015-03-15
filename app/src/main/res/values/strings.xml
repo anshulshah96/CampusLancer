@@ -27,4 +27,5 @@
     <string name="HireDescription">Description:</string>
     <string name="HireInitialBid">Initial Bid:</string>
     <string name="HirePost">POST</string>
+    <string name="title_activity_work">Work</string>
 </resources>
