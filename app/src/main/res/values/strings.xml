@@ -6,13 +6,20 @@
     <string name="action_settings">Settings</string>
     <string name="Username">Username</string>
     <string name="Password">Password</string>
+    <string name="Enrollment">Enrollment Number</string>
+    <string name="Email">Email ID</string>
     <string name="LoginBtn">Login</string>
     <string name="SignupBtn">Sign Up</string>
     <string name="LogoutBtn">Log Out</string>
     <string name="Welcome">Welcome!</string>
-    <string name="title_activity_signup">SignupActivity</string>
     <string name="SignUpBoost">Don\'t have an account? Sign Up for free!</string>
     <string name="Heading">Campus Lancer</string>
-    <string name="title_activity_post">PostActivity</string>
+    <string name="SignUpDescription">Sign Up as a New User for free!</string>
 
+    <string name="HireHeading">Post a New Project</string>
+    <string name="HireInfo">Post your project by filling out the information regarding the work you need to be done.</string>
+    <string name="HireTopic">Topic:</string>
+    <string name="HireDescription">Description:</string>
+    <string name="HireInitialBid">Initial Bid:</string>
+    <string name="HirePost">POST</string>
 </resources>
