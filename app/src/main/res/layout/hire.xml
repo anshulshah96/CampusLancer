@@ -4,40 +4,150 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundmain"
+        android:alpha="0.9" />
+
+    <TextView
+        android:id="@+id/Header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#1761ef"
+
+        android:paddingLeft="100dp"
+        android:paddingTop="25dp"
+        android:text="@string/HireHeading"
+        android:textSize="25sp"
+        android:textColor="#FFFFFF"/>
+
+    <ImageView
+        android:id="@+id/MainLogo"
+        android:background="@drawable/mainlogo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/HireInfo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/MainLogo"
+        android:background="#55FFFFFF"
+
+        android:layout_margin="10dp"
+
+        android:text="@string/HireInfo"
+        android:textSize="20sp"
+        android:textColor="#000000" />
+
+    <TextView
+        android:id="@+id/Topic"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/HireInfo"
+
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        android:text="@string/HireTopic"
+        android:textSize="22sp"
+        android:textColor="#000000" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/TopicField"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/topic"
-        android:hint="Enter The Topic"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="107dp" />
+        android:layout_below="@id/HireInfo"
+        android:layout_toRightOf="@id/Topic"
+        android:layout_alignParentRight="true"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        android:padding="5sp"
+        android:inputType="text"
+        android:textSize="20sp"
+        android:background="#DDDDDD" />
+
+    <TextView
+        android:id="@+id/Description"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Topic"
+
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        android:text="@string/HireDescription"
+        android:textSize="22sp"
+        android:textColor="#000000" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/DescriptionField"
+        android:layout_width="280dp"
+        android:layout_height="80dp"
+        android:layout_below="@+id/TopicField"
+        android:layout_toRightOf="@id/Description"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        android:padding="5sp"
+        android:inputType="textMultiLine"
+        android:textSize="20sp"
+        android:background="#DDDDDD" />
+
+    <TextView
+        android:id="@+id/InitialBid"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:id="@+id/description"
-        android:hint="Enter the Description"
-        android:layout_below="@+id/topic"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:layout_below="@id/Description"
+
+        android:layout_marginTop="65dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        android:text="@string/HireInitialBid"
+        android:textSize="22sp"
+        android:textColor="#000000" />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/InitialBidField"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:id="@+id/bid"
-        android:hint="Enter the initial bid"
-        android:layout_marginTop="78dp"
-        android:layout_below="@+id/description"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@id/DescriptionField"
+        android:layout_toRightOf="@id/InitialBid"
+        android:layout_alignParentRight="true"
+
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        android:padding="5sp"
+        android:inputType="text"
+        android:textSize="20sp"
+        android:background="#DDDDDD" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/HirePost"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Post"
-        android:id="@+id/post"
-        android:layout_marginTop="50dp"
-        android:layout_below="@+id/bid"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@id/InitialBid"
+        android:text="@string/HirePost"
+
+        android:layout_marginLeft="140dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
+
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="#F8650D" />
+
 </RelativeLayout>
