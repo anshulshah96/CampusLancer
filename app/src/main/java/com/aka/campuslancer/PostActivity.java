@@ -24,10 +24,10 @@ public class PostActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
-        postButton = (Button) findViewById(R.id.post);
-        topic = (EditText) findViewById(R.id.topic);
-        description = (EditText) findViewById(R.id.description);
-        bid = (EditText) findViewById(R.id.bid);
+        postButton = (Button) findViewById(R.id.HirePost);
+        topic = (EditText) findViewById(R.id.TopicField);
+        description = (EditText) findViewById(R.id.DescriptionField);
+        bid = (EditText) findViewById(R.id.InitialBidField);
         postButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 post();

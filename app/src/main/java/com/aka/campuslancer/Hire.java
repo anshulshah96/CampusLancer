@@ -26,10 +26,10 @@ public class Hire extends Activity {
         setContentView(R.layout.hire);
         ParseObject.registerSubclass(HirePost.class);
          Parse.initialize(this, "gpSqLXFDsQg0oBtIg3ITgoYZLFiI9wkEF2tGiUR3", "pzEksVGPBG1iX8NkIoJ4V7hAPGoaTPo7dyNRkDs4");
-            postButton = (Button) findViewById(R.id.post);
-            topic = (EditText) findViewById(R.id.topic);
-            description = (EditText) findViewById(R.id.description);
-            bid = (EditText) findViewById(R.id.bid);
+            postButton = (Button) findViewById(R.id.HirePost);
+            topic = (EditText) findViewById(R.id.TopicField);
+            description = (EditText) findViewById(R.id.DescriptionField);
+            bid = (EditText) findViewById(R.id.InitialBidField);
             postButton.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     post();

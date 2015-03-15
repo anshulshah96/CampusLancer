@@ -4,6 +4,10 @@
     <string name="app_name">Campus Lancer</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="title_activity_signup">Set this as per your wish</string>
+    <string name="title_activity_post">Set this as per your wish</string>
+
     <string name="Username">Username</string>
     <string name="Password">Password</string>
     <string name="Enrollment">Enrollment Number</string>
