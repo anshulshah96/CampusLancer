@@ -1,7 +1,12 @@
 package com.aka.campuslancer;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.app.ProgressDialog;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -15,7 +20,7 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 
-public class PostActivity extends ActionBarActivity {
+public class PostActivity extends ActionBarActivity implements WorkDescriptionFragment.OnFragmentInteractionListener {
 
     Button postButton;
     EditText topic, description, bid;
@@ -24,46 +29,16 @@ public class PostActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
-        postButton = (Button) findViewById(R.id.HirePost);
-        topic = (EditText) findViewById(R.id.TopicField);
-        description = (EditText) findViewById(R.id.DescriptionField);
-        bid = (EditText) findViewById(R.id.InitialBidField);
-        postButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                post();
-            }
-        });
+        FragmentManager f1=getFragmentManager();
+        FragmentTransaction f2=f1.beginTransaction();
+        WorkDescriptionFragment f=new WorkDescriptionFragment();
+        f2.replace(R.id.container,f);
+        f2.commit();
+
     }
 
-    private void post() {
-        // 1
-        HirePost post = new HirePost();
-        String text = topic.getText().toString().trim();
-        String text1 = description.getText().toString().trim();
-        post.setUsername();
-        post.setUser(ParseUser.getCurrentUser());
-        post.setTopic(text);
-        post.setDescription(text1);
-
-
-        final ProgressDialog dialog = new ProgressDialog(PostActivity.this);
-        dialog.setMessage("Posting...");
-        dialog.show();
-
-
-        // 2
-        ParseACL acl = new ParseACL();
-        acl.setPublicReadAccess(true);
-        post.setACL(acl);
-
-        // 3
-        post.saveInBackground(new SaveCallback() {
-            @Override
-            public void done(ParseException e) {
-                dialog.dismiss();
-                finish();
-            }
-        });
+    @Override
+    public void onFragmentInteraction(Uri uri) {
 
     }
 }
