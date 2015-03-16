@@ -20,21 +20,22 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 
-public class PostActivity extends ActionBarActivity implements WorkDescriptionFragment.OnFragmentInteractionListener {
+public class PostActivity extends FragmentActivity implements WorkDescriptionFragment.OnFragmentInteractionListener {
 
     Button postButton;
     EditText topic, description, bid;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_post);
         FragmentManager f1=getFragmentManager();
         FragmentTransaction f2=f1.beginTransaction();
         WorkDescriptionFragment f=new WorkDescriptionFragment();
         f2.replace(R.id.container,f);
         f2.commit();
-
+        setContentView(R.layout.activity_post);
     }
 
     @Override

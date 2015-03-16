@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.location.Location;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.internal.widget.AdapterViewCompat;
@@ -24,7 +25,7 @@ import android.widget.AdapterView.OnItemClickListener;
 
 
 
-public class WorkActivity extends Activity {
+public class WorkActivity extends Activity implements WorkDescriptionFragment.OnFragmentInteractionListener{
     private ParseQueryAdapter<HirePost> postsQueryAdapter;
     private static final int MAX_POST_SEARCH_RESULTS = 20;
     public static String username;
@@ -76,8 +77,8 @@ public class WorkActivity extends Activity {
                 TextView bidView = (TextView) view.findViewById(R.id.post_bid);
                 TextView enrolView = (TextView) view.findViewById(R.id.post_enrol);
                 topicView.setText(post.getTopic());
-                bidView.setText(post.getBid());
-                enrolView.setText(post.getEnrol());
+                bidView.setText(""+post.getBid());
+                enrolView.setText(""+post.getEnrol());
                 usernameView.setText(post.getUser().getUsername());
                 return view;
             }
@@ -121,6 +122,10 @@ public class WorkActivity extends Activity {
     private void doListQuery() {
             postsQueryAdapter.loadObjects();
         Log.i("query:",String.valueOf(postsQueryAdapter.isEmpty()));
+
+    }
+
+    public void onFragmentInteraction(Uri uri){
 
     }
 //

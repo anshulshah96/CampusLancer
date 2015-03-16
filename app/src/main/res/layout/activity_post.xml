@@ -12,5 +12,5 @@
         android:name="com.aka.campuslancer.WorkDescriptionFragment"
         android:id="@+id/container"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"  />
 </RelativeLayout>
