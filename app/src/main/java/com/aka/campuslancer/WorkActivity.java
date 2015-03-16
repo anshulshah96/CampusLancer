@@ -77,10 +77,18 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 TextView topicView = (TextView) view.findViewById(R.id.post_topic);
                 TextView bidView = (TextView) view.findViewById(R.id.post_bid);
                 TextView enrolView = (TextView) view.findViewById(R.id.post_enrol);
-                topicView.setText(post.getTopic());
-                bidView.setText(""+post.getBid());
-                enrolView.setText(""+post.getEnrol());
-                usernameView.setText(post.getUser().getUsername());
+
+                String topictxt=post.getTopic();
+                String bidtxt=""+post.getBid();
+                String enrolltxt=""+post.getEnrol();
+                String unametxt=post.getUsername();
+
+                topicView.setText(topictxt);
+                bidView.setText(bidtxt);
+                enrolView.setText(enrolltxt);
+                usernameView.setText(unametxt);
+
+
                 return view;
             }
 
@@ -101,11 +109,11 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
         postsListView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                username = view.findViewById(R.id.post_user).toString();
+                username = ((TextView)(view.findViewById(R.id.post_user))).getText().toString();
                 //description = view.findViewById(R.id.);
                 description= "Null";
-                topic = view.findViewById(R.id.post_topic).toString();
-                mobileno = view.findViewById(R.id.post_enrol).toString();
+                topic = ((TextView)(view.findViewById(R.id.post_topic))).getText().toString();
+                mobileno = ((TextView)(view.findViewById(R.id.post_enrol))).getText().toString();
                 Intent intent = new Intent(WorkActivity.this,PostActivity.class);
                 startActivity(intent);
 //              Toast.makeText(getApplicationContext(),"hey",Toast.LENGTH_SHORT).show();
