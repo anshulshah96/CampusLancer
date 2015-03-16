@@ -75,13 +75,12 @@ public class WorkDescriptionFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_work_description, container, false);
 
 
-//
-//        topicTv = (TextView) getView().findViewById(R.id.topictv);
-//        descriptionTv= (TextView) getView().findViewById(R.id.descriptiontv);
-//        usernameTv = (TextView) getView().findViewById(R.id.usernametv);
-//        mobilenoTv = (TextView) getView().findViewById(R.id.mobilenotv);
-//        bidValue = (EditText) getView().findViewById(R.id.bidvaluetv);
-//        bidButton = (Button) getView().findViewById(R.id.bidbutton);
+        topicTv = (TextView) view.findViewById(R.id.topictv);
+        descriptionTv= (TextView) view.findViewById(R.id.descriptiontv);
+        usernameTv = (TextView) view.findViewById(R.id.usernametv);
+        mobilenoTv = (TextView) view.findViewById(R.id.mobilenotv);
+        bidValue = (EditText) view.findViewById(R.id.bidvaluetv);
+        bidButton = (Button) view.findViewById(R.id.bidbutton);
 
 
         topicTv.setText(WorkActivity.topic);

@@ -61,6 +61,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
 //                        query.include("topic");
                         query.orderByDescending("createdAt");
                         query.setLimit(MAX_POST_SEARCH_RESULTS);
+                        dialog.dismiss();
                         return query;
                     }
                 };
@@ -105,7 +106,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 description= "Null";
                 topic = view.findViewById(R.id.post_topic).toString();
                 mobileno = view.findViewById(R.id.post_enrol).toString();
-                Intent intent = new Intent(getApplicationContext(),PostActivity.class);
+                Intent intent = new Intent(WorkActivity.this,PostActivity.class);
                 startActivity(intent);
 //              Toast.makeText(getApplicationContext(),"hey",Toast.LENGTH_SHORT).show();
             }
