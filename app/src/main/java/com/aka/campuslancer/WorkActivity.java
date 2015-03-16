@@ -2,32 +2,49 @@ package com.aka.campuslancer;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.location.Location;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.internal.widget.AdapterViewCompat;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
+import android.widget.AdapterView.OnItemClickListener;
+
 
 
 public class WorkActivity extends Activity {
     private ParseQueryAdapter<HirePost> postsQueryAdapter;
     private static final int MAX_POST_SEARCH_RESULTS = 20;
+    public static String username;
+    public static String description;
+    public static String topic;
+    public static String mobileno;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_work);
+
+        final ProgressDialog dialog = new ProgressDialog(WorkActivity.this);
+        dialog.setMessage("Loading data...");
+        dialog.show();
+
         ParseObject.registerSubclass(HirePost.class);
+
         ParseQueryAdapter.QueryFactory<HirePost> factory =
                 new ParseQueryAdapter.QueryFactory<HirePost>() {
                     public ParseQuery<HirePost> create() {
@@ -64,6 +81,8 @@ public class WorkActivity extends Activity {
                 usernameView.setText(post.getUser().getUsername());
                 return view;
             }
+
+
         };
 
         // Disable automatic loading when the adapter is attached to a view.
@@ -73,7 +92,23 @@ public class WorkActivity extends Activity {
 
         // Attach the query adapter to the view
         ListView postsListView = (ListView) findViewById(R.id.work_listview);
+
+
         postsListView.setAdapter(postsQueryAdapter);
+
+        postsListView.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                username = view.findViewById(R.id.post_user).toString();
+                //description = view.findViewById(R.id.);
+                description= "Null";
+                topic = view.findViewById(R.id.post_topic).toString();
+                mobileno = view.findViewById(R.id.post_enrol).toString();
+                Intent intent = new Intent(getApplicationContext(),PostActivity.class);
+                startActivity(intent);
+//              Toast.makeText(getApplicationContext(),"hey",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         doListQuery();
 
