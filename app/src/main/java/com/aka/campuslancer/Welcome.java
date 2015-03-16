@@ -29,15 +29,15 @@ public class Welcome extends Activity {
         String struser = currentUser.getUsername().toString();
 
         // Locate TextView in welcome.xml
-        TextView txtuser = (TextView) findViewById(R.id.txtuser);
+        TextView txtuser = (TextView) findViewById(R.id.WelcomeHeader);
 
         // Set the currentUser String into TextView
         txtuser.setText("You are logged in as " + struser);
 
         // Locate Button in welcome.xml
-        logout = (Button) findViewById(R.id.logout);
-        hire=(Button) findViewById(R.id.hire);
-        work=(Button)findViewById(R.id.work);
+        logout = (Button) findViewById(R.id.LogOutWelcome);
+        hire=(Button) findViewById(R.id.HireWelcome);
+        work=(Button)findViewById(R.id.WorkWelcome);
 
         work.setOnClickListener(new OnClickListener() {
             @Override
