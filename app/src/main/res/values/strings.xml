@@ -15,20 +15,32 @@
     <string name="LoginBtn">Login</string>
     <string name="SignupBtn">Sign Up</string>
     <string name="LogoutBtn">Log Out</string>
-    <string name="Welcome">Welcome!</string>
+
+    <string name="Welcome">Welcome to Campus Lancer! It is a platform for people who need to get their work, and people work and earn.</string>
+    <string name="HireWelcome">HIRE</string>
+    <string name="WorkWelcome">WORK</string>
+
     <string name="SignUpBoost">Don\'t have an account? Sign Up for free!</string>
     <string name="Heading">Campus Lancer</string>
-
+    <string name="ProjectListHeading">Active Projects</string>
     <string name="SignUpDescription">Sign Up as a New User for free!</string>
 
-    <string name="HireHeading">Post a New Project</string>
+    <!-- Post Project for Hire Strings -->
     <string name="HireInfo">Post your project by filling out the information regarding the work you need to be done.</string>
     <string name="HireTopic">Topic:</string>
     <string name="HireDescription">Description:</string>
     <string name="HireInitialBid">Initial Bid:</string>
     <string name="HirePost">POST</string>
-    <string name="title_activity_work">Work</string>
 
-<!-- TODO: Remove or change this placeholder text -->
+    <!-- Work Description Page Strings -->
+    <string name="WorkDescriptionTopic">Topic</string>
+    <string name="WorkDescriptionDescription">Description</string>
+    <string name="WorkDescriptionUserName">Username</string>
+    <string name="WorkDescriptionMobileNumber">Mobile Number</string>
+    <string name="WorkDescriptionBid">BID</string>
+    <string name="WorkDescriptionDummy">Dummy Text</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_work">Hello Activity</string>
 </resources>
