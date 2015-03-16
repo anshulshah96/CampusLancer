@@ -25,14 +25,22 @@
     <string name="ProjectListHeading">Active Projects</string>
     <string name="SignUpDescription">Sign Up as a New User for free!</string>
 
-
+    <!-- Post Project for Hire Strings -->
     <string name="HireInfo">Post your project by filling out the information regarding the work you need to be done.</string>
     <string name="HireTopic">Topic:</string>
     <string name="HireDescription">Description:</string>
     <string name="HireInitialBid">Initial Bid:</string>
     <string name="HirePost">POST</string>
-    <string name="title_activity_work">Work</string>
+
+    <!-- Work Description Page Strings -->
+    <string name="WorkDescriptionTopic">Topic</string>
+    <string name="WorkDescriptionDescription">Description</string>
+    <string name="WorkDescriptionUserName">Username</string>
+    <string name="WorkDescriptionMobileNumber">Mobile Number</string>
+    <string name="WorkDescriptionBid">BID</string>
+    <string name="WorkDescriptionDummy">Dummy Text</string>
 
 <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_work">Hello Activity</string>
 </resources>
