@@ -32,16 +32,17 @@ import com.parse.ParseUser;
         put("description", value);
     }
 
-        public String getBid() {
-        return getString("initialbid");
+        public int getBid() {
+          return getInt("initialbid");
+        //return getString("initialbid");
     }
 
     public void setBid(int value) {
         put("initialbid", value);
     }
 
-    public String getEnrol() {
-        return getString("enrollment");
+    public int getEnrol() {
+        return getInt("enrollment");
     }
 
     public void setEnrol(int value) {

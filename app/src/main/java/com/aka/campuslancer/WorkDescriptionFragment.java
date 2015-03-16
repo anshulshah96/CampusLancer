@@ -61,6 +61,7 @@ public class WorkDescriptionFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -79,6 +80,7 @@ public class WorkDescriptionFragment extends Fragment {
         mobilenoTv = (TextView) getView().findViewById(R.id.WorkDescriptionFragmentMobileNumber);
         bidValue = (EditText) getView().findViewById(R.id.BidValue);
         bidButton = (Button) getView().findViewById(R.id.bidButton);
+
 
         topicTv.setText(WorkActivity.topic);
         descriptionTv.setText(WorkActivity.description);
