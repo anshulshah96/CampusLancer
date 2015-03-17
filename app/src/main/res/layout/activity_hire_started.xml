@@ -1,0 +1,116 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.aka.campuslancer.HireStarted">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backgroundmain"
+        android:alpha="0.9" />
+
+    <TextView
+        android:id="@+id/Header"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#1761ef"
+
+        android:paddingLeft="100dp"
+        android:paddingTop="25dp"
+        android:text="@string/Heading"
+        android:textSize="25sp"
+        android:textColor="#FFFFFF"/>
+
+    <ImageView
+        android:id="@+id/MainLogo"
+        android:background="@drawable/mainlogo"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/HireGetStarted"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/MainLogo"
+        android:background="#55FFFFFF"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+
+        android:text="@string/HireGetStarted"
+        android:textSize="22sp"
+        android:textColor="#222222" />
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/HirePics"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@id/HireGetStarted"
+        android:background="#55FFFFFF"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+
+        tools:context="com.aka.campuslancer.HireStarted">
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/HireCaptions"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/HirePics"
+        android:background="#55FFFFFF"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+
+        tools:context="com.aka.campuslancer.HireStarted">
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/HireCaptions"
+
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+
+        android:text="@string/HireNewProject"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:background="#F8650D" />
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login"
+        android:text="@string/HireExistingProject"
+        android:onClick="SignUp"
+
+        android:layout_marginLeft="80dp"
+        android:layout_marginRight="80dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:background="#F8650D" />
+
+</RelativeLayout>

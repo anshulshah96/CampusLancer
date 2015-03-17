@@ -40,7 +40,13 @@
     <string name="WorkDescriptionBid">BID</string>
     <string name="WorkDescriptionDummy">Dummy Text</string>
 
+    <!--Get Started for Hiring Strings -->
+    <string name="HireGetStarted">Get your job done efficiently and at the best prize! How this works:</string>
+    <string name="HireNewProject">Post New Project</string>
+    <string name="HireExistingProject">View Existing Projects</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_work">Hello Activity</string>
+    <string name="title_activity_hire_started">HireStarted</string>
 </resources>
