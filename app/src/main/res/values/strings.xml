@@ -49,4 +49,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_work">Hello Activity</string>
     <string name="title_activity_hire_started">HireStarted</string>
+    <string name="title_activity_view_existing_projects">ViewExistingProjects</string>
 </resources>

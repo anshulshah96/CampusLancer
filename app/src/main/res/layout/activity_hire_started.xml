@@ -103,6 +103,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/newprojectbutton"
         android:text="@string/HireExistingProject"
+        android:onClick="onclick"
 
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
