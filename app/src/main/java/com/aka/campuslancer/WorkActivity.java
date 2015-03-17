@@ -134,13 +134,5 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
     public void onFragmentInteraction(Uri uri){
 
     }
-//
-//
-//    public void onResume(){
-//        super.onResume();
-//        doListQuery();
-//
-//    }
-
 
 }

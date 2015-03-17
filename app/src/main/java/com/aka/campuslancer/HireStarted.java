@@ -1,9 +1,11 @@
 package com.aka.campuslancer;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class HireStarted extends ActionBarActivity {
@@ -35,5 +37,14 @@ public class HireStarted extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void onclick(View view){
+        switch (view.getId()){
+            case R.id.newprojectbutton:
+                Intent i= new Intent(getApplicationContext(),Hire.class);
+                startActivity(i);
+                break;
+        }
+
     }
 }

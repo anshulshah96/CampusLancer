@@ -81,7 +81,7 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/login"
+        android:id="@+id/newprojectbutton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/HireCaptions"
@@ -90,6 +90,7 @@
         android:layout_marginRight="80dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="5dp"
+        android:onClick="onclick"
 
         android:text="@string/HireNewProject"
         android:textSize="18sp"
@@ -97,12 +98,11 @@
         android:background="#F8650D" />
 
     <Button
-        android:id="@+id/signup"
+        android:id="@+id/viewexistingprojectsbutton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login"
+        android:layout_below="@+id/newprojectbutton"
         android:text="@string/HireExistingProject"
-        android:onClick="SignUp"
 
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"

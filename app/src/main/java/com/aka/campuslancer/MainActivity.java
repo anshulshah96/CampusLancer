@@ -18,7 +18,8 @@ public class MainActivity extends Activity {
                     LoginSignupActivity.class);
             startActivity(intent);
             finish();
-        } else {
+        }
+        else {
             // If current user is NOT anonymous user
             // Get current user data from Parse.com
             ParseUser currentUser = ParseUser.getCurrentUser();

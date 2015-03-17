@@ -14,7 +14,7 @@ public class Welcome extends Activity {
 
     // Declare Variable
     Button logout,hire,work;
-
+    public static boolean loggedIn = true;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class Welcome extends Activity {
         hire.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),Hire.class);
+                Intent i= new Intent(getApplicationContext(),HireStarted.class);
                 startActivity(i);
 
             }
@@ -64,11 +64,17 @@ public class Welcome extends Activity {
             public void onClick(View arg0) {
                 // Logout current user
                 ParseUser.logOut();
+                loggedIn = false;
                 Intent intent = new Intent(getApplicationContext(),LoginSignupActivity.class);
                 startActivity(intent);
-
-                //finish();
             }
         });
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(loggedIn==false)
+            finish();
     }
 }
