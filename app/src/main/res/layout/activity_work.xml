@@ -48,8 +48,6 @@
         android:layout_height="fill_parent"
         android:id="@+id/work_listview"
         android:layout_below="@id/ProjectListHeading"
-        android:layout_margin="10dp"
-
-        android:background="#77FFFFFF" />
+        android:layout_margin="10dp" />
 
 </RelativeLayout>
