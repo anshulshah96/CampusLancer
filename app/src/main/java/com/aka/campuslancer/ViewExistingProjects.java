@@ -40,7 +40,7 @@ public class ViewExistingProjects extends Activity {
                         ParseQuery<HirePost> query = HirePost.getQuery();
                         query.include("user");
                         query.orderByDescending("createdAt");
-                        //query.whereContains("username", ParseUser.getCurrentUser().getUsername());
+                        query.whereContains("username", ParseUser.getCurrentUser().getUsername());
                         query.setLimit(MAX_POST_SEARCH_RESULTS);
                         q=query;
                         return query;
@@ -60,11 +60,11 @@ public class ViewExistingProjects extends Activity {
 
                 String topictxt=post.getTopic();
                 String bidtxt=""+post.getBid();
-                //String description = post.getDescription();
+                String description = post.getDescription();
 
                 topicView.setText(topictxt);
                 bidView.setText(bidtxt);
-                //Description.setText(description);
+                Description.setText(description);
                 if(q!=null){
                     dialog.dismiss();
                 }
