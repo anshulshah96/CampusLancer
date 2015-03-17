@@ -33,43 +33,36 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
     public static String topic;
     public static String mobileno;
 
-
+    ParseQuery<HirePost> q = HirePost.getQuery();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_work);
-
         final ProgressDialog dialog = new ProgressDialog(WorkActivity.this);
+
         dialog.setMessage("Loading data...");
         dialog.show();
-
         ParseObject.registerSubclass(HirePost.class);
+
+
 
         ParseQueryAdapter.QueryFactory<HirePost> factory =
                 new ParseQueryAdapter.QueryFactory<HirePost>() {
                     public ParseQuery<HirePost> create() {
-
-
-//                        final ProgressDialog dialog = new ProgressDialog(WorkActivity.this);
-//                        dialog.setMessage("Retrieving Data...");
-//                        dialog.show();
                         ParseQuery<HirePost> query = HirePost.getQuery();
                         query.include("user");
-//                        query.include("bid");
-//                        query.include("enrollment");
-//                        query.include("topic");
                         query.orderByDescending("createdAt");
                         query.setLimit(MAX_POST_SEARCH_RESULTS);
-                        dialog.dismiss();
+                        q=query;
                         return query;
                     }
                 };
         
-        
         postsQueryAdapter = new ParseQueryAdapter<HirePost>(this, factory) {
             @Override
             public View getItemView(HirePost post, View view, ViewGroup parent) {
+
                 if (view == null) {
                     view = View.inflate(getContext(), R.layout.post_item, null);
                 }
@@ -87,10 +80,13 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 bidView.setText(bidtxt);
                 enrolView.setText(enrolltxt);
                 usernameView.setText(unametxt);
-
+                if(q!=null){
+                    dialog.dismiss();
+                }
 
                 return view;
             }
+
 
 
         };
@@ -130,6 +126,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
      */
     private void doListQuery() {
             postsQueryAdapter.loadObjects();
+
         Log.i("query:",String.valueOf(postsQueryAdapter.isEmpty()));
 
     }
