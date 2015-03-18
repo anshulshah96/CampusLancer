@@ -41,11 +41,14 @@ public class ViewExistingProjects extends Activity {
                         query.include("user");
                         query.orderByDescending("createdAt");
                         query.whereContains("username", ParseUser.getCurrentUser().getUsername());
+                        query.whereContains("topic","Parcel");
                         query.setLimit(MAX_POST_SEARCH_RESULTS);
                         q=query;
                         return query;
                 }
         };
+
+
 
         existingProjectsQueryAdapter = new ParseQueryAdapter<HirePost>(this, factory) {
             @Override
@@ -80,5 +83,10 @@ public class ViewExistingProjects extends Activity {
         // Attach the query adapter to the view
         ListView postsListView = (ListView) findViewById(R.id.existingprojectsLV);
         postsListView.setAdapter(existingProjectsQueryAdapter);
+        doListQuery();
+    }
+
+    private void doListQuery() {
+        existingProjectsQueryAdapter.loadObjects();
     }
 }
