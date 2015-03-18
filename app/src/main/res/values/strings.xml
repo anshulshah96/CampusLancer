@@ -44,6 +44,9 @@
     <string name="HireGetStarted">Get your job done efficiently and at the best prize! How this works:</string>
     <string name="HireNewProject">Post New Project</string>
     <string name="HireExistingProject">View Existing Projects</string>
+    <string name="HireText1">1. Post your required project and its details.</string>
+    <string name="HireText2">2. Choose bidders and compare prices.</string>
+    <string name="HireText3">3. Get to contact and pay once satisfied.</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
