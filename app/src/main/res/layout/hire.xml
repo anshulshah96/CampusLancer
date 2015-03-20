@@ -133,21 +133,25 @@
             android:inputType="text"
             android:textSize="20sp"
             android:background="#DDDDDD" />
+            <Spinner
+                android:layout_width="wrap_content"
+                android:id="@+id/spinners"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/InitialBidField"
+                android:layout_alignLeft="@+id/InitialBid"
+                android:layout_alignStart="@+id/InitialBid"
+                android:layout_marginTop="41dp"></Spinner>
 
         <Button
             android:id="@+id/HirePost"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/InitialBid"
             android:text="@string/HirePost"
-
-            android:layout_marginLeft="140dp"
-            android:layout_marginRight="140dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="10dp"
 
             android:textSize="20sp"
             android:textColor="#FFFFFF"
-            android:background="#F8650D" />
+            android:background="#F8650D"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>

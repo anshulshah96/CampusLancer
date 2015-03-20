@@ -52,6 +52,8 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                     public ParseQuery<HirePost> create() {
                         ParseQuery<HirePost> query = HirePost.getQuery();
                         query.include("user");
+                        query.whereContains("category",Welcome.category);
+                        Log.e("cat: ",Welcome.category);
                         query.orderByDescending("createdAt");
                         query.setLimit(MAX_POST_SEARCH_RESULTS);
                         q=query;
@@ -88,9 +90,6 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 }
                 return view;
             }
-
-
-
         };
 
         // Disable automatic loading when the adapter is attached to a view.
