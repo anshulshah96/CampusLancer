@@ -28,6 +28,14 @@ import com.parse.ParseUser;
         return getString("description");
     }
 
+    public void setCategoy(String value){
+        put("category",value);
+    }
+
+    public String getCategory(){
+        return getString("category");
+    }
+
     public void setDescription(String value) {
         put("description", value);
     }

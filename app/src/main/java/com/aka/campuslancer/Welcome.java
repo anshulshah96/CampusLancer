@@ -7,14 +7,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class Welcome extends Activity {
 
     // Declare Variable
+    private String categories[];
     Button logout,hire,work;
     public static boolean loggedIn = true;
+    public static String category = "Android Development";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,6 +44,24 @@ public class Welcome extends Activity {
         hire=(Button) findViewById(R.id.HireWelcome);
         work=(Button)findViewById(R.id.WorkWelcome);
 
+        this.categories = new String[] {"Android Development","Web Development","Web Design","Content Writing","Bakar"};
+        Spinner s =(Spinner) findViewById(R.id.categories_spinner);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, categories);
+        s.setAdapter(adapter);
+
+        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                category =  categories[position];
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                category = "Android Development";
+            }
+        });
+
+
         work.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +84,7 @@ public class Welcome extends Activity {
         // Logout Button Click Listener
         logout.setOnClickListener(new OnClickListener() {
 
-            public void onClick(View arg0) {
+        public void onClick(View arg0) {
                 // Logout current user
                 ParseUser.logOut();
                 loggedIn = false;

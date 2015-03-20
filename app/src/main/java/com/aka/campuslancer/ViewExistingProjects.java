@@ -1,6 +1,7 @@
 package com.aka.campuslancer;
 
 import android.app.Activity;
+import android.os.CountDownTimer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.app.ProgressDialog;
@@ -10,23 +11,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 import com.parse.ParseUser;
 
+import java.util.Timer;
+
 
 public class ViewExistingProjects extends Activity {
     private ParseQueryAdapter<HirePost> existingProjectsQueryAdapter;
-    private static final int MAX_POST_SEARCH_RESULTS = 20;
+    private static final int MAX_POST_SEARCH_RESULTS = 30;
     ParseQuery<HirePost> q = HirePost.getQuery();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_existing_projects);
+        Timer t= new Timer();
+
 
 
         final ProgressDialog dialog = new ProgressDialog(ViewExistingProjects.this);
@@ -41,7 +46,6 @@ public class ViewExistingProjects extends Activity {
                         query.include("user");
                         query.orderByDescending("createdAt");
                         query.whereContains("username", ParseUser.getCurrentUser().getUsername());
-                        query.whereContains("topic","Parcel");
                         query.setLimit(MAX_POST_SEARCH_RESULTS);
                         q=query;
                         return query;
@@ -50,6 +54,12 @@ public class ViewExistingProjects extends Activity {
 
 
 
+
+        if(q==null){
+
+            Toast.makeText(getApplicationContext(),"You don't have any projects",Toast.LENGTH_SHORT).show();
+
+        }
         existingProjectsQueryAdapter = new ParseQueryAdapter<HirePost>(this, factory) {
             @Override
             public View getItemView(HirePost post, View view, ViewGroup parent) {
@@ -71,6 +81,8 @@ public class ViewExistingProjects extends Activity {
                 if(q!=null){
                     dialog.dismiss();
                 }
+
+
                 return view;
             }
         };

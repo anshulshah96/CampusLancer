@@ -29,7 +29,7 @@
     <string name="HireInfo">Post your project by filling out the information regarding the work you need to be done.</string>
     <string name="HireTopic">Topic:</string>
     <string name="HireDescription">Description:</string>
-    <string name="HireInitialBid">Initial Bid:</string>
+    <string name="HireInitialBid">Budget:</string>
     <string name="HirePost">POST</string>
 
     <!-- Work Description Page Strings -->

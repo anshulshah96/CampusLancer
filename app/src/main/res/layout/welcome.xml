@@ -80,17 +80,22 @@
         android:id="@+id/LogOutWelcome"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/HireWelcome"
         android:text="@string/LogoutBtn"
 
 
-        android:layout_marginRight="90dp"
-        android:layout_marginLeft="90dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="10dp"
-
         android:textSize="20sp"
         android:textColor="#FFFFFF"
-        android:background="#F8650D" />
+        android:background="#F8650D"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/categories_spinner"
+        android:layout_above="@+id/LogOutWelcome"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="94dp" />
 
 </RelativeLayout>
