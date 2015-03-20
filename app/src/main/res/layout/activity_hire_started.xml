@@ -45,100 +45,130 @@
         android:text="@string/HireGetStarted"
         android:textSize="22sp"
         android:textColor="#222222" />
-
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/HirePics"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_below="@id/HireGetStarted"
-        android:background="#55FFFFFF"
-
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
-
-        tools:context="com.aka.campuslancer.HireStarted">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/allthree" />
-
-    </RelativeLayout>
-
+   
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/HireCaptions"
+        android:id="@+id/HireNewProjects"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_below="@id/HirePics"
-
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
-
+        android:layout_height="280dp"
+        android:layout_below="@id/HireGetStarted"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
         android:orientation="horizontal"
+
         tools:context="com.aka.campuslancer.HireStarted">
 
-        <TextView
-            android:id="@+id/HireText1"
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.33"
-            android:background="#55FFFFFF"
+            android:orientation="vertical"
 
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
+            tools:context="com.aka.campuslancer.HireStarted">
 
-            android:text="@string/HireText1"
-            android:textSize="18sp"
-            android:textColor="#222222" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.7"
+                android:src="@drawable/project" />
 
-        <TextView
-            android:id="@+id/HireText2"
+            <TextView
+                android:id="@+id/HireText1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:background="#55FFFFFF"
+
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+
+                android:text="@string/HireText1"
+                android:textSize="18sp"
+                android:textColor="#222222" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.33"
-            android:background="#55FFFFFF"
+            android:orientation="vertical"
 
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
+            tools:context="com.aka.campuslancer.HireStarted">
 
-            android:text="@string/HireText2"
-            android:textSize="18sp"
-            android:textColor="#222222" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.7"
+                android:src="@drawable/peoplebids" />
 
-        <TextView
-            android:id="@+id/HireText3"
+            <TextView
+                android:id="@+id/HireText2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:background="#55FFFFFF"
+
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+
+                android:text="@string/HireText2"
+                android:textSize="18sp"
+                android:textColor="#222222" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.33"
-            android:background="#55FFFFFF"
+            android:orientation="vertical"
 
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp"
+            tools:context="com.aka.campuslancer.HireStarted">
 
-            android:text="@string/HireText3"
-            android:textSize="18sp"
-            android:textColor="#222222" />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.7"
+                android:src="@drawable/money" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/HireText3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:background="#55FFFFFF"
+
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="5dp"
+
+                android:text="@string/HireText3"
+                android:textSize="18sp"
+                android:textColor="#222222" />
+
+        </LinearLayout>
+
+        </LinearLayout>
 
     <Button
         android:id="@+id/newprojectbutton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/HireCaptions"
+        android:layout_below="@+id/HireNewProjects"
 
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginBottom="5dp"
         android:onClick="onclick"
 
