@@ -71,7 +71,7 @@ public class Hire extends Activity {
         post.setUser(ParseUser.getCurrentUser());
         post.setTopic(text);
         post.setDescription(text1);
-        post.setCategoy(category);
+        post.setCategory(category);
 
         //To be Set
         post.setEnrol(0);

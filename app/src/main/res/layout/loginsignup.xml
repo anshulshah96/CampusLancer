@@ -131,5 +131,17 @@
         android:textSize="20sp"
         android:textColor="#FFFFFF"
         android:background="#F8650D" />
+    <Button
+        android:id="@+id/reset_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="Forgot password"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="#F8650D"
+        android:layout_marginBottom="44dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

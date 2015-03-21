@@ -30,7 +30,7 @@ public class ViewExistingProjects extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_existing_projects);
-        Timer t= new Timer();
+
 
 
 

@@ -10,18 +10,21 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
+import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseUser;
+import com.parse.RequestPasswordResetCallback;
 import com.parse.SignUpCallback;
 
 public class LoginSignupActivity extends Activity {
     // Declare Variables
-    Button loginbutton;
+    Button loginbutton,reset_password;
     Button signup;
     String usernametxt;
     String passwordtxt;
     EditText password;
     EditText username;
+
 
     /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,9 @@ public class LoginSignupActivity extends Activity {
         // Locate EditTexts in main.xml
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
+        reset_password =(Button)findViewById(R.id.reset_password);
+
+
 
         // Locate Buttons in main.xml
         loginbutton = (Button) findViewById(R.id.login);
@@ -48,7 +54,7 @@ public class LoginSignupActivity extends Activity {
                 dialog.show();
 
                 // Send data to Parse.com for verification
-                ParseUser.logInInBackground(usernametxt,  passwordtxt,
+                ParseUser.logInInBackground(usernametxt, passwordtxt,
                         new LogInCallback() {
                             public void done(ParseUser user, ParseException e) {
                                 if (user != null) {
@@ -75,8 +81,17 @@ public class LoginSignupActivity extends Activity {
         });
         // Sign up Button Click Listener
 
-
+        reset_password.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(getApplicationContext(),forgetpassword.class);
+                startActivity(i);
+            }
+        });
     }
+//    public interface RequestPasswordResetCallback{
+//        public void done
+//    }
     public void SignUp(View view){
         // Save new user data into Parse.com Data Storage
         Intent intent = new Intent(LoginSignupActivity.this,SignupActivity.class);

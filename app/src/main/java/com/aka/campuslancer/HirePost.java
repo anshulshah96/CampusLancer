@@ -17,6 +17,13 @@ import com.parse.ParseUser;
     public void setUsername() {
         put("username", ParseUser.getCurrentUser().getUsername());
     }
+
+    public String getEmail(){
+        return getString("email");
+    }
+    public void setEmail(){
+        put("email",ParseUser.getCurrentUser().getEmail());
+    }
     public String getTopic() {
         return getString("topic");
     }
@@ -28,7 +35,7 @@ import com.parse.ParseUser;
         return getString("description");
     }
 
-    public void setCategoy(String value){
+    public void setCategory(String value){
         put("category",value);
     }
 
