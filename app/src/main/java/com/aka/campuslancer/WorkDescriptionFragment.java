@@ -1,6 +1,8 @@
 package com.aka.campuslancer;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
@@ -11,6 +13,18 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import com.parse.FindCallback;
+import com.parse.ParseACL;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+import com.parse.SaveCallback;
+
+import org.json.JSONArray;
+
+import java.text.ParseException;
+import java.util.List;
 
 
 /**
@@ -31,6 +45,7 @@ public class WorkDescriptionFragment extends Fragment {
     TextView topicTv,descriptionTv,usernameTv,mobilenoTv;
     EditText bidValue;
     Button bidButton;
+    String projectId;
 
     private String mParam1;
     private String mParam2;
@@ -69,11 +84,13 @@ public class WorkDescriptionFragment extends Fragment {
         }
     }
 
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_work_description, container, false);
+
+
+        ParseObject.registerSubclass(BidPost.class);
 
         topicTv = (TextView) view.findViewById(R.id.WorkDescriptionTopic);
         descriptionTv= (TextView) view.findViewById(R.id.WorkDescriptionFragmentDescription);
@@ -87,11 +104,141 @@ public class WorkDescriptionFragment extends Fragment {
         usernameTv.setText(WorkActivity.username);
         mobilenoTv.setText(WorkActivity.mobileno);
 
+        projectId = WorkActivity.projectId;
+
+        bidButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final ProgressDialog dialog = new ProgressDialog(getActivity());
+                dialog.setMessage("Loading data...");
+                dialog.show();
+
+                BidPost bpost = new BidPost();
+                bpost.setBid(Integer.parseInt(bidValue.getText().toString()));
+
+                bpost.setProjectId(projectId);
+                bpost.setUser(ParseUser.getCurrentUser());
+
+                Log.d("bidset: ",Integer.parseInt(bidValue.getText().toString())+"\tpid: "+projectId+"\tuser: "+ParseUser.getCurrentUser());
+
+                ParseACL acl = new ParseACL();
+                acl.setPublicReadAccess(true);
+                bpost.setACL(acl);
+
+                // 3
+                bpost.saveInBackground(new SaveCallback() {
+                    @Override
+                    public void done(com.parse.ParseException e) {
+                        if(e==null) {
+                            dialog.dismiss();
+                            Intent intent = new Intent(getActivity().getApplicationContext(), WorkActivity.class);
+                            startActivity(intent);
+                        }
+                        else {
+                            Log.d("Saving error: ",e.getMessage());
+                        }
+
+                    }
+                });
+
+            }
+        });
 
 
-        return  view;
 
+        return view;
     }
+//
+//    public View onCreateView2(final LayoutInflater inflater, ViewGroup container,
+//                             Bundle savedInstanceState) {
+//        // Inflate the layout for this fragment
+//        View view = inflater.inflate(R.layout.fragment_work_description, container, false);
+//
+//        topicTv = (TextView) view.findViewById(R.id.WorkDescriptionTopic);
+//        descriptionTv= (TextView) view.findViewById(R.id.WorkDescriptionFragmentDescription);
+//        usernameTv = (TextView) view.findViewById(R.id.WorkDescriptionFragmentUsername);
+//        mobilenoTv = (TextView) view.findViewById(R.id.WorkDescriptionFragmentMobileNumber);
+//        bidValue = (EditText) view.findViewById(R.id.BidValue);
+//        bidButton = (Button) view.findViewById(R.id.bidButton);
+//
+//        topicTv.setText(WorkActivity.topic);
+//        descriptionTv.setText(WorkActivity.description);
+//        usernameTv.setText(WorkActivity.username);
+//        mobilenoTv.setText(WorkActivity.mobileno);
+//
+//        projectId = WorkActivity.projectId;
+//
+//        bidButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                final ProgressDialog dialog = new ProgressDialog(getActivity());
+//                dialog.setMessage("Loading data...");
+//                dialog.show();
+//
+//                int bid = Integer.parseInt(bidValue.getText().toString());
+//                final ParseQuery<HirePost> query = ParseQuery.getQuery("HireData");
+//                query.whereContains("objectId",projectId);
+//
+//                HirePost obj = new HirePost();
+//
+//                query.findInBackground(new FindCallback<HirePost>() {
+//                    @Override
+//                    public void done(List<HirePost> hirePosts, com.parse.ParseException e) {
+//                        if (e == null) {
+//                            Log.i("bids ", "Retrieved " + hirePosts.get(0).getObjectId());
+//                            HirePost project = hirePosts.get(0);
+//                            if(project.getBidderIds()==null){
+//                                project.setBidderIds((new JSONArray()).put(ParseUser.getCurrentUser().getUsername()));
+//                            }
+//                            else {
+//                                JSONArray bidderids = project.getBidderIds();
+//                                bidderids.put(ParseUser.getCurrentUser().getUsername());
+//                                project.setBidderIds(bidderids);
+//                            }
+//
+//
+//                            ParseACL acl = new ParseACL();
+//                            project.setACL(acl);
+//
+//                            project.saveInBackground(new SaveCallback() {
+//                                @Override
+//                                public void done(com.parse.ParseException e) {
+//                                    if(e==null) {
+//                                        dialog.dismiss();
+//                                        Intent intent = new Intent(getActivity().getApplicationContext(),WorkActivity.class);
+//                                        startActivity(intent);
+//                                    }
+//                                    else{
+//                                        Log.e("Save in background",e.getMessage());
+//                                        dialog.dismiss();
+//                                    }
+//                                }
+//                            });
+//
+//                        } else {
+//                            Log.i("Error", "Error: " + e.getMessage());
+//                        }
+//                    }
+//                });
+//
+//
+//
+//
+//
+//
+//                JSONArray userIds = new JSONArray();
+//
+//
+//
+//            }
+//        });
+//
+//
+//
+//        return  view;
+//
+//    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

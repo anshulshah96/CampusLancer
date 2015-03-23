@@ -32,6 +32,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
     public static String description;
     public static String topic;
     public static String mobileno;
+    public static String projectId;
 
     ParseQuery<HirePost> q = HirePost.getQuery();
 
@@ -39,10 +40,11 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_work);
-        final ProgressDialog dialog = new ProgressDialog(WorkActivity.this);
 
+        final ProgressDialog dialog = new ProgressDialog(WorkActivity.this);
         dialog.setMessage("Loading data...");
         dialog.show();
+
         ParseObject.registerSubclass(HirePost.class);
 
 
@@ -52,8 +54,8 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                     public ParseQuery<HirePost> create() {
                         ParseQuery<HirePost> query = HirePost.getQuery();
                         query.include("user");
+                        query.include("objectId");
                         query.whereContains("category",Welcome.category);
-                        Log.e("cat: ",Welcome.category);
                         query.orderByDescending("createdAt");
                         query.setLimit(MAX_POST_SEARCH_RESULTS);
                         q=query;
@@ -73,18 +75,23 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 TextView bidView = (TextView) view.findViewById(R.id.post_bid);
                 TextView enrolView = (TextView) view.findViewById(R.id.post_enrol);
                 TextView descriptionView = (TextView) view.findViewById(R.id.post_description);
+                TextView projectId = (TextView) view.findViewById(R.id.post_project_id);
 
                 String topictxt=post.getTopic();
                 String bidtxt=""+post.getBid();
                 String enrolltxt=""+post.getEnrol();
                 String unametxt=post.getUsername();
                 String descriptiontxt = post.getDescription();
+                String projectIdtxt = post.getObjectId();
+                Log.d("pid: ",unametxt+"\t"+projectIdtxt);
 
                 topicView.setText(topictxt);
                 bidView.setText(bidtxt);
                 enrolView.setText(enrolltxt);
                 usernameView.setText(unametxt);
                 descriptionView.setText(descriptiontxt);
+                projectId.setText(projectIdtxt);
+
                 if(q!=null){
                     dialog.dismiss();
                 }
@@ -110,6 +117,9 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 description =((TextView)(view.findViewById(R.id.post_description))).getText().toString();
                 topic = ((TextView)(view.findViewById(R.id.post_topic))).getText().toString();
                 mobileno = ((TextView)(view.findViewById(R.id.post_enrol))).getText().toString();
+                projectId = ((TextView)(view.findViewById(R.id.post_project_id))).getText().toString();
+                Log.i("pid: ",projectId);
+
                 Intent intent = new Intent(WorkActivity.this,PostActivity.class);
                 startActivity(intent);
             }

@@ -5,6 +5,8 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
+import org.json.JSONArray;
+
 /**
  * Created by anshul on 15/3/15.
  */
@@ -71,6 +73,18 @@ import com.parse.ParseUser;
 
     public void setUser(ParseUser value) {
         put("user", value);
+    }
+
+//    public String getObjectId(){
+//        return getString("objectId");
+//    }
+
+    public JSONArray getBidderIds(){
+        return  getJSONArray("bidder_object_ids");
+    }
+
+    public void setBidderIds(JSONArray objectIds){
+        put("bidder_object_ids",objectIds);
     }
 
 

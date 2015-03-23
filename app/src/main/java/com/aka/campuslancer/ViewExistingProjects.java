@@ -46,6 +46,7 @@ public class ViewExistingProjects extends Activity {
                         query.include("user");
                         query.orderByDescending("createdAt");
                         query.whereContains("username", ParseUser.getCurrentUser().getUsername());
+                        //query.whereContains("objectId", "VX7MegqtmW");
                         query.setLimit(MAX_POST_SEARCH_RESULTS);
                         q=query;
                         return query;
