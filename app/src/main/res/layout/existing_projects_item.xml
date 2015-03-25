@@ -56,5 +56,21 @@
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:clickable="false" />
+    <TextView
+        android:id="@+id/existing_project_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/existing_projects_description"
+
+        android:text="@string/WorkDescriptionBid"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:clickable="false"
+        android:visibility="gone"
+        />
 
 </RelativeLayout>

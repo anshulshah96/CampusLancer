@@ -54,4 +54,5 @@
     <string name="title_activity_hire_started">HireStarted</string>
     <string name="title_activity_view_existing_projects">ViewExistingProjects</string>
     <string name="title_activity_forgetpassword">forgetpassword</string>
+    <string name="title_activity_people_for_project">PeopleForProject</string>
 </resources>

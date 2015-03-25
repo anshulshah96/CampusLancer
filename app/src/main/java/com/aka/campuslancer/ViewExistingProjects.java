@@ -1,6 +1,7 @@
 package com.aka.campuslancer;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.CountDownTimer;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -9,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -70,15 +72,19 @@ public class ViewExistingProjects extends Activity {
                 }
                 TextView topicView = (TextView) view.findViewById(R.id.existing_projects_topic);
                 TextView bidView = (TextView) view.findViewById(R.id.existing_projects_bid);
-                TextView Description = (TextView) view.findViewById(R.id.existing_projects_description);
+                TextView description = (TextView) view.findViewById(R.id.existing_projects_description);
+                TextView projectId = (TextView) view.findViewById(R.id.existing_project_id);
 
                 String topictxt=post.getTopic();
                 String bidtxt=""+post.getBid();
-                String description = post.getDescription();
+                String descriptiontxt = post.getDescription();
+                String projectidtxt = post.getObjectId();
 
                 topicView.setText(topictxt);
                 bidView.setText(bidtxt);
-                Description.setText(description);
+                description.setText(descriptiontxt);
+                projectId.setText(projectidtxt);
+
                 if(q!=null){
                     dialog.dismiss();
                 }
@@ -97,6 +103,15 @@ public class ViewExistingProjects extends Activity {
         ListView postsListView = (ListView) findViewById(R.id.existingprojectsLV);
         postsListView.setAdapter(existingProjectsQueryAdapter);
         doListQuery();
+
+        postsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent=new Intent(getApplication(),PeopleForProject.class);
+                intent.putExtra("project_id",((TextView)view.findViewById(R.id.existing_project_id)).getText().toString());
+                startActivity(intent);
+            }
+        });
     }
 
     private void doListQuery() {

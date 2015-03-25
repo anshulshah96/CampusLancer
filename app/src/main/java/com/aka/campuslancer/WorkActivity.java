@@ -83,7 +83,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 String unametxt=post.getUsername();
                 String descriptiontxt = post.getDescription();
                 String projectIdtxt = post.getObjectId();
-                Log.d("pid: ",unametxt+"\t"+projectIdtxt);
+//                Log.d("pid: ",unametxt+"\t"+projectIdtxt);
 
                 topicView.setText(topictxt);
                 bidView.setText(bidtxt);
@@ -118,7 +118,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 topic = ((TextView)(view.findViewById(R.id.post_topic))).getText().toString();
                 mobileno = ((TextView)(view.findViewById(R.id.post_enrol))).getText().toString();
                 projectId = ((TextView)(view.findViewById(R.id.post_project_id))).getText().toString();
-                Log.i("pid: ",projectId);
+//                Log.i("pid: ",projectId);
 
                 Intent intent = new Intent(WorkActivity.this,PostActivity.class);
                 startActivity(intent);

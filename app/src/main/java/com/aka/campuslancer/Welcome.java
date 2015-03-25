@@ -20,6 +20,7 @@ public class Welcome extends Activity {
     Button logout,hire,work;
     public static boolean loggedIn = true;
     public static String category = "Android Development";
+    public static int userMobileNo;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -92,6 +93,8 @@ public class Welcome extends Activity {
                 startActivity(intent);
             }
         });
+
+
     }
 
     @Override
