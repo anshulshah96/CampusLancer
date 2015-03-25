@@ -48,9 +48,10 @@ public class PeopleForProject extends Activity {
                     public ParseQuery<BidPost> create() {
                         ParseQuery<BidPost> query = BidPost.getQuery();
                         query.include("bidder_user");
-                        query.include("project_id");
-                        ParseObject pobj = ParseObject.createWithoutData("HireData",pid);
-                        query.whereEqualTo("pointer_id",pobj);
+//                        query.include("project_id");
+//                        ParseObject pobj = ParseObject.createWithoutData("HireData",pid);
+//                        query.whereEqualTo("pointer_id",pobj);
+                        query.whereContains("projectId",pid);
                         Log.d("project id", pid);
                         query.orderByDescending("createdAt");
 //                        query.setLimit(20);

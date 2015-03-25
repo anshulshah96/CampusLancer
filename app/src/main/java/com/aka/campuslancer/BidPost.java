@@ -50,6 +50,13 @@ public class BidPost extends ParseObject {
         put("project_id",ParseObject.createWithoutData("HireData",id));
     }
 
+    public void setProjectIdString(String id){
+        put("projectId",id);
+    }
+    public String getProjectIdString(){
+        return getString("projectId");
+    }
+
 
     public static ParseQuery<BidPost> getQuery() {
         return ParseQuery.getQuery(BidPost.class);

@@ -117,9 +117,13 @@ public class WorkDescriptionFragment extends Fragment {
                 BidPost bpost = new BidPost();
                 bpost.setBid(Integer.parseInt(bidValue.getText().toString()));
 
+
                 bpost.setProjectId(projectId);
+                bpost.setProjectIdString(projectId);
                 bpost.setUser(ParseUser.getCurrentUser());
                 bpost.setBidderUsername(ParseUser.getCurrentUser().getUsername());
+
+
                 int mobNo=0;
 
                 ParseUser parseUser = ParseUser.getCurrentUser();
