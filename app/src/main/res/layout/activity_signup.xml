@@ -13,7 +13,7 @@
         android:id="@+id/SignUpHeader"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="#4444fff"
+        android:background="#4444ff"
 
         android:paddingLeft="120dp"
         android:paddingTop="35dp"
