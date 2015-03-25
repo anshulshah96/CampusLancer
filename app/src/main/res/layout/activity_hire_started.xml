@@ -15,7 +15,7 @@
         android:id="@+id/Header"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#1761ef"
+        android:background="#777777"
 
         android:paddingLeft="100dp"
         android:paddingTop="25dp"
@@ -53,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="280dp"
         android:layout_below="@id/HireGetStarted"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="15dp"
         android:orientation="horizontal"
 
@@ -73,6 +73,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.7"
+                android:layout_margin="2dp"
                 android:src="@drawable/project" />
 
             <TextView
@@ -106,6 +107,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.7"
+                android:layout_margin="2dp"
                 android:src="@drawable/peoplebids" />
 
             <TextView
@@ -139,6 +141,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="0.7"
+                android:layout_margin="2dp"
                 android:src="@drawable/money" />
 
             <TextView
@@ -168,7 +171,7 @@
 
         android:layout_marginLeft="80dp"
         android:layout_marginRight="80dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="5dp"
         android:onClick="onclick"
 
