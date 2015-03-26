@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context="com.aka.campuslancer.CustomProgressDialogBox"
-    android:background="#44000000">
+    android:background="#77FFFFFF">
 
     <ImageView
         android:id="@+id/progressLogo"
