@@ -77,7 +77,7 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
                 <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
 
-<!--                   IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
+                <!-- IMPORTANT: Change "com.parse.starter" to match your app's package name. -->
                 <category android:name="com.aka.campuslancer" />
             </intent-filter>
         </receiver>
@@ -93,6 +93,10 @@
         <activity
             android:name=".forgetpassword"
             android:label="@string/title_activity_forgetpassword" >
+        </activity>
+        <activity
+            android:name=".PeopleForProject"
+            android:label="@string/title_activity_people_for_project" >
         </activity>
     </application>
 

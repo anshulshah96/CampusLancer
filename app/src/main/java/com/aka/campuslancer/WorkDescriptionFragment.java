@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseACL;
@@ -116,10 +117,27 @@ public class WorkDescriptionFragment extends Fragment {
                 BidPost bpost = new BidPost();
                 bpost.setBid(Integer.parseInt(bidValue.getText().toString()));
 
-                bpost.setProjectId(projectId);
-                bpost.setUser(ParseUser.getCurrentUser());
 
-                Log.d("bidset: ",Integer.parseInt(bidValue.getText().toString())+"\tpid: "+projectId+"\tuser: "+ParseUser.getCurrentUser());
+                bpost.setProjectId(projectId);
+                bpost.setProjectIdString(projectId);
+                bpost.setUser(ParseUser.getCurrentUser());
+                bpost.setBidderUsername(ParseUser.getCurrentUser().getUsername());
+
+
+                int mobNo=0;
+
+                ParseUser parseUser = ParseUser.getCurrentUser();
+                try {
+                    parseUser.fetchFromLocalDatastore();
+                    mobNo = Integer.parseInt(parseUser.get("enrollment").toString());
+                }
+                catch (Exception e){
+                    Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
+                }
+
+              bpost.setMobileNo(mobNo);
+
+                Log.d("bidset: ",Integer.parseInt(bidValue.getText().toString())+"\tpid: "+projectId+"\tuser: "+ParseUser.getCurrentUser()+"\tmobno:"+mobNo);
 
                 ParseACL acl = new ParseACL();
                 acl.setPublicReadAccess(true);

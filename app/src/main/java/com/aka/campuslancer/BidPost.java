@@ -19,6 +19,14 @@ public class BidPost extends ParseObject {
         put("bid", value);
     }
 
+    public int getMobileNo() {
+        return getInt("mobile_no");
+    }
+
+    public void setMobileNo(int value) {
+        put("mobile_no", value);
+    }
+
     public ParseUser getUser() {
         return getParseUser("bidder_user");
     }
@@ -30,12 +38,27 @@ public class BidPost extends ParseObject {
     public String  getProjectId(){
         return getString("project_id");
     }
+    public void setBidderUsername(String username) {
+        put("bidder_username", username);
+    }
+
+    public String  getBidderUsername(){
+        return getString("bidder_username");
+    }
+
     public void setProjectId(String id){
         put("project_id",ParseObject.createWithoutData("HireData",id));
     }
 
+    public void setProjectIdString(String id){
+        put("projectId",id);
+    }
+    public String getProjectIdString(){
+        return getString("projectId");
+    }
 
-    public static ParseQuery<HirePost> getQuery() {
-        return ParseQuery.getQuery(HirePost.class);
+
+    public static ParseQuery<BidPost> getQuery() {
+        return ParseQuery.getQuery(BidPost.class);
     }
 }

@@ -59,6 +59,8 @@ public class SignupActivity extends ActionBarActivity {
                 user.signUpInBackground(new SignUpCallback() {
                     public void done(ParseException e) {
                         if (e == null) {
+//                            user.pinInBackground();
+
                             // Show a simple Toast message upon successful registration
                             Toast.makeText(getApplicationContext(),
                                     "Successfully Signed up, please log in.",
@@ -76,6 +78,8 @@ public class SignupActivity extends ActionBarActivity {
                         }
                     }
                 });
+
+                user.pinInBackground();
             }
         });
 
