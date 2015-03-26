@@ -79,7 +79,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
 
                 String topictxt=post.getTopic();
                 String bidtxt=""+post.getBid();
-                String enrolltxt=""+post.getEnrol();
+                String enrolltxt=""+post.getMobileNo();
                 String unametxt=post.getUsername();
                 String descriptiontxt = post.getDescription();
                 String projectIdtxt = post.getObjectId();

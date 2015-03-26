@@ -37,6 +37,13 @@ import org.json.JSONArray;
         return getString("description");
     }
 
+    public void setMobileNo(String value) {
+        put("mobile_no", value);
+    }
+    public String getMobileNo() {
+        return getString("mobile_no");
+    }
+
     public void setCategory(String value){
         put("category",value);
     }
@@ -57,14 +64,14 @@ import org.json.JSONArray;
     public void setBid(int value) {
         put("initialbid", value);
     }
-
-    public int getEnrol() {
-        return getInt("enrollment");
-    }
-
-    public void setEnrol(int value) {
-        put("enrollment", value);
-    }
+//
+//    public int getEnrol() {
+//        return getInt("enrollment");
+//    }
+//
+//    public void setEnrol(int value) {
+//        put("enrollment", value);
+//    }
 
 
     public ParseUser getUser() {

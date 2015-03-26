@@ -10,7 +10,7 @@
 
     <string name="Username">Username</string>
     <string name="Password">Password</string>
-    <string name="Enrollment">Enrollment Number</string>
+    <string name="Enrollment">Mobile No.</string>
     <string name="Email">Email ID</string>
     <string name="LoginBtn">Login</string>
     <string name="SignupBtn">Sign Up</string>

@@ -3,12 +3,14 @@ package com.aka.campuslancer;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.parse.Parse;
 import com.parse.ParseACL;
@@ -72,10 +74,19 @@ public class Hire extends Activity {
         post.setTopic(text);
         post.setDescription(text1);
         post.setCategory(category);
-
-        //To be Set
-        post.setEnrol(0);
         post.setBid(Integer.parseInt(bid.getText().toString()));
+        String mobNo="";
+
+        ParseUser parseUser = ParseUser.getCurrentUser();
+        try {
+            parseUser.fetchFromLocalDatastore();
+            mobNo = parseUser.get("mobile_no").toString();
+        }
+        catch (Exception e){
+            Log.d("Hire", e.getMessage());
+        }
+
+        post.setMobileNo(mobNo);
 
 
         final ProgressDialog dialog = new ProgressDialog(Hire.this);
@@ -90,8 +101,15 @@ public class Hire extends Activity {
         post.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
-                dialog.dismiss();
-                finish();
+                if(e==null) {
+                    dialog.dismiss();
+                    finish();
+                }
+                else{
+                    dialog.dismiss();
+                    Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT);
+                    Log.d("Cannot hire",e.getMessage());
+                }
             }
         });
 
