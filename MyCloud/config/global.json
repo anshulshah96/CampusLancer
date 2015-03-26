@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Campus Lancer": {
+            "applicationId": "gpSqLXFDsQg0oBtIg3ITgoYZLFiI9wkEF2tGiUR3", 
+            "masterKey": "h3ZixlGhX8lPz1qddHhB7eCiTWg4Fus5f7ajU9gI"
+        }, 
+        "_default": {
+            "link": "Campus Lancer"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.3.5"
+    }
+}
