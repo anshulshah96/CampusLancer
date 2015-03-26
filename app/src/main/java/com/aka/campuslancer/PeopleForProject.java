@@ -36,7 +36,7 @@ public class PeopleForProject extends Activity {
         Intent intent = getIntent();
         final String pid = intent.getStringExtra("project_id");
 
-        dialog = new CustomProgressDialogBox(PeopleForProject.this);
+        dialog = new CustomProgressDialogBox(PeopleForProject.this,"Loading data...");
         dialog.setMessage("Loading data...");
         dialog.show();
 

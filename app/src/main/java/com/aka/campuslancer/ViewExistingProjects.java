@@ -34,7 +34,7 @@ public class ViewExistingProjects extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_existing_projects);
 
-        dialog = new CustomProgressDialogBox(ViewExistingProjects.this);
+        dialog = new CustomProgressDialogBox(ViewExistingProjects.this,"Loading data...");
         dialog.setMessage("Loading data...");
         dialog.show();
 

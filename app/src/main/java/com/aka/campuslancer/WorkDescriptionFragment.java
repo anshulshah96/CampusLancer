@@ -110,7 +110,7 @@ public class WorkDescriptionFragment extends Fragment {
         bidButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dialog = new CustomProgressDialogBox(getActivity());
+                dialog = new CustomProgressDialogBox(getActivity(),"Loading data...");
                 dialog.setMessage("Loading data...");
                 dialog.show();
 

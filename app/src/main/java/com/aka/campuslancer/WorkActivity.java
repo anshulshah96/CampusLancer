@@ -42,8 +42,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_work);
 
-        dialog = new CustomProgressDialogBox(WorkActivity.this);
-        dialog.setMessage("Loading data...");
+        dialog = new CustomProgressDialogBox(WorkActivity.this,"Loading data...");
         dialog.show();
 
         ParseObject.registerSubclass(HirePost.class);

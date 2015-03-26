@@ -39,7 +39,7 @@ public class Hire extends Activity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, categories);
         s.setAdapter(adapter);
 
-        dialog = new CustomProgressDialogBox(Hire.this);
+        dialog = new CustomProgressDialogBox(Hire.this,"Posting...");
 
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

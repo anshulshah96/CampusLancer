@@ -49,7 +49,7 @@ public class LoginSignupActivity extends Activity {
         loginbutton = (Button) findViewById(R.id.login);
         signup = (Button) findViewById(R.id.signup);
 
-        dialog = new CustomProgressDialogBox(LoginSignupActivity.this);
+        dialog = new CustomProgressDialogBox(LoginSignupActivity.this,"Logging In...");
         // Login Button Click Listener
         loginbutton.setOnClickListener(new OnClickListener() {
 
@@ -58,7 +58,7 @@ public class LoginSignupActivity extends Activity {
                 usernametxt = username.getText().toString();
                 passwordtxt = password.getText().toString();
 
-                dialog.setMessage("Logging in...");
+
                 dialog.show();
 
                 // Send data to Parse.com for verification

@@ -48,7 +48,7 @@ public class SignupActivity extends ActionBarActivity {
                 enrollmenttxt = enrollment.getText().toString();
                 emailtxt = email.getText().toString();
 
-                dialog = new CustomProgressDialogBox(SignupActivity.this);
+                dialog = new CustomProgressDialogBox(SignupActivity.this,"Signing Up..");
                 dialog.setMessage("Signing up...");
                 dialog.show();
 
