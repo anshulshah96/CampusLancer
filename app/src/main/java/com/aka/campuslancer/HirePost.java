@@ -19,6 +19,13 @@ import org.json.JSONArray;
     public void setUsername() {
         put("username", ParseUser.getCurrentUser().getUsername());
     }
+    public String getname() {
+        return getString("name");
+    }
+
+    public void setname(String s) {
+        put("name",s);
+    }
 
     public String getEmail(){
         return getString("email");
@@ -49,9 +56,16 @@ import org.json.JSONArray;
         put("description", value);
     }
 
-        public int getBid() {
-          return getInt("initialbid");
+    public int getBid() {
+        return getInt("initialbid");
         //return getString("initialbid");
+    }
+
+    public void setMobileNo(int value) {
+        put("mobile_no", value);
+    }
+    public int getMobileNo() {
+        return getInt("mobile_no");
     }
 
     public void setBid(int value) {

@@ -10,7 +10,7 @@
 
     <string name="Username">Username</string>
     <string name="Password">Password</string>
-    <string name="Enrollment">Enrollment Number</string>
+    <string name="Enrollment">Mobile No.</string>
     <string name="Email">Email ID</string>
     <string name="LoginBtn">Login</string>
     <string name="SignupBtn">Sign Up</string>
@@ -36,7 +36,7 @@
     <!-- Work Description Page Strings -->
     <string name="WorkDescriptionTopic">Topic</string>
     <string name="WorkDescriptionDescription">Description</string>
-    <string name="WorkDescriptionUserName">Username</string>
+    <string name="WorkDescriptionUserName">Employer</string>
     <string name="WorkDescriptionMobileNumber">Mobile Number</string>
     <string name="WorkDescriptionBid">BID</string>
     <string name="WorkDescriptionDummy">Dummy Text</string>

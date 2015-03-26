@@ -23,6 +23,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 import android.widget.AdapterView.OnItemClickListener;
 
+import java.util.List;
 
 
 public class WorkActivity extends Activity implements WorkDescriptionFragment.OnFragmentInteractionListener{
@@ -43,8 +44,6 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
 
         final ProgressDialog dialog = new ProgressDialog(WorkActivity.this);
         dialog.setMessage("Loading data...");
-        dialog.show();
-
         ParseObject.registerSubclass(HirePost.class);
 
 
@@ -79,16 +78,17 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
 
                 String topictxt=post.getTopic();
                 String bidtxt=""+post.getBid();
-                String enrolltxt=""+post.getEnrol();
+                String enrolltxt=""+(post.getMobileNo()==0?post.getEnrol():post.getMobileNo());
                 String unametxt=post.getUsername();
                 String descriptiontxt = post.getDescription();
                 String projectIdtxt = post.getObjectId();
+                String nametxt = post.getname();
 //                Log.d("pid: ",unametxt+"\t"+projectIdtxt);
 
                 topicView.setText(topictxt);
                 bidView.setText(bidtxt);
                 enrolView.setText(enrolltxt);
-                usernameView.setText(unametxt);
+                usernameView.setText(nametxt==""?unametxt:nametxt);
                 descriptionView.setText(descriptiontxt);
                 projectId.setText(projectIdtxt);
 
@@ -113,15 +113,33 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
         postsListView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                username = ((TextView)(view.findViewById(R.id.post_user))).getText().toString();
-                description =((TextView)(view.findViewById(R.id.post_description))).getText().toString();
-                topic = ((TextView)(view.findViewById(R.id.post_topic))).getText().toString();
-                mobileno = ((TextView)(view.findViewById(R.id.post_enrol))).getText().toString();
-                projectId = ((TextView)(view.findViewById(R.id.post_project_id))).getText().toString();
+                username = ((TextView) (view.findViewById(R.id.post_user))).getText().toString();
+                description = ((TextView) (view.findViewById(R.id.post_description))).getText().toString();
+                topic = ((TextView) (view.findViewById(R.id.post_topic))).getText().toString();
+                mobileno = ((TextView) (view.findViewById(R.id.post_enrol))).getText().toString();
+                projectId = ((TextView) (view.findViewById(R.id.post_project_id))).getText().toString();
 //                Log.i("pid: ",projectId);
 
-                Intent intent = new Intent(WorkActivity.this,PostActivity.class);
+                Intent intent = new Intent(WorkActivity.this, PostActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        postsQueryAdapter.addOnQueryLoadListener(new ParseQueryAdapter.OnQueryLoadListener<HirePost>() {
+            @Override
+            public void onLoading() {
+                dialog.show();
+            }
+
+            @Override
+            public void onLoaded(List<HirePost> hirePosts, Exception e) {
+                if(e==null)
+                    dialog.dismiss();
+                else{
+                    dialog.dismiss();
+                    Toast.makeText(getApplicationContext(),"No Data was Found",Toast.LENGTH_SHORT).show();
+                    finish();
+                }
             }
         });
         doListQuery();

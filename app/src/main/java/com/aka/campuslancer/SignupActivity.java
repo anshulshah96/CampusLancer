@@ -65,7 +65,7 @@ public class SignupActivity extends ActionBarActivity {
                             Toast.makeText(getApplicationContext(),
                                     "Successfully Signed up, please log in.",
                                     Toast.LENGTH_LONG).show();
-                                 dialog.dismiss();
+                            dialog.dismiss();
                             Intent intent = new Intent(SignupActivity.this,
                                     Welcome.class);
                         } else {
@@ -74,7 +74,7 @@ public class SignupActivity extends ActionBarActivity {
                                     .show();
                             dialog.dismiss();
 
-                           // Log.e("Sign Up Error: ",e.getMessage());
+                            // Log.e("Sign Up Error: ",e.getMessage());
                         }
                     }
                 });
