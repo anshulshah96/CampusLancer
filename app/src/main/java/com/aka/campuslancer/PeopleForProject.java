@@ -27,7 +27,7 @@ public class PeopleForProject extends Activity {
 
     ParseQuery<BidPost> q = BidPost.getQuery();
     ParseQueryAdapter<BidPost> postsQueryAdapter;
-
+    public CustomProgressDialogBox dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public class PeopleForProject extends Activity {
         Intent intent = getIntent();
         final String pid = intent.getStringExtra("project_id");
 
-        final ProgressDialog dialog = new ProgressDialog(PeopleForProject.this);
+        dialog = new CustomProgressDialogBox(PeopleForProject.this);
         dialog.setMessage("Loading data...");
         dialog.show();
 

@@ -3,12 +3,12 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:context="com.aka.campuslancer.CustomProgressDialogBox"
-    android:background="#77FFFFFF">
+    android:background="#44000000">
 
     <ImageView
         android:id="@+id/progressLogo"
-        android:layout_width="60dip"
-        android:layout_height="60dip"
+        android:layout_width="70dip"
+        android:layout_height="70dip"
         android:background="@drawable/custom_progress_dialog_animation"
 
         android:layout_marginLeft="20dip"
@@ -35,6 +35,6 @@
 
         android:text="@string/WorkDescriptionDummy"
         android:textSize="20sp"
-        android:textColor="#77000000"/>
+        android:textColor="#AA000000"/>
 
 </RelativeLayout>
