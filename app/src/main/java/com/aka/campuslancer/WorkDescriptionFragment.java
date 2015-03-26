@@ -16,7 +16,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.FindCallback;
+import com.parse.FunctionCallback;
+import com.parse.Parse;
 import com.parse.ParseACL;
+import com.parse.ParseCloud;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
@@ -25,6 +28,7 @@ import com.parse.SaveCallback;
 import org.json.JSONArray;
 
 import java.text.ParseException;
+import java.util.HashMap;
 import java.util.List;
 
 
@@ -115,7 +119,9 @@ public class WorkDescriptionFragment extends Fragment {
                 dialog.show();
 
                 BidPost bpost = new BidPost();
-                bpost.setBid(Integer.parseInt(bidValue.getText().toString()));
+                final int bid = Integer.parseInt(bidValue.getText().toString());
+
+                bpost.setBid(bid);
 
 
                 bpost.setProjectId(projectId);
@@ -135,9 +141,9 @@ public class WorkDescriptionFragment extends Fragment {
                     Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
                 }
 
-              bpost.setMobileNo(mobNo);
+                bpost.setMobileNo(mobNo);
 
-                Log.d("bidset: ",Integer.parseInt(bidValue.getText().toString())+"\tpid: "+projectId+"\tuser: "+ParseUser.getCurrentUser()+"\tmobno:"+mobNo);
+                Log.d("bidset",bid+"\tpid: "+projectId+"\tuser: "+ParseUser.getCurrentUser()+"\tmobno:"+mobNo);
 
                 ParseACL acl = new ParseACL();
                 acl.setPublicReadAccess(true);
@@ -149,6 +155,20 @@ public class WorkDescriptionFragment extends Fragment {
                     public void done(com.parse.ParseException e) {
                         if(e==null) {
                             dialog.dismiss();
+                            HashMap<String, Object> params = new HashMap<String, Object>();
+                            params.put("ProjectId",projectId);
+                            params.put("BidderName",ParseUser.getCurrentUser().getUsername());
+                            params.put("Bid",bid);
+                            ParseCloud.callFunctionInBackground("newBid", params, new FunctionCallback<String>() {
+                                @Override
+                                public void done(String s, com.parse.ParseException e) {
+                                    if (e == null)
+                                        Log.d("Cloud Response", s);
+                                    else
+                                        Log.d("Cloud Error", e.getMessage());
+                                }
+                            });
+
                             Intent intent = new Intent(getActivity().getApplicationContext(), WorkActivity.class);
                             startActivity(intent);
                         }
@@ -159,9 +179,10 @@ public class WorkDescriptionFragment extends Fragment {
                     }
                 });
 
+
+
             }
         });
-
 
 
         return view;
