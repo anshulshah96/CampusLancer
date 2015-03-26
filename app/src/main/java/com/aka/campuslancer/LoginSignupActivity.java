@@ -3,10 +3,12 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.LogInCallback;
@@ -18,12 +20,13 @@ import com.parse.SignUpCallback;
 
 public class LoginSignupActivity extends Activity {
     // Declare Variables
-    Button loginbutton,reset_password;
+    Button loginbutton;
     Button signup;
     String usernametxt;
     String passwordtxt;
     EditText password;
     EditText username;
+    TextView reset_password;
 
 
     /** Called when the activity is first created. */
@@ -34,8 +37,8 @@ public class LoginSignupActivity extends Activity {
         // Locate EditTexts in main.xml
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
-        reset_password =(Button)findViewById(R.id.reset_password);
-
+        reset_password = (TextView) findViewById(R.id.reset_password);
+        reset_password.setText(Html.fromHtml(getString(R.string.forgotPassword)));
 
 
         // Locate Buttons in main.xml
