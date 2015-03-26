@@ -21,7 +21,7 @@ Parse.Cloud.define("newBid",function(request,response){
   BidderName  = request.params.BidderName;
   Bid         = request.params.Bids;
 
-  var topic;
+  // var topic = request.params.Topic;
   var employer;
   var category;
 
@@ -46,7 +46,7 @@ Parse.Cloud.define("newBid",function(request,response){
   Parse.Push.send({
       where: pushQuery,
       data: {
-        alert: "New Bidder for your project "+topic+" : "+BidderName,
+        alert: "New Bidder for your project "+request.params.Topic+" : "+BidderName,
       }
     },{
         success:function(){

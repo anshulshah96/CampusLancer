@@ -159,6 +159,7 @@ public class WorkDescriptionFragment extends Fragment {
                             params.put("ProjectId",projectId);
                             params.put("BidderName",ParseUser.getCurrentUser().getUsername());
                             params.put("Bid",bid);
+                            params.put("Topic",WorkActivity.topic);
                             ParseCloud.callFunctionInBackground("newBid", params, new FunctionCallback<String>() {
                                 @Override
                                 public void done(String s, com.parse.ParseException e) {
