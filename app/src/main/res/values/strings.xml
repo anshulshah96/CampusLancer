@@ -25,7 +25,8 @@
     <string name="Heading">Campus Lancer</string>
     <string name="ProjectListHeading">Active Projects</string>
     <string name="SignUpDescription">Sign Up as a New User for free!</string>
-
+    <string name="ForgotPassword">Enter your E-Mail, to receive a mail from us, having a link which will allow your to reset your password.</string>
+    <string name="ResetPassword">Reset Password</string>
     <!-- Post Project for Hire Strings -->
     <string name="HireInfo">Post your project by filling out the information regarding the work you need to be done.</string>
     <string name="HireTopic">Topic:</string>
