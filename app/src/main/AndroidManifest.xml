@@ -105,5 +105,6 @@
             android:name=".CustomProgressDialogBox"
             android:label="@string/title_activity_custom_progress_dialog_box" >
         </activity>
+    </application>
 
 </manifest>
