@@ -36,7 +36,7 @@ public class Hire extends Activity {
         ParseObject.registerSubclass(HirePost.class);
         Parse.initialize(this, "gpSqLXFDsQg0oBtIg3ITgoYZLFiI9wkEF2tGiUR3", "pzEksVGPBG1iX8NkIoJ4V7hAPGoaTPo7dyNRkDs4");
 
-        this.categories = new String[] {"Android Development","Web Development","Web Design","Content Writing","Bakar"};
+        this.categories = new String[] {"Mobile Development","Web Development","Design","Writing","Volunteering","Question-Answer","Miscellaneous"};
         Spinner s =(Spinner) findViewById(R.id.spinners);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, categories);
         s.setAdapter(adapter);

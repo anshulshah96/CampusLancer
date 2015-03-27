@@ -125,6 +125,14 @@ public class PeopleForProject extends Activity {
     private void doListQuery() {
         postsQueryAdapter.loadObjects();
     }
+
+    public void navigationClick(View view){
+        if(view == view.findViewById(R.id.peopleproject_tv_navigation)){
+            Intent intent = new Intent(getApplicationContext(),Welcome.class);
+            startActivity(intent);
+            finish();
+        }
+    }
 }
 
 

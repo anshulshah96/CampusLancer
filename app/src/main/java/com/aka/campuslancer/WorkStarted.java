@@ -26,7 +26,7 @@ public class WorkStarted extends Activity {
         submitButton = (Button)findViewById(R.id.browseProjectsButton);
 
 
-        this.categories = new String[] {"Android Development","Web Development","Web Design","Content Writing","Bakar"};
+        this.categories = new String[] {"Mobile Development","Web Development","Design","Writing","Volunteering","Question-Answer","Miscellaneous"};
         Spinner s =(Spinner) findViewById(R.id.categories_spinner);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, categories);
         s.setAdapter(adapter);

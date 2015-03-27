@@ -1,7 +1,13 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.aka.campuslancer.ViewExistingProjects">
+    tools:context="com.aka.campuslancer.WorkActivity">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.aka.campuslancer.ViewExistingProjects">
 
     <ImageView
         android:layout_width="match_parent"
@@ -50,3 +56,21 @@
         android:layout_below="@id/ProjectListHeading"
         android:layout_margin="10dip" />
 </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/existingprojects_tv_navigation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dip"
+            android:text="@string/GoToMainPage"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:textColor="#BB000000"
+            android:clickable="true"
+            android:textSize="14sp"
+            android:onClick="navigationClick"/>
+    </RelativeLayout>
+</FrameLayout>

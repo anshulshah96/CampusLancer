@@ -27,30 +27,37 @@
         android:theme="@style/Theme.AppCompat.Light" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginSignupActivity" >
+        <activity android:name=".LoginSignupActivity"
+            android:screenOrientation="portrait" >
         </activity>
-        <activity android:name=".Welcome" >
+        <activity android:name=".Welcome"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".SignupActivity"
-            android:label="@string/title_activity_signup" >
+            android:label="@string/title_activity_signup"
+            android:screenOrientation="portrait" >
         </activity>
         <activity android:name=".Hire" >
         </activity>
         <activity
             android:name=".PostActivity"
-            android:label="@string/title_activity_post" >
+            android:label="@string/title_activity_post"
+            android:screenOrientation="portrait"
+            >
         </activity>
         <activity
             android:name=".WorkActivity"
-            android:label="@string/title_activity_work" >
+            android:label="@string/title_activity_work"
+            android:screenOrientation="portrait" >
         </activity>
 
         <service android:name="com.parse.PushService" />
@@ -84,32 +91,37 @@
 
         <activity
             android:name=".HireStarted"
-            android:label="@string/title_activity_hire_started" >
+            android:label="@string/title_activity_hire_started"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".ViewExistingProjects"
-            android:label="@string/title_activity_view_existing_projects" >
+            android:label="@string/title_activity_view_existing_projects"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".forgetpassword"
-            android:label="@string/title_activity_forgetpassword" >
+            android:label="@string/title_activity_forgetpassword"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".PeopleForProject"
-            android:label="@string/title_activity_people_for_project" >
+            android:label="@string/title_activity_people_for_project"
+            android:screenOrientation="portrait">
         </activity>
 
         <meta-data
             android:name="com.parse.push.notification_icon"
             android:resource="@drawable/mainlogo" />
 
-        <activity
-            android:name=".CustomProgressDialogBox"
-            android:label="@string/title_activity_custom_progress_dialog_box" >
-        </activity>
+        <!--<activity-->
+            <!--android:name=".CustomProgressDialogBox"-->
+            <!--android:label="@string/title_activity_custom_progress_dialog_box" >-->
+        <!--</activity>-->
         <activity
             android:name=".WorkStarted"
-            android:label="@string/title_activity_work_started" >
+            android:label="@string/title_activity_work_started"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 

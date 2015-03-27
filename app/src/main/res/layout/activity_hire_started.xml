@@ -45,7 +45,7 @@
         android:text="@string/HireGetStarted"
         android:textSize="22sp"
         android:textColor="#222222" />
-   
+
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"

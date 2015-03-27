@@ -156,5 +156,12 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
     public void onFragmentInteraction(Uri uri){
 
     }
+    public void navigationClick(View view){
+        if(view == view.findViewById(R.id.work_tv_navigation)){
+            Intent intent = new Intent(getApplicationContext(),Welcome.class);
+            startActivity(intent);
+            finish();
+        }
+    }
 
 }

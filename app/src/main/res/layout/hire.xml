@@ -69,7 +69,7 @@
             android:layout_marginRight="10dp"
 
             android:padding="5sp"
-            android:inputType="text"
+            android:inputType="textCapWords"
             android:textSize="20sp"
             android:background="#DDDDDD" />
 
@@ -89,7 +89,7 @@
 
         <EditText
             android:id="@+id/DescriptionField"
-            android:layout_width="280dp"
+            android:layout_width="match_parent"
             android:layout_height="80dp"
             android:layout_below="@+id/TopicField"
             android:layout_toRightOf="@id/Description"
@@ -99,7 +99,7 @@
             android:layout_marginRight="10dp"
 
             android:padding="5sp"
-            android:inputType="textMultiLine"
+            android:inputType="textMultiLine|textCapSentences"
             android:textSize="20sp"
             android:background="#DDDDDD" />
 
@@ -119,7 +119,7 @@
 
         <EditText
             android:id="@+id/InitialBidField"
-            android:layout_width="280dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/DescriptionField"
             android:layout_toRightOf="@id/InitialBid"
@@ -133,21 +133,38 @@
             android:inputType="phone"
             android:textSize="20sp"
             android:background="#DDDDDD" />
-            <Spinner
-                android:layout_width="wrap_content"
-                android:id="@+id/spinners"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/InitialBidField"
-                android:layout_alignLeft="@+id/InitialBid"
-                android:layout_alignStart="@+id/InitialBid"
-                android:layout_marginTop="41dp"></Spinner>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/InitialBid"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dip"
+        android:background="#77FFFFFF"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Select Category:"
+            android:textSize="22sp"
+            android:textColor="#000000" />
+
+        <Spinner
+            android:id="@+id/spinners"
+            android:layout_width="200dip"
+            android:layout_height="wrap_content"></Spinner>
+    </LinearLayout>
 
         <Button
             android:id="@+id/HirePost"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/HirePost"
 
+            android:layout_margin="20dip"
             android:textSize="20sp"
             android:textColor="#FFFFFF"
             android:background="#F8650D"

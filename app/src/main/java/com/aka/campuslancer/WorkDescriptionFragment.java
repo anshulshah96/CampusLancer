@@ -26,6 +26,7 @@ import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import org.json.JSONArray;
+import org.w3c.dom.Text;
 
 import java.text.ParseException;
 import java.util.HashMap;
@@ -47,7 +48,7 @@ public class WorkDescriptionFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
-    TextView topicTv,descriptionTv,usernameTv,mobilenoTv;
+    TextView topicTv,descriptionTv,usernameTv,mobilenoTv,navigationTv;
     EditText bidValue;
     Button bidButton;
     String projectId;
@@ -103,6 +104,7 @@ public class WorkDescriptionFragment extends Fragment {
         mobilenoTv = (TextView) view.findViewById(R.id.WorkDescriptionFragmentMobileNumber);
         bidValue = (EditText) view.findViewById(R.id.BidValue);
         bidButton = (Button) view.findViewById(R.id.bidButton);
+        navigationTv = (TextView) view.findViewById(R.id.work_fragment_tv_navigation);
 
         topicTv.setText(WorkActivity.topic);
         descriptionTv.setText(WorkActivity.description);
@@ -176,6 +178,17 @@ public class WorkDescriptionFragment extends Fragment {
                         }
                     }
                 });
+            }
+        });
+
+        navigationTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(view == view.findViewById(R.id.work_fragment_tv_navigation)){
+                    Intent intent = new Intent(getActivity(),Welcome.class);
+                    startActivity(intent);
+                    getActivity().finish();
+                }
             }
         });
 
@@ -312,5 +325,4 @@ public class WorkDescriptionFragment extends Fragment {
         // TODO: Update argument type and name
         public void onFragmentInteraction(Uri uri);
     }
-
 }

@@ -133,4 +133,13 @@ public class ViewExistingProjects extends Activity {
     private void doListQuery() {
         existingProjectsQueryAdapter.loadObjects();
     }
+
+    public void navigationClick(View view){
+        if(view == view.findViewById(R.id.existingprojects_tv_navigation)){
+            Intent intent = new Intent(getApplicationContext(),Welcome.class);
+            startActivity(intent);
+            finish();
+        }
+    }
+
 }

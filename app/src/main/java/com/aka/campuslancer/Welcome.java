@@ -38,7 +38,7 @@ public class Welcome extends Activity {
         TextView txtuser = (TextView) findViewById(R.id.WelcomeHeader);
 
         // Set the currentUser String into TextView
-        txtuser.setText("You are logged in as " + struser);
+        txtuser.setText("Welcome to Campus Lancer "+struser+"! It is a platform for people who need to get their work, and people work and earn.");
 
         // Locate Button in welcome.xml
         logout = (Button) findViewById(R.id.LogOutWelcome);

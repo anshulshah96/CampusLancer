@@ -5,7 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
-    <string name="title_activity_signup">Set this as per your wish</string>
+    <string name="title_activity_signup">Signup for a new account</string>
     <string name="title_activity_post">Set this as per your wish</string>
 
     <string name="Username">Username</string>
@@ -27,6 +27,8 @@
     <string name="SignUpDescription">Sign Up as a New User for free!</string>
     <string name="ForgotPassword">Enter your E-Mail, to receive a mail from us, having a link which will allow your to reset your password.</string>
     <string name="ResetPassword">Reset Password</string>
+    <string name="GoToMainPage">Go to main page ></string>
+
     <!-- Post Project for Hire Strings -->
     <string name="HireInfo">Post your project by filling out the information regarding the work you need to be done.</string>
     <string name="HireTopic">Topic:</string>
