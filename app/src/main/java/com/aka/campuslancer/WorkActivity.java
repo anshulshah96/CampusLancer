@@ -73,7 +73,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 }
                 TextView usernameView = (TextView) view.findViewById(R.id.post_user);
                 TextView topicView = (TextView) view.findViewById(R.id.post_topic);
-                TextView bidView = (TextView) view.findViewById(R.id.post_bid);
+                TextView bidView = (TextView) view.findViewById(R.id.post_budget);
                 TextView enrolView = (TextView) view.findViewById(R.id.post_mobile);
                 TextView descriptionView = (TextView) view.findViewById(R.id.post_description);
                 TextView projectId = (TextView) view.findViewById(R.id.post_project_id);
@@ -90,7 +90,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 topicView.setText(topictxt);
                 bidView.setText(bidtxt);
                 enrolView.setText(enrolltxt);
-                usernameView.setText(nametxt==""?unametxt:nametxt);
+                usernameView.setText(unametxt);
                 descriptionView.setText(descriptiontxt);
                 projectId.setText(projectIdtxt);
 
