@@ -28,6 +28,7 @@ public class SignupActivity extends ActionBarActivity {
     EditText username;
     EditText enrollment;
     EditText email;
+    public CustomProgressDialogBox dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +47,11 @@ public class SignupActivity extends ActionBarActivity {
                 passwordtxt = password.getText().toString();
                 enrollmenttxt = enrollment.getText().toString();
                 emailtxt = email.getText().toString();
-                final ProgressDialog dialog = new ProgressDialog(SignupActivity.this);
+
+                dialog = new CustomProgressDialogBox(SignupActivity.this,"Signing Up..");
                 dialog.setMessage("Signing up...");
                 dialog.show();
+
                 ParseUser user = new ParseUser();
                 user.setUsername(usernametxt);
                 user.setPassword(passwordtxt);

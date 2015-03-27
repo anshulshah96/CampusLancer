@@ -1,6 +1,6 @@
 package com.aka.campuslancer;
 import android.app.Activity;
-import android.app.ProgressDialog;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
@@ -10,6 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.view.animation.Animation;
 
 import com.parse.LogInCallback;
 import com.parse.Parse;
@@ -27,7 +31,7 @@ public class LoginSignupActivity extends Activity {
     EditText password;
     EditText username;
     TextView reset_password;
-
+    CustomProgressDialogBox dialog;
 
     /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,7 @@ public class LoginSignupActivity extends Activity {
         loginbutton = (Button) findViewById(R.id.login);
         signup = (Button) findViewById(R.id.signup);
 
+        dialog = new CustomProgressDialogBox(LoginSignupActivity.this,"Logging In...");
         // Login Button Click Listener
         loginbutton.setOnClickListener(new OnClickListener() {
 
@@ -52,8 +57,8 @@ public class LoginSignupActivity extends Activity {
                 // Retrieve the text entered from the EditText
                 usernametxt = username.getText().toString();
                 passwordtxt = password.getText().toString();
-                final ProgressDialog dialog = new ProgressDialog(LoginSignupActivity.this);
-                dialog.setMessage("Logging in...");
+
+
                 dialog.show();
 
                 // Send data to Parse.com for verification
@@ -101,4 +106,7 @@ public class LoginSignupActivity extends Activity {
         startActivity(intent);
 
     }
+
+
+
 }

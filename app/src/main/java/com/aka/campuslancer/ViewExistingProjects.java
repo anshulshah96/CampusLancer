@@ -27,16 +27,14 @@ public class ViewExistingProjects extends Activity {
     private ParseQueryAdapter<HirePost> existingProjectsQueryAdapter;
     private static final int MAX_POST_SEARCH_RESULTS = 30;
     ParseQuery<HirePost> q = HirePost.getQuery();
+    public CustomProgressDialogBox dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_existing_projects);
 
-
-
-
-        final ProgressDialog dialog = new ProgressDialog(ViewExistingProjects.this);
+        dialog = new CustomProgressDialogBox(ViewExistingProjects.this,"Loading data...");
         dialog.setMessage("Loading data...");
         dialog.show();
 

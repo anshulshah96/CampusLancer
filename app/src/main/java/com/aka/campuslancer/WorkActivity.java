@@ -33,6 +33,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
     public static String topic;
     public static String mobileno;
     public static String projectId;
+    public CustomProgressDialogBox dialog;
 
     ParseQuery<HirePost> q = HirePost.getQuery();
 
@@ -41,8 +42,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_work);
 
-        final ProgressDialog dialog = new ProgressDialog(WorkActivity.this);
-        dialog.setMessage("Loading data...");
+        dialog = new CustomProgressDialogBox(WorkActivity.this,"Loading data...");
         dialog.show();
 
         ParseObject.registerSubclass(HirePost.class);
