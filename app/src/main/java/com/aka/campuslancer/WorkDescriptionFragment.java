@@ -120,10 +120,7 @@ public class WorkDescriptionFragment extends Fragment {
 
                 BidPost bpost = new BidPost();
                 final int bid = Integer.parseInt(bidValue.getText().toString());
-
                 bpost.setBid(bid);
-
-
                 bpost.setProjectId(projectId);
                 bpost.setProjectIdString(projectId);
                 bpost.setUser(ParseUser.getCurrentUser());
@@ -133,10 +130,9 @@ public class WorkDescriptionFragment extends Fragment {
                 ParseUser parseUser = ParseUser.getCurrentUser();
                 try {
                     parseUser.fetchFromLocalDatastore();
-                        mobNo = parseUser.get("mobile_no").toString();
+                    mobNo = parseUser.get("mobile_no").toString();
                 }
                 catch (Exception e){
-//                    Toast.makeText(getActivity(),"Local data Exception"+e.toString(),Toast.LENGTH_SHORT).show();
                     Log.d("local data error",e.toString());
                 }
 
@@ -148,7 +144,6 @@ public class WorkDescriptionFragment extends Fragment {
                 acl.setPublicReadAccess(true);
                 bpost.setACL(acl);
 
-                // 3
                 bpost.saveInBackground(new SaveCallback() {
                     @Override
                     public void done(com.parse.ParseException e) {
@@ -162,24 +157,25 @@ public class WorkDescriptionFragment extends Fragment {
                             ParseCloud.callFunctionInBackground("newBid", params, new FunctionCallback<String>() {
                                 @Override
                                 public void done(String s, com.parse.ParseException e) {
-                                    if (e == null)
+                                    if (e == null) {
+                                        Toast.makeText(getActivity(),s,Toast.LENGTH_SHORT).show();
                                         Log.d("Cloud Response", s);
-                                    else
+                                        getActivity().finish();
+                                    }
+                                    else {
+                                        Toast.makeText(getActivity(),s,Toast.LENGTH_SHORT).show();
                                         Log.d("Cloud Error", e.getMessage());
+                                    }
                                 }
                             });
-                            getActivity().finish();
                         }
                         else {
+                            dialog.dismiss();
                             Toast.makeText(getActivity(),"Saving error: "+e.getMessage(),Toast.LENGTH_SHORT).show();
                             Log.d("Saving error",e.getMessage());
                         }
-
                     }
                 });
-
-
-
             }
         });
 

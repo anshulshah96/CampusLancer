@@ -147,7 +147,7 @@
             android:layout_marginLeft="10dip"
             android:layout_marginRight="10dip"
 
-            android:inputType="number"
+            android:inputType="phone"
             android:textSize="25sp"
             android:background="#DDDDDD" />
 

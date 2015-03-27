@@ -130,7 +130,7 @@
             android:layout_marginRight="10dp"
 
             android:padding="5sp"
-            android:inputType="text"
+            android:inputType="phone"
             android:textSize="20sp"
             android:background="#DDDDDD" />
             <Spinner
