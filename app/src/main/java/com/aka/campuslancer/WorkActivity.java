@@ -90,7 +90,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 topicView.setText(topictxt);
                 bidView.setText(bidtxt);
                 enrolView.setText(enrolltxt);
-                usernameView.setText(nametxt==""?unametxt:nametxt);
+                usernameView.setText(unametxt);
                 descriptionView.setText(descriptiontxt);
                 projectId.setText(projectIdtxt);
 
