@@ -169,9 +169,9 @@ public class WorkDescriptionFragment extends Fragment {
                                         Log.d("Cloud Error", e.getMessage());
                                 }
                             });
-
-                            Intent intent = new Intent(getActivity().getApplicationContext(), WorkActivity.class);
-                            startActivity(intent);
+                            getActivity().finish();
+//                            Intent intent = new Intent(getActivity().getApplicationContext(), WorkActivity.class);
+//                            startActivity(intent);
                         }
                         else {
                             Log.d("Saving error: ",e.getMessage());

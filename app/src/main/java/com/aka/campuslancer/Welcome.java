@@ -73,7 +73,8 @@ public class Welcome extends Activity {
         });
 
         //hire button click listener
-        hire.setOnClickListener(new OnClickListener() {
+        hire.setOnClickListener(
+                new OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i= new Intent(getApplicationContext(),HireStarted.class);
@@ -97,10 +98,10 @@ public class Welcome extends Activity {
 
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if(loggedIn==false)
-            finish();
-    }
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//        if(loggedIn==false)
+//            finish();
+//    }
 }

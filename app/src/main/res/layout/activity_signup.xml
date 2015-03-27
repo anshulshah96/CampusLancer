@@ -71,6 +71,36 @@
         android:textSize="25sp"
         android:background="#DDDDDD"/>
 
+<!--
+        <TextView
+            android:id="@+id/txtnamesignup"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usernamesignup"
+            android:paddingTop="10dp"
+
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+            android:text="Name"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
+
+    <EditText
+        android:id="@+id/namesignup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtnamesignup"
+        android:padding="5sp"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+
+        android:inputType="text"
+        android:textSize="25sp"
+        android:background="#DDDDDD"/>
+-->
+
     <TextView
         android:id="@+id/txtpasswordsignup"
         android:layout_width="fill_parent"
@@ -123,7 +153,7 @@
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
 
-        android:inputType="text"
+        android:inputType="phone"
         android:textSize="25sp"
         android:background="#DDDDDD" />
 
@@ -151,7 +181,7 @@
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
 
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:textSize="25sp"
         android:background="#DDDDDD"/>
 

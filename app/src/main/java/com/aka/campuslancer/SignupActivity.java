@@ -51,33 +51,27 @@ public class SignupActivity extends ActionBarActivity {
                 dialog = new CustomProgressDialogBox(SignupActivity.this,"Signing Up..");
                 dialog.setMessage("Signing up...");
                 dialog.show();
-
+                ParseUser.logOut();
                 ParseUser user = new ParseUser();
                 user.setUsername(usernametxt);
                 user.setPassword(passwordtxt);
                 user.setEmail(emailtxt);
 
-                user.put("enrollment",Integer.parseInt(enrollment.getText().toString()));
-                // user.setEnrollment(enrollmenttxt);
+                user.put("mobile_no",enrollment.getText().toString());
                 user.signUpInBackground(new SignUpCallback() {
                     public void done(ParseException e) {
                         if (e == null) {
-//                            user.pinInBackground();
-
-                            // Show a simple Toast message upon successful registration
                             Toast.makeText(getApplicationContext(),
                                     "Successfully Signed up, please log in.",
                                     Toast.LENGTH_LONG).show();
                                  dialog.dismiss();
-                            Intent intent = new Intent(SignupActivity.this,
-                                    Welcome.class);
-                        } else {
-                            Toast.makeText(getApplicationContext(),
-                                    "Sign up Error", Toast.LENGTH_LONG)
-                                    .show();
+                            finish();
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(),"SignUp Error: "+e.toString(), Toast.LENGTH_LONG).show();
+                            Log.d("Signup",e.toString());
                             dialog.dismiss();
 
-                           // Log.e("Sign Up Error: ",e.getMessage());
                         }
                     }
                 });

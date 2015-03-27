@@ -23,6 +23,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 import android.widget.AdapterView.OnItemClickListener;
 
+import java.util.List;
 
 
 public class WorkActivity extends Activity implements WorkDescriptionFragment.OnFragmentInteractionListener{
@@ -42,8 +43,8 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_work);
 
+
         dialog = new CustomProgressDialogBox(WorkActivity.this,"Loading data...");
-        dialog.show();
 
         ParseObject.registerSubclass(HirePost.class);
 
@@ -73,28 +74,26 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 TextView usernameView = (TextView) view.findViewById(R.id.post_user);
                 TextView topicView = (TextView) view.findViewById(R.id.post_topic);
                 TextView bidView = (TextView) view.findViewById(R.id.post_bid);
-                TextView enrolView = (TextView) view.findViewById(R.id.post_enrol);
+                TextView enrolView = (TextView) view.findViewById(R.id.mobile_number);
                 TextView descriptionView = (TextView) view.findViewById(R.id.post_description);
                 TextView projectId = (TextView) view.findViewById(R.id.post_project_id);
 
                 String topictxt=post.getTopic();
                 String bidtxt=""+post.getBid();
-                String enrolltxt=""+post.getEnrol();
+                String enrolltxt=""+post.getMobileNo();
                 String unametxt=post.getUsername();
                 String descriptiontxt = post.getDescription();
                 String projectIdtxt = post.getObjectId();
+                String nametxt = post.getname();
 //                Log.d("pid: ",unametxt+"\t"+projectIdtxt);
 
                 topicView.setText(topictxt);
                 bidView.setText(bidtxt);
                 enrolView.setText(enrolltxt);
-                usernameView.setText(unametxt);
+                usernameView.setText(nametxt==""?unametxt:nametxt);
                 descriptionView.setText(descriptiontxt);
                 projectId.setText(projectIdtxt);
 
-                if(q!=null){
-                    dialog.dismiss();
-                }
                 return view;
             }
         };
@@ -113,15 +112,35 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
         postsListView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                username = ((TextView)(view.findViewById(R.id.post_user))).getText().toString();
-                description =((TextView)(view.findViewById(R.id.post_description))).getText().toString();
-                topic = ((TextView)(view.findViewById(R.id.post_topic))).getText().toString();
-                mobileno = ((TextView)(view.findViewById(R.id.post_enrol))).getText().toString();
-                projectId = ((TextView)(view.findViewById(R.id.post_project_id))).getText().toString();
+                username = ((TextView) (view.findViewById(R.id.post_user))).getText().toString();
+                description = ((TextView) (view.findViewById(R.id.post_description))).getText().toString();
+                topic = ((TextView) (view.findViewById(R.id.post_topic))).getText().toString();
+                mobileno = ((TextView) (view.findViewById(R.id.mobile_number))).getText().toString();
+                projectId = ((TextView) (view.findViewById(R.id.post_project_id))).getText().toString();
 //                Log.i("pid: ",projectId);
 
-                Intent intent = new Intent(WorkActivity.this,PostActivity.class);
+                Intent intent = new Intent(WorkActivity.this, PostActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        postsQueryAdapter.addOnQueryLoadListener(new ParseQueryAdapter.OnQueryLoadListener<HirePost>() {
+            @Override
+            public void onLoading() {
+                dialog.setMessage("Loading data...");
+                dialog.show();
+            }
+
+            @Override
+            public void onLoaded(List<HirePost> hirePosts, Exception e) {
+                if(e==null){
+                    dialog.dismiss();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT);
+
+                    finish();
+                }
             }
         });
         doListQuery();
