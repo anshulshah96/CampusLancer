@@ -67,7 +67,7 @@ public class PeopleForProject extends Activity {
                     view = View.inflate(getContext(), R.layout.peopleforprojectitem, null);
                 }
                 TextView projectuser = (TextView) view.findViewById(R.id.peopleproject_user);
-                TextView projectenrol = (TextView) view.findViewById(R.id.peopleproject_enrol);
+                TextView projectmobile = (TextView) view.findViewById(R.id.peopleproject_mobile);
                 TextView projectbid = (TextView) view.findViewById(R.id.peopleproject_bid);
 
                 String pb = "" + post.getBid();
@@ -80,7 +80,7 @@ public class PeopleForProject extends Activity {
 
                 projectbid.setText(pb);
                 projectuser.setText(pu);
-                projectenrol.setText(""+post.getMobileNo());
+                projectmobile.setText(""+post.getMobileNo());
 
                 return view;
 

@@ -46,6 +46,7 @@ public class Welcome extends Activity {
         work=(Button)findViewById(R.id.WorkWelcome);
 
         this.categories = new String[] {"Android Development","Web Development","Web Design","Content Writing","Bakar"};
+
 //        Spinner s =(Spinner) findViewById(R.id.categories_spinner);
 //        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, categories);
 //        s.setAdapter(adapter);
@@ -66,7 +67,7 @@ public class Welcome extends Activity {
         work.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i= new Intent(getApplicationContext(),WorkActivity.class);
+                Intent i= new Intent(getApplicationContext(),WorkStarted.class);
                 startActivity(i);
 
             }

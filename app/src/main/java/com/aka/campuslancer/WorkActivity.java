@@ -56,7 +56,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                         ParseQuery<HirePost> query = HirePost.getQuery();
                         query.include("user");
                         query.include("objectId");
-                        query.whereContains("category",Welcome.category);
+                        query.whereContains("category",WorkStarted.category);
                         query.orderByDescending("createdAt");
                         query.setLimit(MAX_POST_SEARCH_RESULTS);
                         q=query;
@@ -138,11 +138,11 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 }
                 else{
                     Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT);
-
                     finish();
                 }
             }
         });
+
         doListQuery();
     }
 

@@ -184,12 +184,13 @@
         <Spinner
             android:id="@+id/categories_spinner"
             android:layout_width="220dip"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            />
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/browseProjects"
+        android:id="@+id/browseProjectsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/WorkNewProjects"
