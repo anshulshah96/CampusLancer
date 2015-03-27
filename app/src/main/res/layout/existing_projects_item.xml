@@ -3,11 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="90dip"
 
     android:background="#77FFFFFF"
-    android:padding="5dp"
-    android:layout_margin="5dp"
+    android:padding="10dp"
+    android:layout_margin="15dp"
 
     android:clickable="false"
     android:descendantFocusability="blocksDescendants"
@@ -18,6 +18,8 @@
         android:id="@+id/existing_projects_topic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
+        android:layout_marginLeft="5dip"
 
         android:text="@string/WorkDescriptionTopic"
         android:textSize="20sp"
@@ -33,17 +35,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/existing_projects_topic"
+        android:layout_marginLeft="5dip"
+        android:text="@string/WorkDescriptionDummy"
 
-        android:text="Description"
-        android:textSize="20sp"
-        android:textColor="#000000"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="18sp"
+        android:textColor="#222222"
+        android:textAppearance="?android:attr/textAppearanceLarge"
 
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:clickable="false" />
 
-    <TextView
+    <!--<TextView
         android:id="@+id/existing_projects_bid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,21 +60,40 @@
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:clickable="false" />
+    -->
+
     <TextView
-        android:id="@+id/existing_project_id"
+        android:id="@+id/post_just_bid"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/existing_projects_description"
 
+        android:layout_marginLeft="5dip"
+        android:text="Bid: Rs."
+
+        android:textSize="16sp"
+        android:textColor="#333333"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:clickable="false" />
+
+    <TextView
+        android:id="@+id/existing_projects_bid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/existing_projects_description"
+        android:layout_toRightOf="@id/post_just_bid"
+        android:layout_marginLeft="5dip"
+
         android:text="@string/WorkDescriptionBid"
-        android:textSize="20sp"
-        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textColor="#333333"
         android:textAppearance="?android:attr/textAppearanceSmall"
 
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:clickable="false"
-        android:visibility="gone"
-        />
+        android:clickable="false" />
 
 </RelativeLayout>
