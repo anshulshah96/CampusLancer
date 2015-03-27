@@ -56,7 +56,7 @@ public class WorkDescriptionFragment extends Fragment {
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
-
+    public CustomProgressDialogBox dialog;
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -114,7 +114,7 @@ public class WorkDescriptionFragment extends Fragment {
         bidButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final ProgressDialog dialog = new ProgressDialog(getActivity());
+                dialog = new CustomProgressDialogBox(getActivity(),"Loading data...");
                 dialog.setMessage("Loading data...");
                 dialog.show();
 

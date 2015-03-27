@@ -27,19 +27,21 @@ public class Hire extends Activity {
     EditText topic, description, bid;
     private String[] categories;
     public String category="Android Development";
+    public CustomProgressDialogBox dialog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hire);
         ParseObject.registerSubclass(HirePost.class);
-         Parse.initialize(this, "gpSqLXFDsQg0oBtIg3ITgoYZLFiI9wkEF2tGiUR3", "pzEksVGPBG1iX8NkIoJ4V7hAPGoaTPo7dyNRkDs4");
+        Parse.initialize(this, "gpSqLXFDsQg0oBtIg3ITgoYZLFiI9wkEF2tGiUR3", "pzEksVGPBG1iX8NkIoJ4V7hAPGoaTPo7dyNRkDs4");
 
         this.categories = new String[] {"Android Development","Web Development","Web Design","Content Writing","Bakar"};
         Spinner s =(Spinner) findViewById(R.id.spinners);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, categories);
         s.setAdapter(adapter);
 
+        dialog = new CustomProgressDialogBox(Hire.this,"Posting...");
 
         s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -88,8 +90,6 @@ public class Hire extends Activity {
 
         post.setMobileNo(mobNo);
 
-
-        final ProgressDialog dialog = new ProgressDialog(Hire.this);
         dialog.setMessage("Posting...");
         dialog.show();
 
