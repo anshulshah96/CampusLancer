@@ -99,11 +99,18 @@
             android:label="@string/title_activity_people_for_project" >
         </activity>
 
-    <meta-data android:name="com.parse.push.notification_icon" android:resource="@drawable/mainlogo"/>
+        <meta-data
+            android:name="com.parse.push.notification_icon"
+            android:resource="@drawable/mainlogo" />
 
         <activity
             android:name=".CustomProgressDialogBox"
             android:label="@string/title_activity_custom_progress_dialog_box" >
         </activity>
+        <activity
+            android:name=".WorkStarted"
+            android:label="@string/title_activity_work_started" >
+        </activity>
+    </application>
 
 </manifest>

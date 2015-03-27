@@ -32,7 +32,7 @@
         android:layout_marginLeft="10dip"/>
 
     <TextView
-        android:id="@+id/HireGetStarted"
+        android:id="@+id/WorkGetStarted"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/MainLogo"
@@ -42,17 +42,17 @@
         android:layout_marginRight="10dip"
         android:layout_marginTop="5dip"
 
-        android:text="@string/HireGetStarted"
+        android:text="@string/WorkGetStarted"
         android:textSize="22sp"
         android:textColor="#222222" />
-   
+
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/HireNewProjects"
+        android:id="@+id/WorkNewProjects"
         android:layout_width="match_parent"
         android:layout_height="280dip"
-        android:layout_below="@id/HireGetStarted"
+        android:layout_below="@id/WorkGetStarted"
         android:layout_marginBottom="10dip"
         android:orientation="horizontal"
 
@@ -73,10 +73,10 @@
                 android:layout_height="0dip"
                 android:layout_weight="0.7"
                 android:layout_margin="5dip"
-                android:src="@drawable/project" />
+                android:src="@drawable/projects" />
 
             <TextView
-                android:id="@+id/HireText1"
+                android:id="@+id/WorkText1"
                 android:layout_width="match_parent"
                 android:layout_height="0dip"
                 android:layout_weight="0.4"
@@ -85,7 +85,7 @@
                 android:layout_marginLeft="10dip"
                 android:layout_marginRight="10dip"
 
-                android:text="@string/HireText1"
+                android:text="@string/WorkText1"
                 android:textSize="18sp"
                 android:textColor="#222222" />
 
@@ -106,10 +106,10 @@
                 android:layout_height="0dip"
                 android:layout_weight="0.7"
                 android:layout_margin="5dip"
-                android:src="@drawable/peoplebids" />
+                android:src="@drawable/apply" />
 
             <TextView
-                android:id="@+id/HireText2"
+                android:id="@+id/WorkText2"
                 android:layout_width="match_parent"
                 android:layout_height="0dip"
                 android:layout_weight="0.4"
@@ -118,7 +118,7 @@
                 android:layout_marginLeft="10dip"
                 android:layout_marginRight="10dip"
 
-                android:text="@string/HireText2"
+                android:text="@string/WorkText2"
                 android:textSize="18sp"
                 android:textColor="#222222" />
 
@@ -142,7 +142,7 @@
                 android:src="@drawable/money" />
 
             <TextView
-                android:id="@+id/HireText3"
+                android:id="@+id/WorkText3"
                 android:layout_width="match_parent"
                 android:layout_height="0dip"
                 android:layout_weight="0.4"
@@ -151,45 +151,56 @@
                 android:layout_marginLeft="10dip"
                 android:layout_marginRight="10dip"
 
-                android:text="@string/HireText3"
+                android:text="@string/WorkText3"
                 android:textSize="18sp"
                 android:textColor="#222222" />
 
         </LinearLayout>
 
-        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/WorkNewProjects"
+        android:background="#55FFFFFF"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/SelectCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/HireNewProjects"
+
+            android:layout_margin="5dp"
+
+            android:text="@string/SelectCategory"
+            android:textSize="16sp"
+            android:textColor="#222222"
+            />
+
+        <Spinner
+            android:id="@+id/categories_spinner"
+            android:layout_width="220dip"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
     <Button
-        android:id="@+id/newprojectbutton"
-        android:layout_width="fill_parent"
+        android:id="@+id/browseProjects"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/HireNewProjects"
+        android:layout_below="@+id/WorkNewProjects"
+        android:layout_toRightOf="@id/Category"
 
-        android:layout_marginLeft="80dip"
-        android:layout_marginRight="80dip"
-        android:layout_marginTop="10dip"
-        android:layout_marginBottom="5dip"
-        android:onClick="onclick"
+        android:layout_marginTop="25dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
 
-        android:text="@string/HireNewProject"
-        android:textSize="18sp"
-        android:textColor="#FFFFFF"
-        android:background="#F8650D" />
-
-    <Button
-        android:id="@+id/viewexistingprojectsbutton"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/newprojectbutton"
-        android:text="@string/HireExistingProject"
-        android:onClick="onclick"
-
-        android:layout_marginLeft="80dip"
-        android:layout_marginRight="80dip"
-        android:layout_marginTop="5dip"
-        android:layout_marginBottom="10dip"
-
-        android:textSize="18sp"
+        android:text="@string/BrowseProjects"
+        android:textSize="16sp"
         android:textColor="#FFFFFF"
         android:background="#F8650D" />
 

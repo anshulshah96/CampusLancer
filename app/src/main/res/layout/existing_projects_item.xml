@@ -13,6 +13,7 @@
     android:descendantFocusability="blocksDescendants"
     android:focusable="false"
     android:focusableInTouchMode="false" >
+
     <TextView
         android:id="@+id/existing_projects_topic"
         android:layout_width="wrap_content"

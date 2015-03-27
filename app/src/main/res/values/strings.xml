@@ -49,6 +49,14 @@
     <string name="HireText2">2. Choose bidders and compare prices.</string>
     <string name="HireText3">3. Get to contact and pay once satisfied.</string>
 
+    <!-- Get Started For Work Strings -->
+    <string name="WorkGetStarted">Earn money by doing what suits you best! How this works:</string>
+    <string name="WorkText1">1. Lookout for projects matching your skill-set.</string>
+    <string name="WorkText2">2. Apply for work by putting up the best bid.</string>
+    <string name="WorkText3">3. Start work and get paid on completion.</string>
+    <string name="SelectCategory">Select project category:</string>
+    <string name="BrowseProjects">Browse Projects</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_work">Hello Activity</string>
@@ -57,4 +65,5 @@
     <string name="title_activity_forgetpassword">forgetpassword</string>
     <string name="title_activity_people_for_project">PeopleForProject</string>
     <string name="title_activity_custom_progress_dialog_box">CustomProgressDialogBox</string>
+    <string name="title_activity_work_started">WorkStarted</string>
 </resources>

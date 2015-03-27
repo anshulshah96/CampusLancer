@@ -12,11 +12,11 @@
     <TextView
         android:id="@+id/Header"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="60dip"
         android:background="#4444ff"
 
-        android:paddingLeft="100dp"
-        android:paddingTop="25dp"
+        android:paddingLeft="100dip"
+        android:paddingTop="25dip"
         android:text="@string/Heading"
         android:textSize="25sp"
         android:textColor="#FFFFFF"/>
@@ -24,10 +24,10 @@
     <ImageView
         android:id="@+id/MainLogo"
         android:background="@drawable/mainlogo"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"/>
+        android:layout_width="80dip"
+        android:layout_height="80dip"
+        android:layout_marginTop="10dip"
+        android:layout_marginLeft="10dip"/>
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
@@ -37,7 +37,7 @@
         android:layout_below="@id/MainLogo"
         android:background="#55FFFFFF"
 
-        android:layout_margin="10dp"
+        android:layout_margin="10dip"
 
         android:text="@string/WorkDescriptionTopic"
         android:textSize="40sp"
@@ -50,9 +50,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/WorkDescriptionTopic"
 
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
 
         android:text="@string/WorkDescriptionDescription"
         android:textSize="20sp"
@@ -65,8 +65,8 @@
         android:layout_below="@id/WorkDescriptionStaticDescription"
         android:background="#55FFFFFF"
 
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
 
         android:text="@string/WorkDescriptionDummy"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -79,9 +79,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/WorkDescriptionFragmentDescription"
 
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
 
         android:text="@string/WorkDescriptionUserName"
         android:textSize="20sp"
@@ -94,8 +94,8 @@
         android:layout_below="@id/WorkDescriptionStaticUsername"
         android:background="#55FFFFFF"
 
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
 
         android:text="@string/WorkDescriptionDummy"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -108,9 +108,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/WorkDescriptionFragmentUsername"
 
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dip"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
 
         android:text="@string/WorkDescriptionMobileNumber"
         android:textSize="20sp"
@@ -123,8 +123,8 @@
         android:layout_below="@id/WorkDescriptionStaticMobileNumber"
         android:background="#55FFFFFF"
 
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
 
         android:text="@string/WorkDescriptionDummy"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -136,16 +136,16 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/WorkDescriptionFragmentMobileNumber"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="20dip">
 
         <EditText
             android:id="@+id/BidValue"
-            android:layout_width="240dp"
+            android:layout_width="240dip"
             android:layout_height="wrap_content"
             android:padding="10sp"
 
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dip"
+            android:layout_marginRight="10dip"
 
             android:inputType="number"
             android:textSize="25sp"

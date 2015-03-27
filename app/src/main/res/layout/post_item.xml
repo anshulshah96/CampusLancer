@@ -90,7 +90,7 @@
 
 
         <ImageView
-            android:id="@+id/contact_him"
+            android:id="@+id/callme"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:background="@drawable/callme"
