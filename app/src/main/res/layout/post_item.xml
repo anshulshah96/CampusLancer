@@ -96,7 +96,7 @@
         android:id="@+id/just_budget"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/callme"
+        android:layout_below="@id/post_mobile"
 
         android:layout_marginLeft="5dip"
         android:layout_marginTop="3dip"
