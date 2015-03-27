@@ -34,11 +34,10 @@ public class CustomProgressDialogBox extends ProgressDialog {
         messagetv.setText(dialogMessage);
     }
 
-
     public CustomProgressDialogBox(Context context, CharSequence dialogMessage) {
         super(context);
+//        this.context
         this.dialogMessage = dialogMessage;
-
     }
 
     @Override

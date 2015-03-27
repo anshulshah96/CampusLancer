@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
 
-    android:background="#77FFFFFF"
+    android:background="@drawable/custom_gradient"
     android:padding="5dp"
     android:layout_margin="5dp"
 

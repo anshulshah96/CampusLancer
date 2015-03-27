@@ -71,7 +71,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 if (view == null) {
                     view = View.inflate(getContext(), R.layout.post_item, null);
                 }
-                TextView usernameView = (TextView) view.findViewById(R.id.post_user);
+                TextView usernameView = (TextView) view.findViewById(R.id.post_username);
                 TextView topicView = (TextView) view.findViewById(R.id.post_topic);
                 TextView budgetView = (TextView) view.findViewById(R.id.post_budget);
                 TextView enrolView = (TextView) view.findViewById(R.id.post_mobile);
@@ -108,7 +108,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
         postsListView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                username = ((TextView) (view.findViewById(R.id.post_user))).getText().toString();
+                username = ((TextView) (view.findViewById(R.id.post_username))).getText().toString();
                 description = ((TextView) (view.findViewById(R.id.post_description))).getText().toString();
                 topic = ((TextView) (view.findViewById(R.id.post_topic))).getText().toString();
                 mobileno = ((TextView) (view.findViewById(R.id.post_mobile))).getText().toString();
