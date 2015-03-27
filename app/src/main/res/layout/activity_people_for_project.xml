@@ -39,7 +39,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
 
-        android:text="@string/ProjectListHeading"
+        android:text="@string/Bidders"
         android:textSize="22sp"
         android:textColor="#000000"/>
 
