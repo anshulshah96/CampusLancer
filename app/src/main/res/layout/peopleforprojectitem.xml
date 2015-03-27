@@ -62,11 +62,11 @@
 
 
     <TextView
-        android:id="@+id/just_bid"
+        android:id="@+id/bid_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/callme"
-        
+
         android:layout_marginLeft="5dip"
         android:layout_marginTop="3dip"
         android:text="Bid: Rs."
@@ -80,24 +80,24 @@
         android:clickable="false" />
 
 
-    <TextView
-        android:id="@+id/peopleproject_bid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/just_bid"
-        android:layout_below="@id/peopleproject_mobile"
+    <!--<TextView-->
+        <!--android:id="@+id/peopleproject_bid"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_toRightOf="@id/just_bid"-->
+        <!--android:layout_below="@id/peopleproject_mobile"-->
 
-        android:layout_marginTop="3dip"
-        android:layout_marginLeft="5dip"
+        <!--android:layout_marginTop="3dip"-->
+        <!--android:layout_marginLeft="5dip"-->
 
-        android:text="@string/WorkDescriptionBid"
-        android:textSize="16sp"
-        android:textColor="#AA000000"
-        android:textAppearance="?android:attr/textAppearanceSmall"
+        <!--android:text="@string/WorkDescriptionBid"-->
+        <!--android:textSize="16sp"-->
+        <!--android:textColor="#AA000000"-->
+        <!--android:textAppearance="?android:attr/textAppearanceSmall"-->
 
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:clickable="false" />
+        <!--android:focusable="false"-->
+        <!--android:focusableInTouchMode="false"-->
+        <!--android:clickable="false" />-->
 
 
     <TextView

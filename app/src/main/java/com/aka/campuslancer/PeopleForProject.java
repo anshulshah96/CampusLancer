@@ -69,18 +69,13 @@ public class PeopleForProject extends Activity {
                 }
                 TextView projectuser = (TextView) view.findViewById(R.id.peopleproject_user);
                 TextView projectmobile = (TextView) view.findViewById(R.id.peopleproject_mobile);
-                TextView projectbid = (TextView) view.findViewById(R.id.peopleproject_bid);
+                TextView projectbid = (TextView) view.findViewById(R.id.bid_amount);
 
                 String pb = "" + post.getBid();
                 String pu = "" + post.getBidderUsername();
 
-
-                if(q!=null){
-                    dialog.dismiss();
-                }
-
-                projectbid.setText(pb);
-                projectuser.setText(pu);
+                projectbid.setText("Bid: Rs."+pb);
+                projectuser.setText("Bidder: "+pu);
                 projectmobile.setText(""+post.getMobileNo());
 
                 return view;
@@ -101,7 +96,7 @@ public class PeopleForProject extends Activity {
                     Toast.makeText(getApplication(),"No bidder for your project.",Toast.LENGTH_SHORT).show();
                     finish();
                 }
-                else if(e==null){
+                else if(e==null&&!bidPosts.isEmpty()){
                     dialog.dismiss();
                 }
                 else if (e!=null){

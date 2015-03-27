@@ -73,22 +73,21 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 }
                 TextView usernameView = (TextView) view.findViewById(R.id.post_user);
                 TextView topicView = (TextView) view.findViewById(R.id.post_topic);
-                TextView bidView = (TextView) view.findViewById(R.id.post_budget);
+                TextView budgetView = (TextView) view.findViewById(R.id.post_budget);
                 TextView enrolView = (TextView) view.findViewById(R.id.post_mobile);
                 TextView descriptionView = (TextView) view.findViewById(R.id.post_description);
                 TextView projectId = (TextView) view.findViewById(R.id.post_project_id);
 
                 String topictxt=post.getTopic();
-                String bidtxt=""+post.getBid();
+                String bidtxt="Budget: Rs."+post.getBid();
                 String enrolltxt=""+post.getMobileNo();
                 String unametxt=post.getUsername();
                 String descriptiontxt = post.getDescription();
                 String projectIdtxt = post.getObjectId();
-                String nametxt = post.getname();
-//                Log.d("pid: ",unametxt+"\t"+projectIdtxt);
+//                String nametxt = post.getname();
 
                 topicView.setText(topictxt);
-                bidView.setText(bidtxt);
+                budgetView.setText(bidtxt);
                 enrolView.setText(enrolltxt);
                 usernameView.setText(unametxt);
                 descriptionView.setText(descriptiontxt);
@@ -105,10 +104,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
 
         // Attach the query adapter to the view
         ListView postsListView = (ListView) findViewById(R.id.work_listview);
-
-
         postsListView.setAdapter(postsQueryAdapter);
-
         postsListView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -124,13 +120,13 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
             }
         });
 
+
         postsQueryAdapter.addOnQueryLoadListener(new ParseQueryAdapter.OnQueryLoadListener<HirePost>() {
             @Override
             public void onLoading() {
                 dialog.setMessage("Loading data...");
                 dialog.show();
             }
-
             @Override
             public void onLoaded(List<HirePost> hirePosts, Exception e) {
                 if(e==null){
@@ -142,11 +138,11 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 }
                 else{
                     Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
+                    Log.d("Works list error",e.toString());
                     finish();
                 }
             }
         });
-
         doListQuery();
     }
 

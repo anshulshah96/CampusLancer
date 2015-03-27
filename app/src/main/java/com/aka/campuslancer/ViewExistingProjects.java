@@ -75,14 +75,11 @@ public class ViewExistingProjects extends Activity {
                 String descriptiontxt = post.getDescription();
                 String projectidtxt = post.getObjectId();
 
-                topicView.setText(topictxt);
-                bidView.setText(bidtxt);
-                description.setText(descriptiontxt);
+                topicView.setText("Topic: "+topictxt);
+                bidView.setText("Budget: "+bidtxt);
+                description.setText("Description: "+descriptiontxt);
                 projectId.setText(projectidtxt);
 
-                if(q!=null){
-                    dialog.dismiss();
-                }
                 return view;
             }
         };

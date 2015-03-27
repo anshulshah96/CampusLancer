@@ -19,11 +19,11 @@ public class BidPost extends ParseObject {
         put("bid", value);
     }
 
-    public int getMobileNo() {
-        return getInt("mobile_no");
+    public String getMobileNo() {
+        return getString("mobile_no");
     }
 
-    public void setMobileNo(int value) {
+    public void setMobileNo(String value) {
         put("mobile_no", value);
     }
 
