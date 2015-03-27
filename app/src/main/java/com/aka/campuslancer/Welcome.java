@@ -98,10 +98,10 @@ public class Welcome extends Activity {
 
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if(loggedIn==false)
-            finish();
-    }
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+//        if(loggedIn==false)
+//            finish();
+//    }
 }

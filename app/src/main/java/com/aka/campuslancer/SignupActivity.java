@@ -56,22 +56,17 @@ public class SignupActivity extends ActionBarActivity {
                 user.setEmail(emailtxt);
 
                 user.put("mobile_no",enrollment.getText().toString());
-//                user.put("enrollment",Integer.parseInt(enrollment.getText().toString()));
                 user.signUpInBackground(new SignUpCallback() {
                     public void done(ParseException e) {
                         if (e == null) {
-//                            user.pinInBackground();
-
-                            // Show a simple Toast message upon successful registration
                             Toast.makeText(getApplicationContext(),
                                     "Successfully Signed up, please log in.",
                                     Toast.LENGTH_LONG).show();
                                  dialog.dismiss();
                             finish();
-                        } else {
-                            Toast.makeText(getApplicationContext(),
-                                    "SignUp Error: "+e.toString(), Toast.LENGTH_LONG)
-                                    .show();
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(),"SignUp Error: "+e.toString(), Toast.LENGTH_LONG).show();
                             Log.d("Signup",e.toString());
                             dialog.dismiss();
                         }

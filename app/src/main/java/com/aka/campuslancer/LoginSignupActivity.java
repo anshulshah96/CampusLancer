@@ -62,20 +62,13 @@ public class LoginSignupActivity extends Activity {
                             public void done(ParseUser user, ParseException e) {
                                 if (user != null) {
                                     // If user exist and authenticated, send user to Welcome.class
-                                    Intent intent = new Intent(
-                                            LoginSignupActivity.this,
-                                            Welcome.class);
-                                    startActivity(intent);
-                                    Toast.makeText(getApplicationContext(),
-                                            "Successfully Logged in",
-                                            Toast.LENGTH_LONG).show();
+                                    Intent intent = new Intent(LoginSignupActivity.this, Welcome.class);startActivity(intent);
                                     dialog.dismiss();
+                                    Toast.makeText(getApplicationContext(),"Successfully Logged in",Toast.LENGTH_LONG).show();
                                     finish();
-                                } else {
-                                    Toast.makeText(
-                                            getApplicationContext(),
-                                            "No such user exist, please signup",
-                                            Toast.LENGTH_LONG).show();
+                                }
+                                else {
+                                    Toast.makeText(getApplicationContext(),"No such user exist, please signup",Toast.LENGTH_LONG).show();
                                     dialog.dismiss();
                                 }
                             }
@@ -92,13 +85,10 @@ public class LoginSignupActivity extends Activity {
             }
         });
     }
-//    public interface RequestPasswordResetCallback{
-//        public void done
-//    }
+    
     public void SignUp(View view){
         // Save new user data into Parse.com Data Storage
         Intent intent = new Intent(LoginSignupActivity.this,SignupActivity.class);
         startActivity(intent);
-
     }
 }

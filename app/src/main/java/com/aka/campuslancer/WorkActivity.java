@@ -23,6 +23,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 import android.widget.AdapterView.OnItemClickListener;
 
+import java.util.List;
 
 
 public class WorkActivity extends Activity implements WorkDescriptionFragment.OnFragmentInteractionListener{
@@ -42,8 +43,6 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
         setContentView(R.layout.activity_work);
 
         final ProgressDialog dialog = new ProgressDialog(WorkActivity.this);
-        dialog.setMessage("Loading data...");
-        dialog.show();
 
         ParseObject.registerSubclass(HirePost.class);
 
@@ -92,9 +91,6 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 descriptionView.setText(descriptiontxt);
                 projectId.setText(projectIdtxt);
 
-                if(q!=null){
-                    dialog.dismiss();
-                }
                 return view;
             }
         };
@@ -124,6 +120,26 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 startActivity(intent);
             }
         });
+
+        postsQueryAdapter.addOnQueryLoadListener(new ParseQueryAdapter.OnQueryLoadListener<HirePost>() {
+            @Override
+            public void onLoading() {
+                dialog.setMessage("Loading data...");
+                dialog.show();
+            }
+
+            @Override
+            public void onLoaded(List<HirePost> hirePosts, Exception e) {
+                if(e==null){
+                    dialog.dismiss();
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT);
+                    finish();
+                }
+            }
+        });
+
         doListQuery();
     }
 
