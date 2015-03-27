@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -86,6 +87,30 @@ public class PeopleForProject extends Activity {
 
             }
         };
+
+        postsQueryAdapter.addOnQueryLoadListener(new ParseQueryAdapter.OnQueryLoadListener<BidPost>() {
+            @Override
+            public void onLoading() {
+                dialog.setMessage("Loading data...");
+                dialog.show();
+            }
+
+            @Override
+            public void onLoaded(List<BidPost> bidPosts, Exception e) {
+                if(e==null&&bidPosts.isEmpty()){
+                    Toast.makeText(getApplication(),"No bidder for your project.",Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else if(e==null){
+                    dialog.dismiss();
+                }
+                else if (e!=null){
+                    Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
+                    Log.d("bidders",e.toString());
+                    finish();
+                }
+            }
+        });
 
 
         // Disable automatic loading when the adapter is attached to a view.

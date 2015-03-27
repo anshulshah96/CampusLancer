@@ -20,6 +20,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 import com.parse.ParseUser;
 
+import java.util.List;
 import java.util.Timer;
 
 
@@ -52,10 +53,6 @@ public class ViewExistingProjects extends Activity {
                         return query;
                 }
         };
-
-
-
-
         if(q==null){
 
             Toast.makeText(getApplicationContext(),"You don't have any projects",Toast.LENGTH_SHORT).show();
@@ -86,8 +83,6 @@ public class ViewExistingProjects extends Activity {
                 if(q!=null){
                     dialog.dismiss();
                 }
-
-
                 return view;
             }
         };
@@ -100,6 +95,32 @@ public class ViewExistingProjects extends Activity {
         // Attach the query adapter to the view
         ListView postsListView = (ListView) findViewById(R.id.existingprojectsLV);
         postsListView.setAdapter(existingProjectsQueryAdapter);
+
+        existingProjectsQueryAdapter.addOnQueryLoadListener(new ParseQueryAdapter.OnQueryLoadListener<HirePost>() {
+
+            @Override
+            public void onLoading() {
+                dialog.setMessage("Loading data...");
+                dialog.show();
+            }
+
+            @Override
+            public void onLoaded(List<HirePost> hirePosts, Exception e) {
+                if(hirePosts.isEmpty()&&e==null){
+
+                    Toast.makeText(getApplicationContext(),"No Existing Projects.",Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+                else if(e==null){
+                    dialog.dismiss();
+                }
+                else if(e!=null){
+                    Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+            }
+        });
+
         doListQuery();
 
         postsListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
