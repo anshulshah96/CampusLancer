@@ -174,6 +174,7 @@ public class WorkDescriptionFragment extends Fragment {
 //                            startActivity(intent);
                         }
                         else {
+                            Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
                             Log.d("Saving error: ",e.getMessage());
                         }
 

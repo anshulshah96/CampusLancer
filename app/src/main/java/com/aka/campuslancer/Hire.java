@@ -108,7 +108,7 @@ public class Hire extends Activity {
                 else{
                     dialog.dismiss();
                     Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT);
-                    Log.d("Cannot hire",e.getMessage());
+                    Log.d("Error: ",e.getMessage());
                 }
             }
         });

@@ -135,9 +135,13 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
             public void onLoaded(List<HirePost> hirePosts, Exception e) {
                 if(e==null){
                     dialog.dismiss();
+                    if(hirePosts.isEmpty()){
+                        Toast.makeText(getApplication(),"No Active Projects.",Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
                 }
                 else{
-                    Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT);
+                    Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
                     finish();
                 }
             }
