@@ -85,7 +85,7 @@ public class LoginSignupActivity extends Activity {
             }
         });
     }
-    
+
     public void SignUp(View view){
         // Save new user data into Parse.com Data Storage
         Intent intent = new Intent(LoginSignupActivity.this,SignupActivity.class);

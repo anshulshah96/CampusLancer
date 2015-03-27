@@ -69,6 +69,7 @@ public class SignupActivity extends ActionBarActivity {
                             Toast.makeText(getApplicationContext(),"SignUp Error: "+e.toString(), Toast.LENGTH_LONG).show();
                             Log.d("Signup",e.toString());
                             dialog.dismiss();
+
                         }
                     }
                 });
