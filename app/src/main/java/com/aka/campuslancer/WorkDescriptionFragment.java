@@ -129,16 +129,15 @@ public class WorkDescriptionFragment extends Fragment {
                 bpost.setUser(ParseUser.getCurrentUser());
                 bpost.setBidderUsername(ParseUser.getCurrentUser().getUsername());
 
-
-                int mobNo=0;
-
+                String mobNo="";
                 ParseUser parseUser = ParseUser.getCurrentUser();
                 try {
                     parseUser.fetchFromLocalDatastore();
-                    mobNo = Integer.parseInt(parseUser.get("enrollment").toString());
+                        mobNo = parseUser.get("mobile_no").toString();
                 }
                 catch (Exception e){
-                    Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(getActivity(),"Local data Exception"+e.toString(),Toast.LENGTH_SHORT).show();
+                    Log.d("local data error",e.toString());
                 }
 
                 bpost.setMobileNo(mobNo);
@@ -170,12 +169,10 @@ public class WorkDescriptionFragment extends Fragment {
                                 }
                             });
                             getActivity().finish();
-//                            Intent intent = new Intent(getActivity().getApplicationContext(), WorkActivity.class);
-//                            startActivity(intent);
                         }
                         else {
-                            Toast.makeText(getActivity(),e.getMessage(),Toast.LENGTH_SHORT).show();
-                            Log.d("Saving error: ",e.getMessage());
+                            Toast.makeText(getActivity(),"Saving error: "+e.getMessage(),Toast.LENGTH_SHORT).show();
+                            Log.d("Saving error",e.getMessage());
                         }
 
                     }
