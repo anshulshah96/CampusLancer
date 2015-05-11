@@ -65,150 +65,166 @@ MERGED from com.android.support:support-v4:21.0.3:16:5
 		ADDED from AndroidManifest.xml:24:9
 activity#com.aka.campuslancer.MainActivity
 ADDED from AndroidManifest.xml:28:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:31:13
 	android:label
 		ADDED from AndroidManifest.xml:30:13
 	android:name
 		ADDED from AndroidManifest.xml:29:13
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:31:13
+ADDED from AndroidManifest.xml:32:13
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:32:17
+ADDED from AndroidManifest.xml:33:17
 	android:name
-		ADDED from AndroidManifest.xml:32:25
+		ADDED from AndroidManifest.xml:33:25
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:34:17
+ADDED from AndroidManifest.xml:35:17
 	android:name
-		ADDED from AndroidManifest.xml:34:27
+		ADDED from AndroidManifest.xml:35:27
 activity#com.aka.campuslancer.LoginSignupActivity
-ADDED from AndroidManifest.xml:37:9
+ADDED from AndroidManifest.xml:38:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:39:13
 	android:name
-		ADDED from AndroidManifest.xml:37:19
+		ADDED from AndroidManifest.xml:38:19
 activity#com.aka.campuslancer.Welcome
-ADDED from AndroidManifest.xml:39:9
-	android:name
-		ADDED from AndroidManifest.xml:39:19
-activity#com.aka.campuslancer.SignupActivity
 ADDED from AndroidManifest.xml:41:9
-	android:label
-		ADDED from AndroidManifest.xml:43:13
-	android:name
+	android:screenOrientation
 		ADDED from AndroidManifest.xml:42:13
-activity#com.aka.campuslancer.Hire
-ADDED from AndroidManifest.xml:45:9
 	android:name
-		ADDED from AndroidManifest.xml:45:19
-activity#com.aka.campuslancer.PostActivity
-ADDED from AndroidManifest.xml:47:9
+		ADDED from AndroidManifest.xml:41:19
+activity#com.aka.campuslancer.SignupActivity
+ADDED from AndroidManifest.xml:44:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:47:13
 	android:label
-		ADDED from AndroidManifest.xml:49:13
+		ADDED from AndroidManifest.xml:46:13
 	android:name
-		ADDED from AndroidManifest.xml:48:13
-activity#com.aka.campuslancer.WorkActivity
+		ADDED from AndroidManifest.xml:45:13
+activity#com.aka.campuslancer.Hire
+ADDED from AndroidManifest.xml:49:9
+	android:name
+		ADDED from AndroidManifest.xml:49:19
+activity#com.aka.campuslancer.PostActivity
 ADDED from AndroidManifest.xml:51:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:54:13
 	android:label
 		ADDED from AndroidManifest.xml:53:13
 	android:name
 		ADDED from AndroidManifest.xml:52:13
+activity#com.aka.campuslancer.WorkActivity
+ADDED from AndroidManifest.xml:57:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:60:13
+	android:label
+		ADDED from AndroidManifest.xml:59:13
+	android:name
+		ADDED from AndroidManifest.xml:58:13
 service#com.parse.PushService
-ADDED from AndroidManifest.xml:56:9
+ADDED from AndroidManifest.xml:63:9
 	android:name
-		ADDED from AndroidManifest.xml:56:18
+		ADDED from AndroidManifest.xml:63:18
 receiver#com.parse.ParseBroadcastReceiver
-ADDED from AndroidManifest.xml:58:9
+ADDED from AndroidManifest.xml:65:9
 	android:name
-		ADDED from AndroidManifest.xml:58:19
+		ADDED from AndroidManifest.xml:65:19
 intent-filter#android.intent.action.BOOT_COMPLETED+android.intent.action.USER_PRESENT
-ADDED from AndroidManifest.xml:59:13
+ADDED from AndroidManifest.xml:66:13
 action#android.intent.action.BOOT_COMPLETED
-ADDED from AndroidManifest.xml:60:17
+ADDED from AndroidManifest.xml:67:17
 	android:name
-		ADDED from AndroidManifest.xml:60:25
+		ADDED from AndroidManifest.xml:67:25
 action#android.intent.action.USER_PRESENT
-ADDED from AndroidManifest.xml:61:17
-	android:name
-		ADDED from AndroidManifest.xml:61:25
-receiver#com.parse.ParsePushBroadcastReceiver
-ADDED from AndroidManifest.xml:64:9
-	android:exported
-		ADDED from AndroidManifest.xml:66:13
-	android:name
-		ADDED from AndroidManifest.xml:65:13
-intent-filter#com.parse.push.intent.DELETE+com.parse.push.intent.OPEN+com.parse.push.intent.RECEIVE
-ADDED from AndroidManifest.xml:67:13
-action#com.parse.push.intent.RECEIVE
 ADDED from AndroidManifest.xml:68:17
 	android:name
 		ADDED from AndroidManifest.xml:68:25
+receiver#com.parse.ParsePushBroadcastReceiver
+ADDED from AndroidManifest.xml:71:9
+	android:exported
+		ADDED from AndroidManifest.xml:73:13
+	android:name
+		ADDED from AndroidManifest.xml:72:13
+intent-filter#com.parse.push.intent.DELETE+com.parse.push.intent.OPEN+com.parse.push.intent.RECEIVE
+ADDED from AndroidManifest.xml:74:13
+action#com.parse.push.intent.RECEIVE
+ADDED from AndroidManifest.xml:75:17
+	android:name
+		ADDED from AndroidManifest.xml:75:25
 action#com.parse.push.intent.DELETE
-ADDED from AndroidManifest.xml:69:17
+ADDED from AndroidManifest.xml:76:17
 	android:name
-		ADDED from AndroidManifest.xml:69:25
+		ADDED from AndroidManifest.xml:76:25
 action#com.parse.push.intent.OPEN
-ADDED from AndroidManifest.xml:70:17
-	android:name
-		ADDED from AndroidManifest.xml:70:25
-receiver#com.parse.GcmBroadcastReceiver
-ADDED from AndroidManifest.xml:73:9
-	android:permission
-		ADDED from AndroidManifest.xml:75:13
-	android:name
-		ADDED from AndroidManifest.xml:74:13
-intent-filter#com.aka.campuslancer+com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION
-ADDED from AndroidManifest.xml:76:13
-action#com.google.android.c2dm.intent.RECEIVE
 ADDED from AndroidManifest.xml:77:17
 	android:name
 		ADDED from AndroidManifest.xml:77:25
+receiver#com.parse.GcmBroadcastReceiver
+ADDED from AndroidManifest.xml:80:9
+	android:permission
+		ADDED from AndroidManifest.xml:82:13
+	android:name
+		ADDED from AndroidManifest.xml:81:13
+intent-filter#com.aka.campuslancer+com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION
+ADDED from AndroidManifest.xml:83:13
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from AndroidManifest.xml:84:17
+	android:name
+		ADDED from AndroidManifest.xml:84:25
 action#com.google.android.c2dm.intent.REGISTRATION
-ADDED from AndroidManifest.xml:78:17
+ADDED from AndroidManifest.xml:85:17
 	android:name
-		ADDED from AndroidManifest.xml:78:25
+		ADDED from AndroidManifest.xml:85:25
 category#com.aka.campuslancer
-ADDED from AndroidManifest.xml:81:17
+ADDED from AndroidManifest.xml:88:17
 	android:name
-		ADDED from AndroidManifest.xml:81:27
+		ADDED from AndroidManifest.xml:88:27
 activity#com.aka.campuslancer.HireStarted
-ADDED from AndroidManifest.xml:85:9
-	android:label
-		ADDED from AndroidManifest.xml:87:13
-	android:name
-		ADDED from AndroidManifest.xml:86:13
-activity#com.aka.campuslancer.ViewExistingProjects
-ADDED from AndroidManifest.xml:89:9
-	android:label
-		ADDED from AndroidManifest.xml:91:13
-	android:name
-		ADDED from AndroidManifest.xml:90:13
-activity#com.aka.campuslancer.forgetpassword
-ADDED from AndroidManifest.xml:93:9
-	android:label
+ADDED from AndroidManifest.xml:92:9
+	android:screenOrientation
 		ADDED from AndroidManifest.xml:95:13
-	android:name
+	android:label
 		ADDED from AndroidManifest.xml:94:13
-activity#com.aka.campuslancer.PeopleForProject
+	android:name
+		ADDED from AndroidManifest.xml:93:13
+activity#com.aka.campuslancer.ViewExistingProjects
 ADDED from AndroidManifest.xml:97:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:100:13
 	android:label
 		ADDED from AndroidManifest.xml:99:13
 	android:name
 		ADDED from AndroidManifest.xml:98:13
-meta-data#com.parse.push.notification_icon
+activity#com.aka.campuslancer.forgetpassword
 ADDED from AndroidManifest.xml:102:9
-	android:resource
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:105:13
+	android:label
 		ADDED from AndroidManifest.xml:104:13
 	android:name
 		ADDED from AndroidManifest.xml:103:13
-activity#com.aka.campuslancer.CustomProgressDialogBox
-ADDED from AndroidManifest.xml:106:9
+activity#com.aka.campuslancer.PeopleForProject
+ADDED from AndroidManifest.xml:107:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:110:13
 	android:label
+		ADDED from AndroidManifest.xml:109:13
+	android:name
 		ADDED from AndroidManifest.xml:108:13
+meta-data#com.parse.push.notification_icon
+ADDED from AndroidManifest.xml:113:9
+	android:resource
+		ADDED from AndroidManifest.xml:115:13
 	android:name
-		ADDED from AndroidManifest.xml:107:13
+		ADDED from AndroidManifest.xml:114:13
 activity#com.aka.campuslancer.WorkStarted
-ADDED from AndroidManifest.xml:110:9
+ADDED from AndroidManifest.xml:121:9
+	android:screenOrientation
+		ADDED from AndroidManifest.xml:124:13
 	android:label
-		ADDED from AndroidManifest.xml:112:13
+		ADDED from AndroidManifest.xml:123:13
 	android:name
-		ADDED from AndroidManifest.xml:111:13
+		ADDED from AndroidManifest.xml:122:13
 uses-sdk
 INJECTED from AndroidManifest.xml:0:0 reason: use-sdk injection requested
 MERGED from com.android.support:appcompat-v7:21.0.3:15:5

@@ -43,6 +43,7 @@ Parse.Cloud.define("newBid",function(request,response){
       }
   });
 
+  pushQuery.equalTo("username",employer);
   Parse.Push.send({
       where: pushQuery,
       data: {
