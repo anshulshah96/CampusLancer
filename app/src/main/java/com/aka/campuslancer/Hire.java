@@ -2,6 +2,8 @@ package com.aka.campuslancer;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -19,25 +21,28 @@ import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
-/**
- * Created by anshul on 14/3/15.
- */
-public class Hire extends Activity {
-    Button postButton;
+public class Hire extends Activity  {
+    Button postButton,mapbutton;
     EditText topic, description, bid;
     private String[] categories;
-    public String category="Android Development";
+    public String category;
     public CustomProgressDialogBox dialog;
+    String lat,longi,text,text1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hire);
         ParseObject.registerSubclass(HirePost.class);
-        Parse.initialize(this, "gpSqLXFDsQg0oBtIg3ITgoYZLFiI9wkEF2tGiUR3", "pzEksVGPBG1iX8NkIoJ4V7hAPGoaTPo7dyNRkDs4");
-
-        this.categories = new String[] {"Mobile Development","Web Development","Design","Writing","Volunteering","Question-Answer","Miscellaneous"};
+        mapbutton=(Button)findViewById(R.id.map);
+        topic = (EditText) findViewById(R.id.TopicField);
+        description = (EditText) findViewById(R.id.DescriptionField);
+        bid = (EditText) findViewById(R.id.InitialBidField);
         Spinner s =(Spinner) findViewById(R.id.spinners);
+
+        Resources res = getResources();
+        this.categories = res.getStringArray(R.array.categories_array);
+        category = getString(R.string.category_default);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, categories);
         s.setAdapter(adapter);
 
@@ -50,33 +55,85 @@ public class Hire extends Activity {
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                category = "Android Development";
+                category = getString(R.string.category_default);
             }
         });
 
+        mapbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Hire.this, MapsActivity.class);
+                startActivityForResult(i, 1);
+                i.putExtra("caller", "Hirer");
+            }
+        });
 
         postButton = (Button) findViewById(R.id.HirePost);
-            topic = (EditText) findViewById(R.id.TopicField);
-            description = (EditText) findViewById(R.id.DescriptionField);
-            bid = (EditText) findViewById(R.id.InitialBidField);
-            postButton.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    post();
-                }
-            });
+        postButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                dialog.show();
+                post();
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==1 && resultCode == 1)
+        {
+            mapbutton.setText("Location Saved");
+            lat     = data.getStringExtra("lat");
+            longi   = data.getStringExtra("longi");
+            Log.d("mapResp",lat+","+longi);
         }
+        else
+        {
+            Log.d("mapResp","Null");
+        }
+    }
 
     private void post() {
-        // 1
         HirePost post = new HirePost();
-        String text =  topic.getText().toString().trim();
-        String text1 = description.getText().toString().trim();
+        text =  topic.getText().toString().trim();
+
+        text1 = description.getText().toString().trim();
+
         post.setUsername();
         post.setUser(ParseUser.getCurrentUser());
         post.setTopic(text);
         post.setDescription(text1);
+
+        Log.d("mapPost",lat+","+longi);
+
+        if(lat == "" || longi == "" || lat =="0.0" | longi == "0.0")
+        {
+            post.setLat("0.0");
+            post.setLongi("0.0");
+            post.setLocationSet(false);
+        }
+        else {
+            try {
+                post.setLat(lat);
+                post.setLongi(longi);
+                post.setLocationSet(true);
+            } catch (Exception e) {
+                try {
+                    post.setLat("0.0");
+                    post.setLongi("0.0");
+                    post.setLocationSet(false);
+                } catch (Exception e2) {
+                    return;
+                }
+            }
+        }
         post.setCategory(category);
-        post.setBid(Integer.parseInt(bid.getText().toString()));
+        if(bid.getText().toString()!=""){
+        post.setBid(Integer.parseInt(bid.getText().toString()));}
+        else
+        Toast.makeText(Hire.this,"Enter a bid to post project",Toast.LENGTH_LONG).show();
+
         String mobNo="";
 
         ParseUser parseUser = ParseUser.getCurrentUser();
@@ -93,11 +150,11 @@ public class Hire extends Activity {
         dialog.setMessage("Posting...");
         dialog.show();
 
-       ParseACL acl = new ParseACL();
-       acl.setPublicReadAccess(true);
+        ParseACL acl = new ParseACL();
+        acl.setPublicReadAccess(true);
+        acl.setWriteAccess(ParseUser.getCurrentUser(), true);
         post.setACL(acl);
 
-        // 3
         post.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
@@ -112,7 +169,6 @@ public class Hire extends Activity {
                 }
             }
         });
-
     }
 }
 

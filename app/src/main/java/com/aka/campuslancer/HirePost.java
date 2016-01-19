@@ -104,4 +104,11 @@ import org.json.JSONArray;
     public static ParseQuery<HirePost> getQuery() {
         return ParseQuery.getQuery(HirePost.class);
     }
+
+    public void setLat(String lat){put("lat",lat);}
+    public void setLongi(String longi){put("longi",longi);}
+    public String getLat(){return getString("lat");}
+    public String getLongi(){return getString("longi");}
+    public boolean getLocationSet(){ return getBoolean("locationSet");}
+    public void setLocationSet(boolean b){ put("locationSet", b);}
 }

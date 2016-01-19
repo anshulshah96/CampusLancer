@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<RelativeLayout-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context=".MapsActivity"-->
+    <!--&gt;-->
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <fragment
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/butdone"
+        map:cameraZoom="3"
+        map:cameraTargetLat="23.1667"
+        map:cameraTargetLng="79.9333"
+        map:mapType="normal"
+        map:uiCompass="false"
+        map:uiRotateGestures="true"
+        map:uiScrollGestures="true"
+        map:uiTiltGestures="true"
+        map:uiZoomControls="false"
+        map:uiZoomGestures="true"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/butdone"
+        android:text="DONE"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:background="#F8650D"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>
+    <!--<Button-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/butdone"-->
+        <!--android:text="DONE"-->
+        <!--android:gravity="bottom"/>-->
+<!--</RelativeLayout>-->
+
+    <!--app:cameraTargetLat="29.86621840000"-->
+    <!--app:cameraTargetLng="77.89531809999"-->
+    <!--app:cameraBearing="112.5"-->
+    <!--app:cameraTilt="30"-->
+    <!--app:cameraZoom="1"-->
+    <!--app:mapType="normal"-->
+    <!--app:uiCompass="false"-->
+    <!--app:uiRotateGestures="true"-->
+    <!--app:uiScrollGestures="true"-->
+    <!--app:uiTiltGestures="true"-->
+    <!--app:uiZoomControls="false"-->
+    <!--app:uiZoomGestures="true"-->
+
+
+
+
+

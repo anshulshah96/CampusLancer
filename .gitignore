@@ -36,7 +36,9 @@ proguard/
 *.iml
 *.ipr
 *.iws
+*.gradle
+app/build.gradle
 .idea/
-
+screenshots/
 #Parse Keys
-/app/src/main/java/com/aka/campuslancer/ParseApplication.java
+/app/src/main/java/com/aka/campuslancer/Keys.java

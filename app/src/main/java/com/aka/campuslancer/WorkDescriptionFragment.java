@@ -41,7 +41,7 @@ import java.util.List;
  * Use the {@link WorkDescriptionFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class WorkDescriptionFragment extends Fragment {
+public class WorkDescriptionFragment extends Fragment  {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -50,8 +50,9 @@ public class WorkDescriptionFragment extends Fragment {
     // TODO: Rename and change types of parameters
     TextView topicTv,descriptionTv,usernameTv,mobilenoTv,navigationTv;
     EditText bidValue;
-    Button bidButton;
+    Button bidButton,location;
     String projectId;
+    public static WorkDescriptionFragment instance;
 
     private String mParam1;
     private String mParam2;
@@ -95,7 +96,6 @@ public class WorkDescriptionFragment extends Fragment {
     public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_work_description, container, false);
 
-
         ParseObject.registerSubclass(BidPost.class);
 
         topicTv = (TextView) view.findViewById(R.id.WorkDescriptionTopic);
@@ -105,7 +105,6 @@ public class WorkDescriptionFragment extends Fragment {
         bidValue = (EditText) view.findViewById(R.id.BidValue);
         bidButton = (Button) view.findViewById(R.id.bidButton);
         navigationTv = (TextView) view.findViewById(R.id.work_fragment_tv_navigation);
-
         topicTv.setText(WorkActivity.topic);
         descriptionTv.setText(WorkActivity.description);
         usernameTv.setText(WorkActivity.username);
@@ -128,6 +127,7 @@ public class WorkDescriptionFragment extends Fragment {
                 bpost.setUser(ParseUser.getCurrentUser());
                 bpost.setBidderUsername(ParseUser.getCurrentUser().getUsername());
 
+
                 String mobNo="";
                 ParseUser parseUser = ParseUser.getCurrentUser();
                 try {
@@ -144,6 +144,7 @@ public class WorkDescriptionFragment extends Fragment {
 
                 ParseACL acl = new ParseACL();
                 acl.setPublicReadAccess(true);
+                acl.setPublicWriteAccess(true);
                 bpost.setACL(acl);
 
                 bpost.saveInBackground(new SaveCallback() {
@@ -192,100 +193,18 @@ public class WorkDescriptionFragment extends Fragment {
             }
         });
 
+//        location.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//            Intent i= new Intent(getActivity(),MapsActivity.class);
+//            i.putExtra("caller","Bidder");
+//            startActivity(i);
+//            }
+//        });
+
 
         return view;
     }
-//
-//    public View onCreateView2(final LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        // Inflate the layout for this fragment
-//        View view = inflater.inflate(R.layout.fragment_work_description, container, false);
-//
-//        topicTv = (TextView) view.findViewById(R.id.WorkDescriptionTopic);
-//        descriptionTv= (TextView) view.findViewById(R.id.WorkDescriptionFragmentDescription);
-//        usernameTv = (TextView) view.findViewById(R.id.WorkDescriptionFragmentUsername);
-//        mobilenoTv = (TextView) view.findViewById(R.id.WorkDescriptionFragmentMobileNumber);
-//        bidValue = (EditText) view.findViewById(R.id.BidValue);
-//        bidButton = (Button) view.findViewById(R.id.bidButton);
-//
-//        topicTv.setText(WorkActivity.topic);
-//        descriptionTv.setText(WorkActivity.description);
-//        usernameTv.setText(WorkActivity.username);
-//        mobilenoTv.setText(WorkActivity.mobileno);
-//
-//        projectId = WorkActivity.projectId;
-//
-//        bidButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                final ProgressDialog dialog = new ProgressDialog(getActivity());
-//                dialog.setMessage("Loading data...");
-//                dialog.show();
-//
-//                int bid = Integer.parseInt(bidValue.getText().toString());
-//                final ParseQuery<HirePost> query = ParseQuery.getQuery("HireData");
-//                query.whereContains("objectId",projectId);
-//
-//                HirePost obj = new HirePost();
-//
-//                query.findInBackground(new FindCallback<HirePost>() {
-//                    @Override
-//                    public void done(List<HirePost> hirePosts, com.parse.ParseException e) {
-//                        if (e == null) {
-//                            Log.i("bids ", "Retrieved " + hirePosts.get(0).getObjectId());
-//                            HirePost project = hirePosts.get(0);
-//                            if(project.getBidderIds()==null){
-//                                project.setBidderIds((new JSONArray()).put(ParseUser.getCurrentUser().getUsername()));
-//                            }
-//                            else {
-//                                JSONArray bidderids = project.getBidderIds();
-//                                bidderids.put(ParseUser.getCurrentUser().getUsername());
-//                                project.setBidderIds(bidderids);
-//                            }
-//
-//
-//                            ParseACL acl = new ParseACL();
-//                            project.setACL(acl);
-//
-//                            project.saveInBackground(new SaveCallback() {
-//                                @Override
-//                                public void done(com.parse.ParseException e) {
-//                                    if(e==null) {
-//                                        dialog.dismiss();
-//                                        Intent intent = new Intent(getActivity().getApplicationContext(),WorkActivity.class);
-//                                        startActivity(intent);
-//                                    }
-//                                    else{
-//                                        Log.e("Save in background",e.getMessage());
-//                                        dialog.dismiss();
-//                                    }
-//                                }
-//                            });
-//
-//                        } else {
-//                            Log.i("Error", "Error: " + e.getMessage());
-//                        }
-//                    }
-//                });
-//
-//
-//
-//
-//
-//
-//                JSONArray userIds = new JSONArray();
-//
-//
-//
-//            }
-//        });
-//
-//
-//
-//        return  view;
-//
-//    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -310,6 +229,8 @@ public class WorkDescriptionFragment extends Fragment {
         super.onDetach();
         mListener = null;
     }
+
+
 
     /**
      * This interface must be implemented by activities that contain this

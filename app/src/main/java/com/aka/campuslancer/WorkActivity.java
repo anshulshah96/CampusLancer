@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,6 +22,8 @@ import android.widget.Toast;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
+import com.parse.ParseUser;
+
 import android.widget.AdapterView.OnItemClickListener;
 
 import java.util.List;
@@ -35,7 +38,7 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
     public static String mobileno;
     public static String projectId;
     public CustomProgressDialogBox dialog;
-
+    double lat,longi;
     ParseQuery<HirePost> q = HirePost.getQuery();
 
     @Override
@@ -56,7 +59,8 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                         ParseQuery<HirePost> query = HirePost.getQuery();
                         query.include("user");
                         query.include("objectId");
-                        query.whereContains("category",WorkStarted.category);
+                        query.whereEqualTo("category", WorkStarted.category);
+                        query.whereNotEqualTo("username", ParseUser.getCurrentUser().getUsername());
                         query.orderByDescending("createdAt");
                         query.setLimit(MAX_POST_SEARCH_RESULTS);
                         q=query;
@@ -77,15 +81,17 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 TextView enrolView = (TextView) view.findViewById(R.id.post_mobile);
                 TextView descriptionView = (TextView) view.findViewById(R.id.post_description);
                 TextView projectId = (TextView) view.findViewById(R.id.post_project_id);
-
+                Button location=(Button)view.findViewById(R.id.location);
                 String topictxt=post.getTopic();
                 String bidtxt="Budget: Rs."+post.getBid();
                 String enrolltxt=""+post.getMobileNo();
                 String unametxt=post.getUsername();
                 String descriptiontxt = post.getDescription();
                 String projectIdtxt = post.getObjectId();
-//                String nametxt = post.getname();
+                boolean locationGiven = post.getLocationSet();
 
+                lat=Double.parseDouble(post.getLat());
+                longi=Double.parseDouble(post.getLongi());
                 topicView.setText(topictxt);
                 budgetView.setText(bidtxt);
                 enrolView.setText(enrolltxt);
@@ -93,6 +99,22 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 descriptionView.setText(descriptiontxt);
                 projectId.setText(projectIdtxt);
 
+                if(locationGiven) {
+                    location.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent i = new Intent(WorkActivity.this, MapsActivityBid.class);
+                            Bundle b = new Bundle();
+                            b.putString("lat", lat + "");
+                            b.putString("longi", longi + "");
+                            i.putExtras(b);
+                            startActivity(i);
+                        }
+                    });
+                }
+                else{
+                    location.setVisibility(View.INVISIBLE);
+                }
                 return view;
             }
         };
@@ -113,8 +135,6 @@ public class WorkActivity extends Activity implements WorkDescriptionFragment.On
                 topic = ((TextView) (view.findViewById(R.id.post_topic))).getText().toString();
                 mobileno = ((TextView) (view.findViewById(R.id.post_mobile))).getText().toString();
                 projectId = ((TextView) (view.findViewById(R.id.post_project_id))).getText().toString();
-//                Log.i("pid: ",projectId);
-
                 Intent intent = new Intent(WorkActivity.this, PostActivity.class);
                 startActivity(intent);
             }

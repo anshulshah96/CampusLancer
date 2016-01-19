@@ -2,8 +2,10 @@ package com.aka.campuslancer;
 import android.app.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -18,8 +20,10 @@ import android.view.animation.Animation;
 import com.parse.LogInCallback;
 import com.parse.Parse;
 import com.parse.ParseException;
+import com.parse.ParseInstallation;
 import com.parse.ParseUser;
 import com.parse.RequestPasswordResetCallback;
+import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
 
 public class LoginSignupActivity extends Activity {
@@ -32,12 +36,18 @@ public class LoginSignupActivity extends Activity {
     EditText username;
     TextView reset_password;
     CustomProgressDialogBox dialog;
+    SharedPreferences loginpref;
 
     /** Called when the activity is first created. */
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Get the view from main.xml
         setContentView(R.layout.loginsignup);
+        //Parse.initialize(this, "gpSqLXFDsQg0oBtIg3ITgoYZLFiI9wkEF2tGiUR3", "pzEksVGPBG1iX8NkIoJ4V7hAPGoaTPo7dyNRkDs4");
+
+        loginpref=getSharedPreferences("loginprefs",Context.MODE_PRIVATE);
+
+
         // Locate EditTexts in main.xml
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
@@ -67,7 +77,11 @@ public class LoginSignupActivity extends Activity {
                             public void done(ParseUser user, ParseException e) {
                                 if (user != null) {
                                     // If user exist and authenticated, send user to Welcome.class
-                                    Intent intent = new Intent(LoginSignupActivity.this, Welcome.class);startActivity(intent);
+                                    SharedPreferences.Editor edit=loginpref.edit();
+                                    edit.putInt("logged",1);
+                                    edit.commit();
+                                    Intent intent = new Intent(LoginSignupActivity.this, Welcome.class);
+                                    startActivity(intent);
                                     dialog.dismiss();
                                     Toast.makeText(getApplicationContext(),"Successfully Logged in",Toast.LENGTH_LONG).show();
                                     finish();

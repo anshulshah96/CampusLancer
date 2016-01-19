@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +30,7 @@ public class PeopleForProject extends Activity {
     ParseQuery<BidPost> q = BidPost.getQuery();
     ParseQueryAdapter<BidPost> postsQueryAdapter;
     public CustomProgressDialogBox dialog;
+    double lat,longi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,9 +73,9 @@ public class PeopleForProject extends Activity {
                 TextView projectmobile = (TextView) view.findViewById(R.id.peopleproject_mobile);
                 TextView projectbid = (TextView) view.findViewById(R.id.bid_amount);
 
+
                 String pb = "" + post.getBid();
                 String pu = "" + post.getBidderUsername();
-
                 projectbid.setText("Bid: Rs."+pb);
                 projectuser.setText("Bidder: "+pu);
                 projectmobile.setText(""+post.getMobileNo());
@@ -133,6 +135,7 @@ public class PeopleForProject extends Activity {
             finish();
         }
     }
+
 }
 
 
