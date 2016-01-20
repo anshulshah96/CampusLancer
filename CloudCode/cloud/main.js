@@ -58,7 +58,7 @@ Parse.Cloud.define("newBid",function(request,response){
                 console.log("Installation not found for "+employer);
           }
           else{
-                console.log("Installation id is "+result[0].objectId.toString());
+                console.log("Installation id is "+result[0].objectId);
           }
       },
       error:function(error){

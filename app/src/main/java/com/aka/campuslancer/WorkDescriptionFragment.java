@@ -162,12 +162,12 @@ public class WorkDescriptionFragment extends Fragment  {
                                 public void done(String s, com.parse.ParseException e) {
                                     if (e == null) {
                                         Toast.makeText(getActivity(),s,Toast.LENGTH_SHORT).show();
-                                        Log.d("Cloud Response", s);
+                                        Log.e("Cloud Response", s);
                                         getActivity().finish();
                                     }
                                     else {
                                         Toast.makeText(getActivity(),s,Toast.LENGTH_SHORT).show();
-                                        Log.d("Cloud Error", e.getMessage());
+                                        Log.e("Cloud Error", e.getMessage());
                                     }
                                 }
                             });
@@ -175,7 +175,7 @@ public class WorkDescriptionFragment extends Fragment  {
                         else {
                             dialog.dismiss();
                             Toast.makeText(getActivity(),"Saving error: "+e.getMessage(),Toast.LENGTH_SHORT).show();
-                            Log.d("Saving error",e.getMessage());
+                            Log.e("Saving error",e.getMessage());
                         }
                     }
                 });

@@ -26,10 +26,8 @@ dependencies {
     compile 'com.wrapp.floatlabelededittext:library:0.0.6'
     compile fileTree(include: 'Parse-*.jar', dir: 'libs')
     compile 'com.google.android.gms:play-services:8.3.0'
-    compile files('C:/Users/akshayaggarwal99/CampusLancer/libs/bolts-android-1.1.4.jar')
-    compile files('C:/Users/akshayaggarwal99/CampusLancer/libs/bolts-android-1.1.4-javadoc.jar')
-    compile files('C:/Users/akshayaggarwal99/CampusLancer/libs/Parse-1.8.3.jar')
-    compile files('C:/Users/akshayaggarwal99/CampusLancer/libs/ParseCrashReporting-1.8.3.jar')
+    compile files('bolts-android-1.1.4.jar')
+    compile files('Parse-1.8.3.jar')
 }
 dependencies {
 //    compile 'com.parse.bolts:bolts-android:1.+'
