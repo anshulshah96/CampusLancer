@@ -1,90 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/backgroundmain"
-        android:alpha="0.6" />
-
-    <TextView
-        android:id="@+id/Header"
-        android:layout_width="match_parent"
-        android:layout_height="80dip"
-        android:background="#4444ff"
-
-        android:paddingLeft="120dp"
-        android:paddingTop="35dp"
-        android:text="@string/Heading"
-        android:textSize="35sp"
-        android:textColor="#FFFFFF" />
+    xmlns:float="http://schemas.android.com/apk/res-auto"
+    android:padding="15dp"
+    android:orientation="vertical"
+    android:background="#f1f5f7">
 
     <ImageView
         android:id="@+id/MainLogo"
         android:background="@drawable/mainlogo"
         android:layout_width="100dip"
         android:layout_height="100dip"
-        android:layout_marginTop="10dip"
-        android:layout_marginLeft="10dip" />
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        android:layout_gravity="center"></ImageView>
 
-    <TextView
-        android:id="@+id/txtusername"
-        android:layout_width="fill_parent"
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/MainLogo"
-        android:paddingTop="20dip"
-
-        android:layout_marginLeft="10dip"
-        android:layout_marginRight="10dip"
-
-        android:text="@string/Username"
-        android:textSize="20sp"
-        android:textColor="#000000"/>
+        float:fletPaddingBottom="10dp">
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtusername"
-        android:padding="5sp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:hint="Username"
+        android:layout_margin="15dp"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:inputType="textCapWords"
+        android:textColor="@color/input_register"
+        android:textColorHint="@color/input_register_hint" />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
-        android:layout_marginLeft="10dip"
-        android:layout_marginRight="10dip"
-
-        android:inputType="text"
-        android:textSize="25sp"
-        android:background="#DDDDDD"/>
-
-    <TextView
-        android:id="@+id/txtpassword"
-        android:layout_width="fill_parent"
+    <com.wrapp.floatlabelededittext.FloatLabeledEditText
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/username"
-        android:paddingTop="10dip"
-
-        android:layout_marginLeft="10dip"
-        android:layout_marginRight="10dip"
-
-        android:text="@string/Password"
-        android:textSize="20sp"
-        android:textColor="#000000"/>
-
+        float:fletPaddingBottom="10dp">
     <EditText
         android:id="@+id/password"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtpassword"
-        android:padding="5sp"
-
-        android:layout_marginLeft="10dip"
-        android:layout_marginRight="10dip"
-
+        android:layout_marginBottom="10dp"
+        android:background="@color/white"
+        android:hint="@string/Password"
+        android:layout_margin="15dp"
+        android:padding="10dp"
+        android:singleLine="true"
         android:inputType="textPassword"
-        android:textSize="25sp"
-        android:background="#DDDDDD"/>
+        android:textColor="@color/input_register"
+        android:textColorHint="@color/input_register_hint" />
+    </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
 
     <Button
         android:id="@+id/login"
@@ -100,7 +70,7 @@
         android:text="@string/LoginBtn"
         android:textSize="20sp"
         android:textColor="#FFFFFF"
-        android:background="#F8650D"/>
+        android:background="@color/primaryColor"/>
 
     <TextView
         android:id="@+id/SignUpBoost"
@@ -130,7 +100,7 @@
 
         android:textSize="20sp"
         android:textColor="#FFFFFF"
-        android:background="#F8650D" />
+        android:background="@color/primaryColor" />
 
     <TextView
         android:id="@+id/reset_password"
@@ -144,6 +114,7 @@
         android:clickable="true"
         android:textSize="15sp"
         android:textColor="#000000"
-        android:textColorHighlight="#0000ff" />
+        android:textColorHighlight="#0000ff"
+        android:layout_gravity="center_horizontal" />
 
-</RelativeLayout>
+</LinearLayout>

@@ -4,8 +4,6 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="90dip"
-
-    android:background="@drawable/custom_gradient"
     android:padding="10dp"
     android:layout_margin="15dp"
 
@@ -134,7 +132,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/location"
         android:text="Location"
-        android:alpha="0.8"
         android:layout_below="@+id/mob_img"
 
         android:layout_alignParentRight="true" />

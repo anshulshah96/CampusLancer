@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primaryColor">#e5483a</color>
+    <color name="primaryColorDark">#a23329</color>
+    <color name="accentColor">#F50057</color>
+    <color name="sinch_purple">#80CBC4</color>
+    <color name="off_white">#ECEBE4</color>
+    <color name="dark_gray">#ffb3b3b3</color>
+    <color name="very_dark_gray">#636363</color>
+    <color name="tabsScrollColor">#8a140e</color>
+    <color name="second_grey">#ff999999</color>
+    <color name="card_white">#ffffffff</color>
+    <color name="card_shadow">#8c666666</color>
+
+
+
+    <color name="bg_login">#26ae90</color>
+    <color name="bg_register">#cccccc</color>
+    <color name="bg_main">#428bca</color>
+    <color name="white">#ffffff</color>
+    <color name="input_login">#222222</color>
+    <color name="input_login_hint">#999999</color>
+    <color name="input_register">#888888</color>
+    <color name="input_register_bg">#3b4148</color>
+    <color name="input_register_hint">#5e6266</color>
+    <color name="btn_login">#26ae90</color>
+    <color name="btn_login_bg">#eceef1</color>
+    <color name="lbl_name">#333333</color>
+    <color name="btn_logut_bg">#ff6861</color>
+
+
+</resources>

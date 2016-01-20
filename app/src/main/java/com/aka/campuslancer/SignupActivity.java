@@ -34,11 +34,11 @@ public class SignupActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        username = (EditText) findViewById(R.id.usernamesignup);
-        password = (EditText) findViewById(R.id.passwordsignup);
-        enrollment = (EditText) findViewById(R.id.enrollmentsignup);
-        email=(EditText)findViewById(R.id.emailsignup);
-        signup = (Button) findViewById(R.id.signupbtn);
+        username = (EditText) findViewById(R.id.uname);
+        password = (EditText) findViewById(R.id.password);
+        enrollment = (EditText) findViewById(R.id.enrollment);
+        email=(EditText)findViewById(R.id.email);
+        signup = (Button) findViewById(R.id.btnRegister);
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override

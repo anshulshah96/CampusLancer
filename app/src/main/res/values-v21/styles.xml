@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <style name="AppTheme" parent="MyCustomTheme">
+                <!-- Main theme colors -->
+                <!--   your app branding color for the app bar -->
+                <item name="colorPrimary">@color/primaryColor</item>
+                <!--   darker variant for the status bar and contextual app bars -->
+                <item name="colorPrimaryDark">@color/primaryColorDark</item>
+                <!--   theme UI controls like checkboxes and text fields -->
+                <item name="colorAccent">#F50057</item>
+                <item name="colorButtonNormal">#2196f3</item>
+                <item name="android:navigationBarColor">@android:color/white</item>
+
+
+        </style>
+</resources>

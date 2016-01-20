@@ -33,7 +33,7 @@
         android:allowBackup="true"
         android:icon="@drawable/mainlogo"
         android:label="@string/app_name"
-        android:theme="@style/Theme.AppCompat.Light">
+        android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -53,7 +53,8 @@
         <activity
             android:name=".SignupActivity"
             android:label="@string/title_activity_signup"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
         <activity android:name=".Hire" />
         <activity
             android:name=".PostActivity"

@@ -12,14 +12,14 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/backgroundmain"
-        android:alpha="0.6" />
+        android:background="@color/white"
+        />
 
     <TextView
         android:id="@+id/Header"
         android:layout_width="match_parent"
         android:layout_height="60dip"
-        android:background="#4444ff"
+        android:background="@color/primaryColor"
 
         android:paddingLeft="100dip"
         android:paddingTop="25dip"
@@ -165,7 +165,7 @@
             android:text="@string/WorkDescriptionBid"
             android:textSize="20sp"
             android:textColor="#FFFFFF"
-            android:background="#F8650D"/>
+            android:background="@color/primaryColor"/>
 
     </LinearLayout>
 

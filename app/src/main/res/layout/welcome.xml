@@ -2,19 +2,22 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:customfont="http://schemas.android.com/apk/res-auto"
+    xmlns:foo="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@drawable/backgroundmain">
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/Header"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="#4444ff"
+        android:background="@color/primaryColor"
 
         android:paddingLeft="120dp"
         android:paddingTop="35dp"
         android:text="@string/Heading"
-        android:textSize="35sp"
+        android:singleLine="true"
+        android:textSize="30sp"
         android:textColor="#FFFFFF" />
 
     <ImageView
@@ -25,12 +28,13 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp" />
 
-    <TextView
+    <com.aka.campuslancer.TextViewPlus
         android:id="@+id/WelcomeHeader"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/MainLogo"
         android:background="#55FFFFFF"
+        foo:customfont="Lato-Medium.ttf"
 
         android:layout_margin="10dp"
 
@@ -62,7 +66,7 @@
 
                 android:textSize="20sp"
                 android:textColor="#FFFFFF"
-                android:background="#F8650D"
+                android:background="@color/bg_main"
                 android:layout_weight="0.5" />
 
             <Button
@@ -77,7 +81,7 @@
 
                 android:textSize="20sp"
                 android:textColor="#FFFFFF"
-                android:background="#F8650D" />
+                android:background="@color/primaryColor" />
         </LinearLayout>
 
         <Button
@@ -92,7 +96,7 @@
             android:textSize="20sp"
             android:textColor="#FFFFFF"
 
-            android:background="#F8650D"
+            android:background="@color/bg_login"
             android:layout_below="@+id/HireWelcome"
             android:layout_centerHorizontal="true" />
     </LinearLayout>

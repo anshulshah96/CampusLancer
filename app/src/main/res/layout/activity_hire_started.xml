@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundmain">
+    android:background="@color/white">
     <RelativeLayout
 
         android:layout_width="match_parent"
@@ -13,7 +13,7 @@
             android:id="@+id/Header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#4444FF"
+            android:background="@color/primaryColor"
 
             android:paddingLeft="100dip"
             android:paddingTop="25dip"
@@ -63,20 +63,20 @@
                     android:layout_height="match_parent"
                     android:layout_weight="0.33"
                     android:layout_margin="5dip"
-                    android:src="@drawable/project" />
+                    android:src="@drawable/ic_description_black_48dp" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_weight="0.33"
                     android:layout_margin="5dip"
-                    android:src="@drawable/peoplebids"
+                    android:src="@drawable/ic_group_black_48dp"
                     android:layout_height="match_parent" />
 
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_weight="0.33"
                     android:layout_margin="5dip"
-                    android:src="@drawable/money"
+                    android:src="@drawable/ic_attach_money_black_48dp"
                     android:layout_height="match_parent" />
             </LinearLayout>
 
@@ -138,7 +138,7 @@
             android:text="@string/HireNewProject"
             android:textSize="18sp"
             android:textColor="#FFFFFF"
-            android:background="#F8650D" />
+            android:background="@color/bg_login" />
 
         <Button
             android:id="@+id/viewexistingprojectsbutton"
@@ -154,7 +154,7 @@
 
             android:textSize="18sp"
             android:textColor="#FFFFFF"
-            android:background="#F8650D" />
+            android:background="@color/bg_main" />
 
     </RelativeLayout>
 </ScrollView>

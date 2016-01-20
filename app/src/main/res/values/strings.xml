@@ -72,6 +72,17 @@
     <string name="title_activity_custom_progress_dialog_box">CustomProgressDialogBox</string>
     <string name="title_activity_work_started">WorkStarted</string>
     <string name="title_activity_parse_application">ParseApplication</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_name">Fullname</string>
+    <string name="btn_login">LOGIN</string>
+    <string name="btn_register">REGISTER</string>
+    <string name="btn_link_to_register">Not a member? Sign up now.</string>
+    <string name="btn_link_to_login">Already registred! Login Me.</string>
+    <string name="welcome">Welcome</string>
+    <string name="btn_logout">LOGOUT</string>
+    <string name="name">Fullname</string>
+
 
     <string-array name="categories_array">
         <item>Android Developer</item>

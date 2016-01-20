@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -13,18 +12,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.view.animation.Animation;
 
 import com.parse.LogInCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
-import com.parse.ParseInstallation;
 import com.parse.ParseUser;
-import com.parse.RequestPasswordResetCallback;
-import com.parse.SaveCallback;
-import com.parse.SignUpCallback;
 
 public class LoginSignupActivity extends Activity {
     // Declare Variables

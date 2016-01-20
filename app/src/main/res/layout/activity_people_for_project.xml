@@ -13,14 +13,14 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/backgroundmain"
-            android:alpha="0.6" />
+            android:background="@color/white"
+             />
 
         <TextView
             android:id="@+id/Header"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="#1761ef"
+            android:background="@color/primaryColor"
 
             android:paddingLeft="100dp"
             android:paddingTop="25dp"

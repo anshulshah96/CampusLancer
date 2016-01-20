@@ -1,205 +1,172 @@
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/backgroundmain">
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <LinearLayout xmlns:float="http://schemas.android.com/apk/res-auto"
         android:layout_height="match_parent"
-        tools:context="com.aka.campuslancer.SignupActivity">
-
-        <TextView
-            android:id="@+id/SignUpHeader"
-            android:layout_width="match_parent"
-            android:layout_height="80dip"
-            android:background="#4444ff"
-
-            android:paddingLeft="120dip"
-            android:paddingTop="35dip"
-            android:text="@string/Heading"
-            android:textSize="35sp"
-            android:textColor="#FFFFFF"/>
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:background="#f1f5f7"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
 
         <ImageView
-            android:id="@+id/SignUpMainLogo"
-            android:background="@drawable/mainlogo"
-            android:layout_width="100dip"
-            android:layout_height="100dip"
-            android:layout_marginTop="10dip"
-            android:layout_marginLeft="10dip"/>
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center_horizontal"
+            android:padding="8dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/mainlogo" />
 
-        <TextView
-            android:id="@+id/SignUpDescription"
-            android:layout_width="fill_parent"
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/SignUpMainLogo"
-            android:paddingTop="10dip"
-
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip"
-
-            android:text="@string/SignUpDescription"
-            android:textSize="22sp"
-            android:textColor="#000000"/>
-
-        <TextView
-            android:id="@+id/txtusernamesignup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/SignUpDescription"
-            android:paddingTop="10dip"
-
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip"
-
-            android:text="@string/Username"
-            android:textSize="20sp"
-            android:textColor="#000000"/>
-
-        <EditText
-            android:id="@+id/usernamesignup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtusernamesignup"
-            android:padding="5sp"
-
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip"
-
-            android:inputType="text"
-            android:textSize="25sp"
-            android:background="#DDDDDD"/>
-
-        <!--
-                <TextView
-                    android:id="@+id/txtnamesignup"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/usernamesignup"
-                    android:paddingTop="10dip"
-
-                    android:layout_marginLeft="10dip"
-                    android:layout_marginRight="10dip"
-
-                    android:text="Name"
-                    android:textSize="20sp"
-                    android:textColor="#000000"/>
+            float:fletPaddingBottom="10dp">
 
             <EditText
-                android:id="@+id/namesignup"
+                android:id="@+id/fname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:hint="First Name"
+                android:inputType="textCapWords"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/input_register"
+                android:textColorHint="@color/input_register_hint" />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            float:fletPaddingBottom="10dp">
+
+            <EditText
+                android:id="@+id/lname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:hint="Last Name"
+                android:inputType="textCapWords"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/input_register"
+                android:textColorHint="@color/input_register_hint" />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            float:fletPaddingBottom="10dp">
+
+            <EditText
+                android:id="@+id/uname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:hint="Username"
+                android:inputType="textCapWords"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/input_register"
+                android:textColorHint="@color/input_register_hint" />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            float:fletPaddingBottom="10dp">
+
+            <EditText
+                android:id="@+id/enrollment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:hint="@string/Enrollment"
+                android:inputType="phone"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/input_register"
+                android:textColorHint="@color/input_register_hint" />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
+
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            float:fletPaddingBottom="10dp">
+
+            <EditText
+                android:id="@+id/email"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/txtnamesignup"
-                android:padding="5sp"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:hint="@string/hint_email"
+                android:inputType="textEmailAddress"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/input_register"
+                android:textColorHint="@color/input_register_hint" />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
-                android:layout_marginLeft="10dip"
-                android:layout_marginRight="10dip"
-
-                android:inputType="text"
-                android:textSize="25sp"
-                android:background="#DDDDDD"/>
-        -->
-
-        <TextView
-            android:id="@+id/txtpasswordsignup"
-            android:layout_width="fill_parent"
+        <com.wrapp.floatlabelededittext.FloatLabeledEditText
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/usernamesignup"
-            android:paddingTop="10dip"
+            float:fletPaddingBottom="10dp">
 
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip"
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@color/white"
+                android:hint="@string/hint_password"
+                android:inputType="textPassword"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColor="@color/input_register"
+                android:textColorHint="@color/input_register_hint" />
+        </com.wrapp.floatlabelededittext.FloatLabeledEditText>
 
-            android:text="@string/Password"
-            android:textSize="20sp"
-            android:textColor="#000000" />
 
-        <EditText
-            android:id="@+id/passwordsignup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txtpasswordsignup"
-            android:padding="5sp"
-
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip"
-
-            android:inputType="textPassword"
-            android:textSize="25sp"
-            android:background="#DDDDDD" />
-
-        <TextView
-            android:id="@+id/txtenrollmentsignup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/passwordsignup"
-            android:paddingTop="10dip"
-
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip"
-
-            android:text="@string/Enrollment"
-            android:textSize="20sp"
-            android:textColor="#000000" />
-
-        <EditText
-            android:id="@+id/enrollmentsignup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtenrollmentsignup"
-            android:padding="5sp"
-
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip"
-
-            android:inputType="phone"
-            android:textSize="25sp"
-            android:background="#DDDDDD" />
-
-        <TextView
-            android:id="@+id/txtemailsignup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/enrollmentsignup"
-            android:paddingTop="10dip"
-
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip"
-
-            android:text="@string/Email"
-            android:textSize="20sp"
-            android:textColor="#000000" />
-
-        <EditText
-            android:id="@+id/emailsignup"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtemailsignup"
-            android:padding="5sp"
-
-            android:layout_marginLeft="10dip"
-            android:layout_marginRight="10dip"
-
-            android:inputType="textEmailAddress"
-            android:textSize="25sp"
-            android:background="#DDDDDD"/>
+        <!-- Login Button -->
 
         <Button
-            android:id="@+id/signupbtn"
+            android:id="@+id/btnRegister"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/emailsignup"
+            android:layout_marginTop="20dip"
+            android:background="#993333"
+            android:text="Create Account"
+            android:textColor="@color/white" />
 
-            android:layout_marginLeft="80dip"
-            android:layout_marginRight="80dip"
-            android:layout_marginTop="15dip"
-            android:layout_marginBottom="5dip"
+        <!-- Link to Login Screen -->
 
-            android:text="@string/SignupBtn"
-            android:textSize="20sp"
-            android:textColor="#FFFFFF"
-            android:background="#F8650D"/>
+        <Button
+            android:id="@+id/bktologin"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dip"
+            android:background="@null"
+            android:text="Already have an account? Signin"
+            android:textAllCaps="false"
+            android:textColor="@android:color/black"
+            android:textSize="15dp" />
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/register_error"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/register"
+            android:textColor="#000000" />
+
+    </LinearLayout>
 
 </ScrollView>
