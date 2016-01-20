@@ -71,7 +71,6 @@ public class Hire extends Activity  {
         postButton = (Button) findViewById(R.id.HirePost);
         postButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                dialog.show();
                 post();
             }
         });
@@ -96,6 +95,14 @@ public class Hire extends Activity  {
 
     private void post() {
         HirePost post = new HirePost();
+        try {
+            post.setBid(Integer.parseInt(bid.getText().toString()));
+        }
+        catch (Exception e) {
+            Toast.makeText(Hire.this, "Enter a valid budget", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        dialog.show();
         text =  topic.getText().toString().trim();
 
         text1 = description.getText().toString().trim();
@@ -124,15 +131,13 @@ public class Hire extends Activity  {
                     post.setLongi("0.0");
                     post.setLocationSet(false);
                 } catch (Exception e2) {
+                    Toast.makeText(Hire.this, "Select a valid location", Toast.LENGTH_SHORT).show();
+                    dialog.dismiss();
                     return;
                 }
             }
         }
         post.setCategory(category);
-        if(bid.getText().toString()!=""){
-        post.setBid(Integer.parseInt(bid.getText().toString()));}
-        else
-        Toast.makeText(Hire.this,"Enter a bid to post project",Toast.LENGTH_LONG).show();
 
         String mobNo="";
 
@@ -160,11 +165,11 @@ public class Hire extends Activity  {
             public void done(ParseException e) {
                 if(e==null) {
                     dialog.dismiss();
+                    Toast.makeText(getApplicationContext()," Post Published ", Toast.LENGTH_SHORT).show();
                     finish();
                 }
                 else{
                     dialog.dismiss();
-                    Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_SHORT);
                     Log.d("Error: ",e.getMessage());
                 }
             }

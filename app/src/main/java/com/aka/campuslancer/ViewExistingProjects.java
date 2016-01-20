@@ -46,7 +46,7 @@ public class ViewExistingProjects extends Activity {
         dialog.show();
 
         ParseObject.registerSubclass(HirePost.class);
-        ParseQueryAdapter.QueryFactory<HirePost> factory =
+        final ParseQueryAdapter.QueryFactory<HirePost> factory =
                 new ParseQueryAdapter.QueryFactory<HirePost>() {
                     public ParseQuery<HirePost> create() {
                         ParseQuery<HirePost> query = HirePost.getQuery();
@@ -75,7 +75,7 @@ public class ViewExistingProjects extends Activity {
                 TextView bidView = (TextView) view.findViewById(R.id.existing_projects_bid);
                 TextView description = (TextView) view.findViewById(R.id.existing_projects_description);
                 TextView projectId = (TextView) view.findViewById(R.id.existing_project_id);
-                Button deleteButton = (Button) view.findViewById(R.id.button_delete);
+                final Button deleteButton = (Button) view.findViewById(R.id.button_delete);
 
                 String topictxt=post.getTopic();
                 String bidtxt=""+post.getBid();
@@ -90,6 +90,9 @@ public class ViewExistingProjects extends Activity {
                 deleteButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        final CustomProgressDialogBox deleteDialog = new CustomProgressDialogBox(ViewExistingProjects.this,"Loading data...");
+                        deleteDialog.setMessage("Loading data...");
+                        deleteDialog.show();
                         ParseQuery<HirePost> query = ParseQuery.getQuery(HirePost.class);
                         query.whereContains("objectId", projectidtxt);
                         query.findInBackground(new FindCallback<HirePost>() {
@@ -102,19 +105,23 @@ public class ViewExistingProjects extends Activity {
                                             public void done(ParseException e) {
                                                 if (e == null) {
                                                     Toast.makeText(getApplicationContext(), "Post deleted", Toast.LENGTH_SHORT).show();
+                                                    deleteDialog.dismiss();
+                                                    finish();
                                                 } else {
                                                     Log.d("DeleteError", e.getMessage());
+                                                    deleteDialog.dismiss();
                                                 }
                                             }
                                         });
                                     }
                                 } else {
                                     Log.d("DelFoundError", e.getMessage());
+                                    deleteDialog.dismiss();
                                 }
                             }
                         });
                         ParseQuery<BidPost> query2 = ParseQuery.getQuery(BidPost.class);
-                        query2.whereContains("projectId",projectidtxt);
+                        query2.whereContains("projectId", projectidtxt);
                         query2.findInBackground(new FindCallback<BidPost>() {
                             @Override
                             public void done(List<BidPost> bids, ParseException e) {
@@ -136,7 +143,6 @@ public class ViewExistingProjects extends Activity {
                                 }
                             }
                         });
-                        finish();
                     }
                 });
 

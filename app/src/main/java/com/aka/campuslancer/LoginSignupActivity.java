@@ -57,17 +57,16 @@ public class LoginSignupActivity extends Activity {
 
             public void onClick(View arg0) {
                 // Retrieve the text entered from the EditText
-                usernametxt = username.getText().toString();
+                usernametxt = username.getText().toString().trim();
                 passwordtxt = password.getText().toString();
 
 
                 dialog.show();
-
                 // Send data to Parse.com for verification
                 ParseUser.logInInBackground(usernametxt, passwordtxt,
                         new LogInCallback() {
                             public void done(ParseUser user, ParseException e) {
-                                if (user != null) {
+                                if (user != null && user.getBoolean("emailVerified") == true) {
                                     // If user exist and authenticated, send user to Welcome.class
                                     SharedPreferences.Editor edit=loginpref.edit();
                                     edit.putInt("logged",1);
@@ -75,8 +74,12 @@ public class LoginSignupActivity extends Activity {
                                     Intent intent = new Intent(LoginSignupActivity.this, Welcome.class);
                                     startActivity(intent);
                                     dialog.dismiss();
-                                    Toast.makeText(getApplicationContext(),"Successfully Logged in",Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(),"Successfully Logged in",Toast.LENGTH_SHORT).show();
                                     finish();
+                                }
+                                else if(user!= null && user.getBoolean("emailVerified") == false){
+                                    Toast.makeText(getApplicationContext(),"Please verify your email id " + user.getEmail(),Toast.LENGTH_LONG).show();
+                                    dialog.dismiss();
                                 }
                                 else {
                                     Toast.makeText(getApplicationContext(),"No such user exist, please signup",Toast.LENGTH_LONG).show();
