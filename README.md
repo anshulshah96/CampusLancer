@@ -1,4 +1,4 @@
-# EmployMe
+# CampusLancer
 This App basically connects the people who need to get their work done, and the people who are capable of doing the specific work. This App will be working within different campuses, and is just a medium of connection, and no payments are made through this App.
 
 Need any Logo for your Start Up? Any T-Shirt Design for your branch? Want to have a website made? Or any problems in your laptop that you can't fix? Or you need an editorial or a blog written professionally?
