@@ -18,14 +18,19 @@ import com.parse.SaveCallback;
 public class ParseApplication extends Application {
     @Override
     public void onCreate() {
+        Parse.initialize(new Parse.Configuration.Builder(getApplicationContext())
+                .applicationId(Keys.API_KEY)
+                .clientKey(Keys.CLIENT_KEY)
+                .server("http://172.25.12.120/parse/")   // '/' important after 'parse'
+                .build());
         super.onCreate();
         Parse.enableLocalDatastore(this);
-        Parse.initialize(this,Keys.API_KEY,Keys.CLIENT_KEY);
+//        Parse.initialize(this,Keys.API_KEY,Keys.CLIENT_KEY);
         ParseInstallation.getCurrentInstallation().saveInBackground();
         ParseUser.enableAutomaticUser();
         ParseACL defaultacl=new ParseACL();
         defaultacl.setPublicReadAccess(true);
-        PushService.setDefaultPushCallback(this,MainActivity.class);
+//        PushService.setDefaultPushCallback(this,MainActivity.class);
         ParsePush.subscribeInBackground("", new SaveCallback() {
             @Override
             public void done(ParseException e) {
